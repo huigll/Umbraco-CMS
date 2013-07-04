@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{FF5F489F-94B2-405F-A408-F0486E92ECC3}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Runway.Blog</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Web" />
+    <Reference Include="interfaces" />
+    <Reference Include="cms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="umbraco.DataLayer" />
+    <Reference Include="umbraco.editorControls" />
+    <Reference Include="controls" />
+    <Reference Include="umbraco" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Web" />
+    <Reference Include="ICSharpCode.SharpZipLib" />
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Runway.Blog.Dashboard\BlogCreator.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Runway.Blog.Dashboard\CommentModeration.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Runway.Blog.Dashboard\CreatePost.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Runway.Blog.DataTypes\SkinBrowser.cs" />
+    <Compile Include="Runway.Blog.DataTypes\SkinBrowserConfig.cs" />
+    <Compile Include="Runway.Blog.DataTypes\SkinBrowserDatatype.cs" />
+    <Compile Include="Runway.Blog.DataTypes\UserPicker.cs" />
+    <Compile Include="Runway.Blog.EventHandlers\AutoChannelCreator.cs" />
+    <Compile Include="Runway.Blog.EventHandlers\Autoping.cs" />
+    <Compile Include="Runway.Blog.Installer\addRestExtension.cs" />
+    <Compile Include="Runway.Blog.Installer\ExecuteNonQuery.cs" />
+    <Compile Include="Runway.Blog.Interfaces\ISpamChecker.cs" />
+    <Compile Include="Runway.Blog.Library\Base.cs" />
+    <Compile Include="Runway.Blog.plugins.blog4umbraco\skinBrowser1.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Runway.Blog.Spam\AkismetSpamChecker.cs" />
+    <Compile Include="Runway.Blog.Spam\SpamChecker.cs" />
+    <Compile Include="Runway.Blog.usercontrols\AjaxCommentForm.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Runway.Blog.usercontrols\BlogInstaller.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Runway.Blog\BlogDateFolder.cs" />
+    <Compile Include="Runway.Blog\BlogLibrary.cs" />
+    <Compile Include="Runway.Blog\Config.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Joel.Net.Akismet.1.0.1\Akismet.csproj">
+      <Project>{006DE6B0-1513-44FC-B37B-3DB0C2631CD1}</Project>
+      <Name>Akismet</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\umbraco.businesslogic\umbraco.businesslogic.csproj">
+      <Project>{E469A9CE-1BEC-423F-AC44-713CD72457EA}</Project>
+      <Name>umbraco.businesslogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Umbraco.Core\Umbraco.Core.csproj">
+      <Project>{31785BC3-256C-4613-B2F5-A1B0BDDED8C1}</Project>
+      <Name>Umbraco.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
