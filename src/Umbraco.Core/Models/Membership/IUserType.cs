@@ -1,4 +1,4 @@
-using Umbraco.Core.Models.EntityBase;
+﻿using Umbraco.Core.Models.EntityBase;
 using Umbraco.Core.Persistence.Mappers;
 
 namespace Umbraco.Core.Models.Membership

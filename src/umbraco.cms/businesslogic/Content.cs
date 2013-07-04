@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml;
@@ -700,7 +700,7 @@ namespace umbraco.cms.businesslogic
         }
 
         /// <summary>
-        /// Optimized method for bulk deletion of properties�on a Content object.
+        /// Optimized method for bulk deletion of properties´on a Content object.
         /// </summary>
         protected void deleteAllProperties()
         {

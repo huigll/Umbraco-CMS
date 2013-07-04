@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Configuration;
 using NUnit.Framework;
 using Umbraco.Core.Configuration;

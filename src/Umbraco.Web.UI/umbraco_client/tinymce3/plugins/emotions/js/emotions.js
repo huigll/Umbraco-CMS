@@ -1,4 +1,4 @@
-tinyMCEPopup.requireLangPack();
+﻿tinyMCEPopup.requireLangPack();
 
 var EmotionsDialog = {
 	addKeyboardNavigation: function(){

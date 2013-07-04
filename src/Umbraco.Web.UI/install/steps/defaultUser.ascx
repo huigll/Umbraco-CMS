@@ -1,4 +1,4 @@
-<%@ Control Language="c#" AutoEventWireup="True" Codebehind="DefaultUser.ascx.cs" Inherits="Umbraco.Web.UI.Install.Steps.DefaultUser" TargetSchema="http://schemas.microsoft.com/intellisense/ie5"%>
+﻿<%@ Control Language="c#" AutoEventWireup="True" Codebehind="DefaultUser.ascx.cs" Inherits="Umbraco.Web.UI.Install.Steps.DefaultUser" TargetSchema="http://schemas.microsoft.com/intellisense/ie5"%>
 <asp:Placeholder ID="identify" Runat="server" Visible="True">
 
 <!-- create box -->

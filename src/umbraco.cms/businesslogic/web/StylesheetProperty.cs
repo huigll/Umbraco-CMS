@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Umbraco.Core;
 using Umbraco.Core.Cache;
 using umbraco.cms.businesslogic.cache;

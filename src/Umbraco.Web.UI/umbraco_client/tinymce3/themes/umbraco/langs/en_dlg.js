@@ -1,4 +1,4 @@
-tinyMCE.addI18n('en.umbraco_dlg', {"link_list":"Link List",
+﻿tinyMCE.addI18n('en.umbraco_dlg', {"link_list":"Link List",
 "link_is_external":"The URL you entered seems to be an external link. Do you want to add the required http:// prefix?",
 "link_is_email":"The URL you entered seems to be an email address. Do you want to add the required mailto: prefix?",
 "link_titlefield":"Title",

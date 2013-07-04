@@ -1,4 +1,4 @@
-		var doScroll = false;
+﻿		var doScroll = false;
 		
 		var el = null;
 		var FromLeftMax = 0;

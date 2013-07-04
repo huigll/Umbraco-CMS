@@ -1,10 +1,10 @@
-tinyMCE.addI18n('zh.embed_dlg', {
-    title: '嵌入第三方媒体',
-    general: '普通',
-    url: '链接：',
-    size: '尺寸：',
-    constrain_proportions: '约束比例',
-    preview: '预览',
-    source: '源'
+﻿tinyMCE.addI18n('zh.embed_dlg', {
+    title: 'åµŒå…¥ç¬¬ä¸‰æ–¹åª’ä½“',
+    general: 'æ™®é€š',
+    url: 'é“¾æŽ¥ï¼š',
+    size: 'å°ºå¯¸ï¼š',
+    constrain_proportions: 'çº¦æŸæ¯”ä¾‹',
+    preview: 'é¢„è§ˆ',
+    source: 'æº'
 
 });

@@ -1,4 +1,4 @@
-namespace System.Linq.Dynamic
+﻿namespace System.Linq.Dynamic
 {
 
 	[Obsolete("This class has been superceded by Umbraco.Core.Dynamics.ParseException")]

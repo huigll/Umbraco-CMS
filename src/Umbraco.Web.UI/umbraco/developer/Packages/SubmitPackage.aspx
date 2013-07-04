@@ -1,4 +1,4 @@
-<%@ Page Language="C#" Title="Submit package" MasterPageFile="../../masterpages/umbracoPage.Master" AutoEventWireup="true" CodeBehind="SubmitPackage.aspx.cs" Inherits="umbraco.presentation.developer.packages.SubmitPackage" %>
+﻿<%@ Page Language="C#" Title="Submit package" MasterPageFile="../../masterpages/umbracoPage.Master" AutoEventWireup="true" CodeBehind="SubmitPackage.aspx.cs" Inherits="umbraco.presentation.developer.packages.SubmitPackage" %>
 <%@ Register TagPrefix="cc2" Namespace="umbraco.uicontrols" Assembly="controls" %>
 
 <asp:Content ContentPlaceHolderID="footer" runat="server">

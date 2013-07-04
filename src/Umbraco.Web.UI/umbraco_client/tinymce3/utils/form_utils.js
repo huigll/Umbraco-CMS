@@ -1,4 +1,4 @@
-/**
+﻿/**
  * form_utils.js
  *
  * Copyright 2009, Moxiecode Systems AB

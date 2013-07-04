@@ -1,4 +1,4 @@
-tinyMCE.addI18n('it.umbraco',{
+﻿tinyMCE.addI18n('it.umbraco',{
 "style_select":"Stili",
 "anchor_delta_height":"",
 "anchor_delta_width":"",

@@ -1,4 +1,4 @@
-var step = 8;
+﻿var step = 8;
 var padding = 10;
 
 function progressBarUpdate(id, percent) {

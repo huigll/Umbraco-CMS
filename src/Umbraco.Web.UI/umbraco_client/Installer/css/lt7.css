@@ -1,4 +1,4 @@
-* html body{width: expression(document.documentElement.clientWidth < 1000 ? "1000px" : "auto");}
+﻿* html body{width: expression(document.documentElement.clientWidth < 1000 ? "1000px" : "auto");}
 #header{
 	background:url(../images/none.gif);
 	filter: progid:dximagetransform.microsoft.alphaimageloader(src='../umbraco_client/installer/images/bg-header.png', sizingmethod='scale');

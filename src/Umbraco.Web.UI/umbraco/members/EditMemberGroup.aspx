@@ -1,4 +1,4 @@
-<%@ Page Language="c#" MasterPageFile="../masterpages/umbracoPage.Master" CodeBehind="EditMemberGroup.aspx.cs"
+﻿<%@ Page Language="c#" MasterPageFile="../masterpages/umbracoPage.Master" CodeBehind="EditMemberGroup.aspx.cs"
   AutoEventWireup="True" Inherits="umbraco.presentation.members.EditMemberGroup" %>
 
 <%@ Register TagPrefix="cc1" Namespace="umbraco.uicontrols" Assembly="controls" %>

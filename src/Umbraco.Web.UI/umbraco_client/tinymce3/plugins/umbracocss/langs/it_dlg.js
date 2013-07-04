@@ -1,3 +1,3 @@
-tinyMCE.addI18n('it.example_dlg',{	
+﻿tinyMCE.addI18n('it.example_dlg',{	
 title : 'Esempio di titolo'
 });

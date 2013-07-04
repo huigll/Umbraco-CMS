@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using Umbraco.Core;
 using Umbraco.Core.Logging;

@@ -1,3 +1,3 @@
-tinyMCE.addI18n('ru.example_dlg',{
-	title : 'Это просто пример заголовка'
+п»їtinyMCE.addI18n('ru.example_dlg',{
+	title : 'ГќГІГ® ГЇГ°Г®Г±ГІГ® ГЇГ°ГЁГ¬ГҐГ° Г§Г ГЈГ®Г«Г®ГўГЄГ '
 });

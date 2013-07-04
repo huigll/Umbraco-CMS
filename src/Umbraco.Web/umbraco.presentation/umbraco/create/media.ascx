@@ -1,4 +1,4 @@
-<%@ Control Language="c#" AutoEventWireup="True" Codebehind="media.ascx.cs" Inherits="umbraco.cms.presentation.create.controls.media" TargetSchema="http://schemas.microsoft.com/intellisense/ie5" %>
+﻿<%@ Control Language="c#" AutoEventWireup="True" Codebehind="media.ascx.cs" Inherits="umbraco.cms.presentation.create.controls.media" TargetSchema="http://schemas.microsoft.com/intellisense/ie5" %>
 
 <%=umbraco.ui.Text("name")%>: <asp:RequiredFieldValidator id="RequiredFieldValidator1" ErrorMessage="*" ControlToValidate="rename" runat="server">*</asp:RequiredFieldValidator><br />
 <asp:TextBox id="rename" Runat="server" Width="350px" CssClass="bigInput"></asp:TextBox>

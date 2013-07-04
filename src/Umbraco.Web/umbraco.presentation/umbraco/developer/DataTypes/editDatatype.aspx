@@ -1,4 +1,4 @@
-<%@ Page Language="c#" MasterPageFile="../../masterpages/umbracoPage.Master" Title="Edit data type"
+﻿<%@ Page Language="c#" MasterPageFile="../../masterpages/umbracoPage.Master" Title="Edit data type"
     CodeBehind="editDatatype.aspx.cs" AutoEventWireup="True" Inherits="umbraco.cms.presentation.developer.editDatatype" %>
 
 <%@ Register TagPrefix="cc1" Namespace="umbraco.uicontrols" Assembly="controls" %>

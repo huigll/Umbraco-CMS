@@ -1,4 +1,4 @@
-/// Knockout Mapping plugin v2.2.4
+﻿/// Knockout Mapping plugin v2.2.4
 /// (c) 2012 Steven Sanderson, Roy Jacobs - http://knockoutjs.com/
 /// License: MIT (http://www.opensource.org/licenses/mit-license.php)
 (function(d){"function"===typeof require&&"object"===typeof exports&&"object"===typeof module?d(require("knockout"),exports):"function"===typeof define&&define.amd?define(["knockout","exports"],d):d(ko,ko.mapping={})})(function(d,e){function u(a,c){for(var b in c)c.hasOwnProperty(b)&&c[b]&&(b&&a[b]&&"array"!==e.getType(a[b])?u(a[b],c[b]):a[b]=c[b])}function A(a,c){var b={};u(b,a);u(b,c);return b}function H(a,c){options=A({},a);for(var b=K.length-1;0<=b;b--){var d=K[b];options[d]&&(options[""]instanceof

@@ -1,4 +1,4 @@
-(function() {
+﻿(function() {
 	var url;
 
 	if (url = tinyMCEPopup.getParam("media_external_list_url"))

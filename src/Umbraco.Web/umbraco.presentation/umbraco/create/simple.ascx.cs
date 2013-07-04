@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using umbraco.BasePages;
 
 namespace umbraco.cms.presentation.create.controls

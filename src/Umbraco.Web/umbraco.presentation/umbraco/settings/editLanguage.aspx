@@ -1,4 +1,4 @@
-<%@ Page Language="c#" CodeBehind="editLanguage.aspx.cs" AutoEventWireup="True" MasterPageFile="../masterpages/umbracoPage.Master"
+﻿<%@ Page Language="c#" CodeBehind="editLanguage.aspx.cs" AutoEventWireup="True" MasterPageFile="../masterpages/umbracoPage.Master"
     Inherits="umbraco.settings.editLanguage" %>
 
 <%@ Register TagPrefix="cc1" Namespace="umbraco.uicontrols" Assembly="controls" %>

@@ -1,4 +1,4 @@
-tinyMCE.addI18n('da.umbraco',{
+﻿tinyMCE.addI18n('da.umbraco',{
 style_select:"Typografier",
 font_size:"Skriftst\u00F8rrelse",
 fontdefault:"Skrifttype",

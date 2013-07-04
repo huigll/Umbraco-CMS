@@ -1,4 +1,4 @@
-using System.Xml;
+﻿using System.Xml;
 using umbraco.IO;
 
 namespace umbraco.cms.businesslogic.packager.standardPackageActions

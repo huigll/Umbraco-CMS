@@ -1,4 +1,4 @@
-<%@ Page language="c#" Codebehind="insertTable.aspx.cs" AutoEventWireup="True" Inherits="umbraco.dialogs.insertTable" %>
+ï»¿<%@ Page language="c#" Codebehind="insertTable.aspx.cs" AutoEventWireup="True" Inherits="umbraco.dialogs.insertTable" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
 <HTML>
   <HEAD>
@@ -25,7 +25,7 @@ function insertTable()
 	var tablePadding = theForm.tablePadding.value;
 	var tableSpacing = theForm.tableSpacing.value;
 
-	// hvis der ikke er sat padding eller spacing, skal de sættes til nul
+	// hvis der ikke er sat padding eller spacing, skal de sÃ¦ttes til nul
 	if (tablePadding == '') tablePadding = '0';
 	if (tableSpacing == '') tableSpacing = '0';
 
@@ -59,7 +59,7 @@ function insertTable()
 		
 		tableTag += '>\n';
 		
-		// kolonner og rækker
+		// kolonner og rÃ¦kker
 		for (i=1; i<=tableRow;i++) {
 			tableTag += '\t<TR>\n';
 			for(j=1; j<=tableCol;j++) {

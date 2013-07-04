@@ -1,4 +1,4 @@
-/*!
+﻿/*!
  * jQuery contextMenu - Plugin for simple contextMenu handling
  *
  * Version: 1.5.22

@@ -1,4 +1,4 @@
-using System.Web;
+﻿using System.Web;
 using Umbraco.Core.Models.Membership;
 
 namespace Umbraco.Core.Services

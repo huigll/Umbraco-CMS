@@ -1,4 +1,4 @@
-using System.Xml.Serialization;
+﻿using System.Xml.Serialization;
 using System.Collections;
 using System;
 using umbraco.BusinessLogic.Utils;

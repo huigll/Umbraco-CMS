@@ -1,4 +1,4 @@
-<%@ Page language="c#" Codebehind="publishStatus.aspx.cs" AutoEventWireup="True" Inherits="umbraco.cms.presentation.publishStatus" %>
+﻿<%@ Page language="c#" Codebehind="publishStatus.aspx.cs" AutoEventWireup="True" Inherits="umbraco.cms.presentation.publishStatus" %>
 <%@ Register TagPrefix="cc1" Namespace="umbraco.uicontrols" Assembly="controls" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
 <HTML>

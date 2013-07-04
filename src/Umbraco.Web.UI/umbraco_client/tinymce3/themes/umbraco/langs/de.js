@@ -1,4 +1,4 @@
-tinyMCE.addI18n('de.umbraco',{
+﻿tinyMCE.addI18n('de.umbraco',{
 style_select:"Format",
 font_size:"Schriftgr\u00F6\u00DFe",
 fontdefault:"Schriftart",

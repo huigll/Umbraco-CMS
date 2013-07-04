@@ -1,4 +1,4 @@
-<%@ Register TagPrefix="cc1" Namespace="umbraco.uicontrols" Assembly="controls" %>
+﻿<%@ Register TagPrefix="cc1" Namespace="umbraco.uicontrols" Assembly="controls" %>
 
 <%@ Page Language="c#" CodeBehind="Default.aspx.cs" AutoEventWireup="True" Inherits="umbraco._Default" %>
 

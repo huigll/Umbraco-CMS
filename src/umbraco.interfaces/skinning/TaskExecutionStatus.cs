@@ -1,4 +1,4 @@
-namespace umbraco.interfaces.skinning
+﻿namespace umbraco.interfaces.skinning
 {
 	public enum TaskExecutionStatus
 	{

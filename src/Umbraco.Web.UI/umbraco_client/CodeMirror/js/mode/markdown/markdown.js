@@ -1,4 +1,4 @@
-CodeMirror.defineMode("markdown", function(cmCfg, modeCfg) {
+﻿CodeMirror.defineMode("markdown", function(cmCfg, modeCfg) {
 
   var htmlFound = CodeMirror.mimeModes.hasOwnProperty("text/html");
   var htmlMode = CodeMirror.getMode(cmCfg, htmlFound ? "text/html" : "text/plain");

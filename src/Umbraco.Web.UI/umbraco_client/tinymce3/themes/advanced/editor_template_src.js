@@ -1,4 +1,4 @@
-/**
+﻿/**
  * editor_template_src.js
  *
  * Copyright 2009, Moxiecode Systems AB

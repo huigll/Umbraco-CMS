@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using umbraco.interfaces;
 using Umbraco.Core;
 using datatype = umbraco.cms.businesslogic.datatype;

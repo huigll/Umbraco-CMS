@@ -1,4 +1,4 @@
-namespace umbraco.interfaces
+﻿namespace umbraco.interfaces
 {
 	public interface ITag
 	{

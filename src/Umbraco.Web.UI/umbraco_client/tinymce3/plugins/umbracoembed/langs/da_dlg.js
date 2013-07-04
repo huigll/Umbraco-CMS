@@ -1,4 +1,4 @@
-tinyMCE.addI18n('da.embed_dlg', {
+﻿tinyMCE.addI18n('da.embed_dlg', {
     title: 'Inds\u00E6t ekstern mediefil',
     general: 'Generelt',
     url: 'Url:',

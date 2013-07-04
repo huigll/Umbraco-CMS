@@ -1,4 +1,4 @@
-var requestRunning = false;
+﻿var requestRunning = false;
 var xmlHttp = null;
 var xmlHttpDebug = false;
 

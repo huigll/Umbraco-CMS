@@ -1,4 +1,4 @@
-namespace Umbraco.Core.Publishing
+﻿namespace Umbraco.Core.Publishing
 {
     /// <summary>
     /// A status type of the result of publishing a content item

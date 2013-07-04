@@ -1,4 +1,4 @@
-namespace Umbraco.Core.ObjectResolution
+﻿namespace Umbraco.Core.ObjectResolution
 {
 	/// <summary>
 	/// Specifies the lifetime scope of resolved objects.

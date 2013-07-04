@@ -1,4 +1,4 @@
-<%@ Page Language="c#" CodeBehind="Default.aspx.cs" AutoEventWireup="True" Inherits="Umbraco.Web.UI.Install.Default" EnableViewState="False" %>
+﻿<%@ Page Language="c#" CodeBehind="Default.aspx.cs" AutoEventWireup="True" Inherits="Umbraco.Web.UI.Install.Default" EnableViewState="False" %>
 
 <%@ Register TagPrefix="umb" Namespace="ClientDependency.Core.Controls" Assembly="ClientDependency.Core" %>
 

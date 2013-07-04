@@ -1,4 +1,4 @@
-tinyMCE.addI18n('sv.umbraco',{
+﻿tinyMCE.addI18n('sv.umbraco',{
 style_select:"Stilar",
 font_size:"Fontstorlek",
 fontdefault:"Fontfamilj",

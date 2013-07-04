@@ -1,4 +1,4 @@
-<%@ Control Language="c#" AutoEventWireup="True" CodeBehind="member.ascx.cs" Inherits="umbraco.cms.presentation.create.controls.member"
+﻿<%@ Control Language="c#" AutoEventWireup="True" CodeBehind="member.ascx.cs" Inherits="umbraco.cms.presentation.create.controls.member"
     TargetSchema="http://schemas.microsoft.com/intellisense/ie5" %>
 <asp:ValidationSummary runat="server" DisplayMode="BulletList" ID="validationSummary"
     CssClass="error"></asp:ValidationSummary>

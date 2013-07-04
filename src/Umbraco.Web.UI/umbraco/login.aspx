@@ -1,4 +1,4 @@
-<%@ Page Language="c#" CodeBehind="login.aspx.cs" AutoEventWireup="True" Inherits="umbraco.cms.presentation.login" %>
+﻿<%@ Page Language="c#" CodeBehind="login.aspx.cs" AutoEventWireup="True" Inherits="umbraco.cms.presentation.login" %>
 
 <%@ Register TagPrefix="cc1" Namespace="umbraco.uicontrols" Assembly="controls" %>
 <%@ Register Namespace="umbraco" TagPrefix="umb" Assembly="umbraco" %>

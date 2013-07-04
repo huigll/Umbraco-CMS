@@ -1,7 +1,7 @@
-/*
+﻿/*
  * $Id: JSONWriter.cs 439 2007-11-26 13:26:10Z spocke $
  *
- * Copyright � 2007, Moxiecode Systems AB, All rights reserved. 
+ * Copyright © 2007, Moxiecode Systems AB, All rights reserved. 
  */
 
 using System;

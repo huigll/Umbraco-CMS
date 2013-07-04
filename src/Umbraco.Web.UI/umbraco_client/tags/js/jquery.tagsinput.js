@@ -1,4 +1,4 @@
-/*
+﻿/*
 
 	jQuery Tags Input Plugin 1.3.3
 	
@@ -320,7 +320,7 @@
 				//Removes the not_valid class when user changes the value of the fake input
 				if(data.unique) {
 				    $(data.fake_input).keydown(function(event){
-				        if(event.keyCode == 8 || String.fromCharCode(event.which).match(/\w+|[áéíóúÁÉÍÓÚñÑ,/]+/)) {
+				        if(event.keyCode == 8 || String.fromCharCode(event.which).match(/\w+|[Ã¡Ã©Ã­Ã³ÃºÃÃ‰ÃÃ“ÃšÃ±Ã‘,/]+/)) {
 				            $(this).removeClass('not_valid');
 				        }
 				    });

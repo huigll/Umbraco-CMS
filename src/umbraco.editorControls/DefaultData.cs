@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using Umbraco.Core.Logging;
 using umbraco.BusinessLogic;
 using umbraco.DataLayer;
@@ -61,13 +61,13 @@ namespace umbraco.editorControls
 
 		public virtual void MakeNew(int PropertyId)
 		{
-			// this default implementation of makenew does not do anything sínce 
+			// this default implementation of makenew does not do anything sÃ­nce 
 			// it uses the default datastorage of umbraco, and the row is already populated by the "property" object
 			// If the datatype needs to have a default value, inherit this class and override this method.
 		}
 
 		public void Delete() {
-			// this default implementation of delete does not do anything sínce 
+			// this default implementation of delete does not do anything sÃ­nce 
 			// it uses the default datastorage of umbraco, and the row is already deleted by the "property" object
 		}
 

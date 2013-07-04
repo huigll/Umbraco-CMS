@@ -1,4 +1,4 @@
-namespace umbraco.MacroEngines
+﻿namespace umbraco.MacroEngines
 {
 	internal static class LegacyConverter
 	{

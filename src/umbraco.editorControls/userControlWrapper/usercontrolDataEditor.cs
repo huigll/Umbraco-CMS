@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Web.UI;
 using Umbraco.Core.IO;
 using umbraco.cms.businesslogic.property;

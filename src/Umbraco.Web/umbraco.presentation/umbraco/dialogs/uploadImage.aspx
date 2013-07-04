@@ -1,4 +1,4 @@
-<%@ Page Language="c#" MasterPageFile="../masterpages/umbracoDialog.Master" CodeBehind="uploadImage.aspx.cs"
+﻿<%@ Page Language="c#" MasterPageFile="../masterpages/umbracoDialog.Master" CodeBehind="uploadImage.aspx.cs"
     AutoEventWireup="True" Inherits="umbraco.dialogs.uploadImage" %>
 
 <%@ Register TagPrefix="cc1" Namespace="umbraco.uicontrols" Assembly="controls" %>

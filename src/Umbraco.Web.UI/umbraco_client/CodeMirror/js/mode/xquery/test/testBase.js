@@ -1,4 +1,4 @@
-  $(document).ready(function(){
+﻿  $(document).ready(function(){
     module("testBase");
     test("eviltest", function() {
       expect(1);

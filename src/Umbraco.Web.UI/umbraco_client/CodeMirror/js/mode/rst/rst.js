@@ -1,4 +1,4 @@
-CodeMirror.defineMode('rst', function(config, options) {
+﻿CodeMirror.defineMode('rst', function(config, options) {
     function setState(state, fn, ctx) {
         state.fn = fn;
         setCtx(state, ctx);

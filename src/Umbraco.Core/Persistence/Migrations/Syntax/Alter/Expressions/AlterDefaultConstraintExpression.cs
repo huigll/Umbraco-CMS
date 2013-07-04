@@ -1,4 +1,4 @@
-using Umbraco.Core.Persistence.SqlSyntax;
+﻿using Umbraco.Core.Persistence.SqlSyntax;
 
 namespace Umbraco.Core.Persistence.Migrations.Syntax.Alter.Expressions
 {

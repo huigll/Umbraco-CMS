@@ -1,4 +1,4 @@
-namespace Umbraco.Core.Dictionary
+﻿namespace Umbraco.Core.Dictionary
 {
 	internal interface ICultureDictionaryFactory
 	{

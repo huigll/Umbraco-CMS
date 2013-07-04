@@ -1,4 +1,4 @@
-// ajax.js
+﻿// ajax.js
 // Common Javascript methods and global objects
 // Ajax framework for Internet Explorer (6.0, ...) and Firefox (1.0, ...)
 // Copyright by Matthias Hertel, http://www.mathertel.de

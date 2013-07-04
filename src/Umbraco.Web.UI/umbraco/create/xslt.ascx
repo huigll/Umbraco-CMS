@@ -1,4 +1,4 @@
-<%@ Control Language="c#" AutoEventWireup="True" Codebehind="xslt.ascx.cs" Inherits="umbraco.presentation.create.xslt" TargetSchema="http://schemas.microsoft.com/intellisense/ie5"%>
+﻿<%@ Control Language="c#" AutoEventWireup="True" Codebehind="xslt.ascx.cs" Inherits="umbraco.presentation.create.xslt" TargetSchema="http://schemas.microsoft.com/intellisense/ie5"%>
 Filename (without .xslt): <asp:RequiredFieldValidator id="RequiredFieldValidator1" ErrorMessage="*" ControlToValidate="rename" runat="server">*</asp:RequiredFieldValidator><br />
 <input type="hidden" name="nodeType" value="-1">
 <asp:TextBox id="rename" Runat="server" CssClass="bigInput" Width="350"></asp:TextBox>

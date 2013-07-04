@@ -1,4 +1,4 @@
-<%@ Page Language="c#" CodeBehind="imageViewer.aspx.cs" AutoEventWireup="True" Inherits="umbraco.dialogs.imageViewer" %>
+﻿<%@ Page Language="c#" CodeBehind="imageViewer.aspx.cs" AutoEventWireup="True" Inherits="umbraco.dialogs.imageViewer" %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
 <html>

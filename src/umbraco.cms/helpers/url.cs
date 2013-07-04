@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Xml;
 using System.Text.RegularExpressions;
 using Umbraco.Core;

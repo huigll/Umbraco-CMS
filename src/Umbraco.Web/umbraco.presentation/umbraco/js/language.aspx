@@ -1,1 +1,1 @@
-<%@ Page language="c#" Codebehind="language.aspx.cs" AutoEventWireup="True" Inherits="umbraco.js.language" %>
+﻿<%@ Page language="c#" Codebehind="language.aspx.cs" AutoEventWireup="True" Inherits="umbraco.js.language" %>

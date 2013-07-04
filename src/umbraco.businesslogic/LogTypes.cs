@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 
 namespace umbraco.BusinessLogic
 {
@@ -53,7 +53,7 @@ namespace umbraco.BusinessLogic
 		[AuditTrailLogItem]
 		Copy,
 		/// <summary>
-		/// Used when nodes are ass�gned a domain
+		/// Used when nodes are assígned a domain
 		/// </summary>
 		[AuditTrailLogItem]
 		AssignDomain,

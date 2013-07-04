@@ -1,4 +1,4 @@
-/*!
+﻿/*!
  * jQuery UI Timepicker 0.2.1
  *
  * Copyright (c) 2009 Martin Milesich (http://milesich.com/)

@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EditUserType.aspx.cs" MasterPageFile="../masterpages/umbracoPage.Master"
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EditUserType.aspx.cs" MasterPageFile="../masterpages/umbracoPage.Master"
     Inherits="umbraco.cms.presentation.user.EditUserType" %>
 
 <%@ Register TagPrefix="cc2" Namespace="umbraco.uicontrols" Assembly="controls" %>

@@ -1,4 +1,4 @@
-var MT = ModeTest;
+﻿var MT = ModeTest;
 MT.modeName = 'stex';
 MT.modeOptions = {};
 

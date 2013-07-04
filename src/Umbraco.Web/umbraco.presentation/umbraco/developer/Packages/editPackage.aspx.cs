@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections.Generic;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -353,13 +353,13 @@ namespace umbraco.presentation.developer.packages
             {
                 string tmpFFFF = ((TextBox)rItem.FindControl("packageFilePath")).Text;
                 if (tmpFFFF.Trim() != "")
-                    tmpFilePathString += tmpFFFF + "¤";
+                    tmpFilePathString += tmpFFFF + "Â¤";
             }
 
             cms.businesslogic.packager.CreatedPackage createdPackage = cms.businesslogic.packager.CreatedPackage.GetById(int.Parse(Request.QueryString["id"]));
             cms.businesslogic.packager.PackageInstance pack = createdPackage.Data;
           
-            pack.Files = new List<string>(tmpFilePathString.Trim('¤').Split('¤'));
+            pack.Files = new List<string>(tmpFilePathString.Trim('Â¤').Split('Â¤'));
             pack.Files.TrimExcess();
 
             createdPackage.Save();

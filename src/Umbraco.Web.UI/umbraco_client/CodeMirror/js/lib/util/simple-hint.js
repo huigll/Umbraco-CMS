@@ -1,4 +1,4 @@
-(function() {
+﻿(function() {
   CodeMirror.simpleHint = function(editor, getHints, givenOptions) {
     // Determine effective options based on given values and defaults.
     var options = {}, defaults = CodeMirror.simpleHint.defaults;

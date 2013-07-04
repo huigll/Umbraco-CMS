@@ -1,3 +1,3 @@
-tinyMCE.addI18n('ru.example',{
-	desc : 'Это просто образец кнопки'
+﻿tinyMCE.addI18n('ru.example',{
+	desc : 'Ð­Ñ‚Ð¾ Ð¿Ñ€Ð¾ÑÑ‚Ð¾ Ð¾Ð±Ñ€Ð°Ð·ÐµÑ† ÐºÐ½Ð¾Ð¿ÐºÐ¸'
 });

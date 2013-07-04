@@ -1,4 +1,4 @@
-<%@ Register Namespace="umbraco" TagPrefix="umb" Assembly="umbraco" %>
+﻿<%@ Register Namespace="umbraco" TagPrefix="umb" Assembly="umbraco" %>
 <%@ Page Language="c#" Codebehind="EditUser.aspx.cs" MasterPageFile="../masterpages/umbracoPage.Master" AutoEventWireup="True" Inherits="umbraco.cms.presentation.user.EditUser" %>
 <%@ Register TagPrefix="cc1" Namespace="umbraco.uicontrols" Assembly="controls" %>
 

@@ -1,4 +1,4 @@
-var activeDragId = "";
+﻿var activeDragId = "";
 function expandCollapse(theId) {
 
     var edit = document.getElementById("edit" + theId);

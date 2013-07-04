@@ -1,4 +1,4 @@
-using CookComputing.MetaWeblog;
+﻿using CookComputing.MetaWeblog;
 using CookComputing.XmlRpc;
 
 namespace umbraco.presentation.channels

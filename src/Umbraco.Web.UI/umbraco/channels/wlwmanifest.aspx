@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+﻿<?xml version="1.0" encoding="UTF-8" ?>
 <%@ Page Language="C#" AutoEventWireup="true" Inherits="System.Web.UI.Page" %>
 <%@ Import Namespace="Umbraco.Core.IO" %>
 <%@ Import Namespace="umbraco" %>

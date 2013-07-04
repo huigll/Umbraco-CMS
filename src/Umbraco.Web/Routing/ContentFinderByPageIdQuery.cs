@@ -1,4 +1,4 @@
-namespace Umbraco.Web.Routing
+﻿namespace Umbraco.Web.Routing
 {
 	/// <summary>
 	/// This looks up a document by checking for the umbPageId of a request/query string

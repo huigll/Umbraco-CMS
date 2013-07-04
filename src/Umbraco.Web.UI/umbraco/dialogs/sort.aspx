@@ -1,4 +1,4 @@
-<%@ Page Language="c#" MasterPageFile="../masterpages/umbracoDialog.Master" CodeBehind="sort.aspx.cs" AutoEventWireup="True" Inherits="Umbraco.Web.UI.Umbraco.Dialogs.Sort" %>
+﻿<%@ Page Language="c#" MasterPageFile="../masterpages/umbracoDialog.Master" CodeBehind="sort.aspx.cs" AutoEventWireup="True" Inherits="Umbraco.Web.UI.Umbraco.Dialogs.Sort" %>
 
 <%@ Import Namespace="System.Globalization" %>
 <%@ Import Namespace="Umbraco.Core.IO" %>

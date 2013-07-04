@@ -1,4 +1,4 @@
-function resizeTextArea(textEditor, offsetX, offsetY) {
+﻿function resizeTextArea(textEditor, offsetX, offsetY) {
     var clientHeight = getViewportHeight();
     var clientWidth = getViewportWidth();
 

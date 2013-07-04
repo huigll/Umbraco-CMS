@@ -1,4 +1,4 @@
-<%@ Control Language="C#" AutoEventWireup="True" CodeBehind="license.ascx.cs" Inherits="Umbraco.Web.UI.Install.Steps.License" %>
+Ôªø<%@ Control Language="C#" AutoEventWireup="True" CodeBehind="license.ascx.cs" Inherits="Umbraco.Web.UI.Install.Steps.License" %>
 <!-- licence box -->
 <div class="tab main-tabinfo">
 	<div class="container">
@@ -10,11 +10,11 @@
 		<h3>The License (MIT):</h3>
 		<div class="box-software">
 			<p>Copyright (c) 2002 - <%=DateTime.Now.Year %> Umbraco I/S</p>
-			<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the ìSoftwareî), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+			<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the ‚ÄúSoftware‚Äù), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
 			<p>The above copyright and this permission notice shall be included in all copies or substantial portions of the software.</p>
-			<p><span>THE SOFTWARE IS PROVIDED ìAS ISî, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USER OR OTHER DEALINGS IN THE SOFTWARE.</span></p>
+			<p><span>THE SOFTWARE IS PROVIDED ‚ÄúAS IS‚Äù, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USER OR OTHER DEALINGS IN THE SOFTWARE.</span></p>
 		</div>
-		<p>Thatís all. That didnít hurt did it?</p>
+		<p>That‚Äôs all. That didn‚Äôt hurt did it?</p>
 	</div>
 	<!-- btn box -->
 	<footer class="btn-box">

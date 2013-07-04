@@ -1,4 +1,4 @@
-<%@ Page Language="c#" MasterPageFile="../masterpages/umbracoDialog.Master" Codebehind="notifications.aspx.cs" AutoEventWireup="True"
+﻿<%@ Page Language="c#" MasterPageFile="../masterpages/umbracoDialog.Master" Codebehind="notifications.aspx.cs" AutoEventWireup="True"
   Inherits="umbraco.dialogs.notifications" %>
 <%@ Register TagPrefix="cc1" Namespace="umbraco.uicontrols" Assembly="controls" %>
 

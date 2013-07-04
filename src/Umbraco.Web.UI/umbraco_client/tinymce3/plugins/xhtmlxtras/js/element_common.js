@@ -1,4 +1,4 @@
-/**
+﻿/**
  * element_common.js
  *
  * Copyright 2009, Moxiecode Systems AB

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.IO;
 using Examine.Azure;
 using Examine.LuceneEngine.Config;

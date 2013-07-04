@@ -1,4 +1,4 @@
-<%@ Page Language="C#" MasterPageFile="../masterpages/umbracoDialog.Master" AutoEventWireup="true" CodeBehind="emptyTrashcan.aspx.cs" Inherits="umbraco.presentation.dialogs.emptyTrashcan" %>
+﻿<%@ Page Language="C#" MasterPageFile="../masterpages/umbracoDialog.Master" AutoEventWireup="true" CodeBehind="emptyTrashcan.aspx.cs" Inherits="umbraco.presentation.dialogs.emptyTrashcan" %>
 <%@ Register TagPrefix="cc1" Namespace="umbraco.uicontrols" Assembly="controls" %>
 
 <asp:Content ContentPlaceHolderID="head" runat="server">

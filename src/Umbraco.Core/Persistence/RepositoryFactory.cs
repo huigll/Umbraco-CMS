@@ -1,4 +1,4 @@
-using Umbraco.Core.Persistence.Caching;
+﻿using Umbraco.Core.Persistence.Caching;
 using Umbraco.Core.Persistence.Repositories;
 using Umbraco.Core.Persistence.UnitOfWork;
 

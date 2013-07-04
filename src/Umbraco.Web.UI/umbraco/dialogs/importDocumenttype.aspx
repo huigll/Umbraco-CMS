@@ -1,4 +1,4 @@
-<%@ Page MasterPageFile="../masterpages/umbracoDialog.Master" Language="c#" Codebehind="importDocumenttype.aspx.cs" AutoEventWireup="false"
+﻿<%@ Page MasterPageFile="../masterpages/umbracoDialog.Master" Language="c#" Codebehind="importDocumenttype.aspx.cs" AutoEventWireup="false"
   Inherits="umbraco.presentation.umbraco.dialogs.importDocumentType" %>
 
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="body">

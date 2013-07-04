@@ -1,4 +1,4 @@
-$(document).ready(function(){
+﻿$(document).ready(function(){
   module("testEmptySequenceKeyword");
   test("testEmptySequenceKeyword", function() {
     expect(1);

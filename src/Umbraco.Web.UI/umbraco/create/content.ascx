@@ -1,4 +1,4 @@
-<%@ Control Language="c#" AutoEventWireup="True" Codebehind="content.ascx.cs" Inherits="umbraco.cms.presentation.create.controls.content" TargetSchema="http://schemas.microsoft.com/intellisense/ie5" %>
+﻿<%@ Control Language="c#" AutoEventWireup="True" Codebehind="content.ascx.cs" Inherits="umbraco.cms.presentation.create.controls.content" TargetSchema="http://schemas.microsoft.com/intellisense/ie5" %>
 <asp:literal id="typeJs" runat="server"/>
 
 <div><%=umbraco.ui.Text("name")%>:<br /></div>

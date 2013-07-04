@@ -1,4 +1,4 @@
-using System.Security.Permissions;
+﻿using System.Security.Permissions;
 using Umbraco.Core.Models;
 using Umbraco.Core.Models.EntityBase;
 

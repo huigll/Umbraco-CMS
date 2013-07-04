@@ -1,4 +1,4 @@
-using UmbracoExamine.DataServices;
+﻿using UmbracoExamine.DataServices;
 
 namespace UmbracoExamine.Azure
 {

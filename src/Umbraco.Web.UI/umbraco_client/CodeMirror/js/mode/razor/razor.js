@@ -1,4 +1,4 @@
-CodeMirror.defineMode("razor", function(config, parserConfig) {
+﻿CodeMirror.defineMode("razor", function(config, parserConfig) {
   var indentUnit = config.indentUnit,
       keywords = words("abstract as base break case catch checked class const continue" + 
                     " default delegate do else enum event explicit extern finally fixed for" + 

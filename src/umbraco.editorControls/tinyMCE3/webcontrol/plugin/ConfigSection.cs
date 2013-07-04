@@ -1,8 +1,8 @@
-/*
+﻿/*
  * $Id: ConfigSection.cs 439 2007-11-26 13:26:10Z spocke $
  *
  * @author Moxiecode
- * @copyright Copyright � 2004-2007, Moxiecode Systems AB, All rights reserved.
+ * @copyright Copyright © 2004-2007, Moxiecode Systems AB, All rights reserved.
  */
 
 using System;

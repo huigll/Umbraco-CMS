@@ -1,4 +1,4 @@
-namespace Umbraco.Core.Dynamics
+﻿namespace Umbraco.Core.Dynamics
 {
 	/// <summary>
 	/// Currently just used for informational purposes as to where a PropertyResult object was created from.

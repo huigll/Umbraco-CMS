@@ -1,4 +1,4 @@
-<%@ Page Language="C#" MasterPageFile="../masterpages/umbracoDialog.Master" AutoEventWireup="true" Codebehind="sendToTranslation.aspx.cs" Inherits="umbraco.presentation.dialogs.sendToTranslation" %>
+﻿<%@ Page Language="C#" MasterPageFile="../masterpages/umbracoDialog.Master" AutoEventWireup="true" Codebehind="sendToTranslation.aspx.cs" Inherits="umbraco.presentation.dialogs.sendToTranslation" %>
 <%@ Register TagPrefix="cc1" Namespace="umbraco.uicontrols" Assembly="controls" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">

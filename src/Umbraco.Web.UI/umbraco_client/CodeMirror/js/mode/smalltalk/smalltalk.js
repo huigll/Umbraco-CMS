@@ -1,4 +1,4 @@
-CodeMirror.defineMode('smalltalk', function(config, modeConfig) {
+﻿CodeMirror.defineMode('smalltalk', function(config, modeConfig) {
 
 	var specialChars = /[+\-/\\*~<>=@%|&?!.:;^]/;
 	var keywords = /true|false|nil|self|super|thisContext/;

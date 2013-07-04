@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using StackExchange.Profiling;
 using Umbraco.Core;
 using Umbraco.Core.Configuration;

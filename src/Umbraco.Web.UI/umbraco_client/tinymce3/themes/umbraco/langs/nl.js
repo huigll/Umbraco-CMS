@@ -1,4 +1,4 @@
-tinyMCE.addI18n('nl.umbraco',{
+﻿tinyMCE.addI18n('nl.umbraco',{
 style_select:"Stijlen",
 font_size:"Tekengrootte",
 fontdefault:"Lettertype",

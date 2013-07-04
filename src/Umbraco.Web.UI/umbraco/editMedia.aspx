@@ -1,4 +1,4 @@
-<%@ Page Language="c#" CodeBehind="editMedia.aspx.cs" ValidateRequest="false" MasterPageFile="masterpages/umbracoPage.Master"
+﻿<%@ Page Language="c#" CodeBehind="editMedia.aspx.cs" ValidateRequest="false" MasterPageFile="masterpages/umbracoPage.Master"
     AutoEventWireup="True" Inherits="umbraco.cms.presentation.editMedia" %>
 
 <asp:Content ContentPlaceHolderID="head" runat="server">

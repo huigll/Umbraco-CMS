@@ -1,4 +1,4 @@
-CodeMirror.defineMode("gfm", function(config, parserConfig) {
+﻿CodeMirror.defineMode("gfm", function(config, parserConfig) {
   var mdMode = CodeMirror.getMode(config, "markdown");
   var aliases = {
     html: "htmlmixed",

@@ -1,4 +1,4 @@
-namespace umbraco.DataLayer.Utility.Installer
+﻿namespace umbraco.DataLayer.Utility.Installer
 {
     /// <summary>
     /// A triple (Field, Table, Version) meaning:

@@ -1,4 +1,4 @@
-CodeMirror.defineMode("css", function(config) {
+﻿CodeMirror.defineMode("css", function(config) {
   var indentUnit = config.indentUnit, type;
   
   var atMediaTypes = keySet([

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Umbraco.Core.Logging;
 using System.Linq;
 using Umbraco.Core;

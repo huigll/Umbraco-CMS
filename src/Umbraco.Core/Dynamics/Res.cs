@@ -1,4 +1,4 @@
-namespace Umbraco.Core.Dynamics
+﻿namespace Umbraco.Core.Dynamics
 {
 	internal static class Res
 	{

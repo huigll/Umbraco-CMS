@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Data;
 using System.Web.Security;
 using Umbraco.Core.Logging;
@@ -40,7 +40,7 @@ namespace umbraco
             set
             {
                 _parentID = value;
-                // NASTY HACK ON NASTY HACK§!!
+                // NASTY HACK ON NASTY HACKÂ§!!
                 // if (_parentID == 1) _parentID = -1;
             }
             get

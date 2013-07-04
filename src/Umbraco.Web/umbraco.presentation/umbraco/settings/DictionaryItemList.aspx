@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" Codebehind="DictionaryItemList.aspx.cs"
+﻿<%@ Page Language="C#" AutoEventWireup="true" Codebehind="DictionaryItemList.aspx.cs"
   Inherits="umbraco.presentation.settings.DictionaryItemList" MasterPageFile="../masterpages/umbracoPage.Master" %>
 <%@ Register TagPrefix="cc1" Namespace="umbraco.uicontrols" Assembly="controls" %>
 

@@ -1,4 +1,4 @@
-namespace Umbraco.Core.Cache
+﻿namespace Umbraco.Core.Cache
 {
 
     /// <summary>

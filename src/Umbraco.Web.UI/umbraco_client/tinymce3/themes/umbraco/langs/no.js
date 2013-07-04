@@ -1,4 +1,4 @@
-tinyMCE.addI18n('no.umbraco',{
+﻿tinyMCE.addI18n('no.umbraco',{
 style_select:"Stiler",
 font_size:"Skriftst\u00F8rrelse",
 fontdefault:"Skriftfamilie",

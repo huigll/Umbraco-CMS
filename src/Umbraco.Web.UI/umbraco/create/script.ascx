@@ -1,4 +1,4 @@
-<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="script.ascx.cs" Inherits="umbraco.presentation.umbraco.create.script" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="script.ascx.cs" Inherits="umbraco.presentation.umbraco.create.script" %>
 
 <input type="hidden" name="nodeType" value="-1"/>
 

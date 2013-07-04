@@ -1,4 +1,4 @@
-(function ($) {
+﻿(function ($) {
 	$.fn.alphanumeric = function (p) {
 
 		p = $.extend({

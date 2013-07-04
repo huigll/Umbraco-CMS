@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Collections;
@@ -483,7 +483,7 @@ namespace umbraco.controls
 				{
 					e.save();
 				}
-				return "2 egenskabstyper �ndret";
+				return "2 egenskabstyper ændret";
 			}
 
 			

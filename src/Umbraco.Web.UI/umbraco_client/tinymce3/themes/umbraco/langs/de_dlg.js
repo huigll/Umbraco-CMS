@@ -1,4 +1,4 @@
-tinyMCE.addI18n('de.umbraco_dlg',{
+﻿tinyMCE.addI18n('de.umbraco_dlg',{
 about_title:"\u00DCber TinyMCE",
 about_general:"\u00DCber\u2026",
 about_help:"Hilfe",

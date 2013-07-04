@@ -1,4 +1,4 @@
-/*
+﻿/*
  *	MySQL Mode for CodeMirror 2 by MySQL-Tools
  *	@author James Thorne (partydroid)
  *	@link 	http://github.com/partydroid/MySQL-Tools

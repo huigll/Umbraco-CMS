@@ -1,4 +1,4 @@
-/**
+﻿/**
  * editable_selects.js
  *
  * Copyright 2009, Moxiecode Systems AB

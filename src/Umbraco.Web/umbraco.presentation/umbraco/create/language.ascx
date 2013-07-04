@@ -1,4 +1,4 @@
-<%@ Control Language="c#" AutoEventWireup="True" Codebehind="language.ascx.cs" Inherits="umbraco.cms.presentation.create.controls.language" TargetSchema="http://schemas.microsoft.com/intellisense/ie5"%>
+﻿<%@ Control Language="c#" AutoEventWireup="True" Codebehind="language.ascx.cs" Inherits="umbraco.cms.presentation.create.controls.language" TargetSchema="http://schemas.microsoft.com/intellisense/ie5"%>
 <input type="hidden" name="nodeType">
 
 <div style="MARGIN-TOP: 25px"><%=umbraco.ui.Text("choose")%> <%=umbraco.ui.Text("language")%>:<br />

@@ -1,4 +1,4 @@
-namespace Umbraco.Web.Dictionary
+﻿namespace Umbraco.Web.Dictionary
 {
 	/// <summary>
 	/// A culture dictionary factory used to create an Umbraco.Core.Dictionary.ICultureDictionary.

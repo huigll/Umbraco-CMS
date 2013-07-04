@@ -1,4 +1,4 @@
-<%@ Page Language="c#" Codebehind="xsltChooseExtension.aspx.cs" MasterPageFile="../../masterpages/umbracoDialog.Master"  AutoEventWireup="True"
+﻿<%@ Page Language="c#" Codebehind="xsltChooseExtension.aspx.cs" MasterPageFile="../../masterpages/umbracoDialog.Master"  AutoEventWireup="True"
   Inherits="umbraco.developer.xsltChooseExtension" %>
   <%@ Register TagPrefix="cc1" Namespace="umbraco.uicontrols" Assembly="controls" %>
   

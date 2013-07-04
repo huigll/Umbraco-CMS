@@ -1,4 +1,4 @@
-<%@ Page Language="c#" MasterPageFile="../masterpages/umbracoDialog.Master" CodeBehind="Publish.aspx.cs" AutoEventWireup="True" Inherits="Umbraco.Web.UI.Umbraco.Dialogs.Publish" %>
+﻿<%@ Page Language="c#" MasterPageFile="../masterpages/umbracoDialog.Master" CodeBehind="Publish.aspx.cs" AutoEventWireup="True" Inherits="Umbraco.Web.UI.Umbraco.Dialogs.Publish" %>
 
 <%@ Import Namespace="Umbraco.Core" %>
 <%@ Import Namespace="Umbraco.Web" %>

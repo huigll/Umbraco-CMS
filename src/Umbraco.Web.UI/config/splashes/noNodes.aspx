@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="True" Inherits="Umbraco.Web.UI.Config.Splashes.NoNodes" CodeBehind="NoNodes.aspx.cs" %>
+﻿<%@ Page Language="C#" AutoEventWireup="True" Inherits="Umbraco.Web.UI.Config.Splashes.NoNodes" CodeBehind="NoNodes.aspx.cs" %>
 <%@ Import Namespace="Umbraco.Core.Configuration" %>
 <%@ Import Namespace="Umbraco.Core.IO" %>
 
@@ -95,7 +95,7 @@
                                 <div class="hold">
                                     <aside class="col1">
                                         <h2>Useful links</h2>
-                                        <p>We�ve put together some useful links to help you get started with Umbraco.</p>
+                                        <p>We’ve put together some useful links to help you get started with Umbraco.</p>
                                         <nav class="links">
                                             <ul>
                                                 <li><a href="http://our.umbraco.org?ref=ourFromInstaller">our.umbraco.org</a></li>

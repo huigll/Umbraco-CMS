@@ -1,4 +1,4 @@
-CodeMirror.runMode = function(string, modespec, callback, options) {
+﻿CodeMirror.runMode = function(string, modespec, callback, options) {
   function esc(str) {
     return str.replace(/[<&]/, function(ch) { return ch == "<" ? "&lt;" : "&amp;"; });
   }

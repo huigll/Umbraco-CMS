@@ -1,4 +1,4 @@
-tinyMCE.addI18n('en.umbraco',{"underline_desc":"Underline (Ctrl+U)",
+﻿tinyMCE.addI18n('en.umbraco',{"underline_desc":"Underline (Ctrl+U)",
 "italic_desc":"Italic (Ctrl+I)",
 "bold_desc":"Bold (Ctrl+B)",
 dd:"Definition Description",

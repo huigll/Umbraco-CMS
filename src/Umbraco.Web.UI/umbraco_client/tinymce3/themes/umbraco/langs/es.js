@@ -1,4 +1,4 @@
-tinyMCE.addI18n('es.umbraco',{
+﻿tinyMCE.addI18n('es.umbraco',{
 style_select:"Estilos",
 font_size:"Tama\u00F1o",
 fontdefault:"Fuente",

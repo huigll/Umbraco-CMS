@@ -1,4 +1,4 @@
-/*
+﻿/*
 *	Class: fileUploader
 *	Use: Upload multiple files using jquery
 *	Author: Matt Brailsford

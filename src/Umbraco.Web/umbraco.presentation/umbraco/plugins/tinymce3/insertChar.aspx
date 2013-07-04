@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="insertChar.aspx.cs" Inherits="umbraco.presentation.umbraco.plugins.tinymce3.insertChar" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="insertChar.aspx.cs" Inherits="umbraco.presentation.umbraco.plugins.tinymce3.insertChar" %>
 <%@ Register TagPrefix="umb" Namespace="ClientDependency.Core.Controls" Assembly="ClientDependency.Core" %>
 <%@ Register TagPrefix="cc1" Namespace="umbraco.uicontrols" Assembly="controls" %>
 

@@ -1,4 +1,4 @@
-<%@ Page Title="Edit content" Language="c#" MasterPageFile="masterpages/umbracoPage.Master"
+﻿<%@ Page Title="Edit content" Language="c#" MasterPageFile="masterpages/umbracoPage.Master"
     CodeBehind="editContent.aspx.cs" ValidateRequest="false" AutoEventWireup="True"
     Inherits="umbraco.cms.presentation.editContent" Trace="false" %>
 

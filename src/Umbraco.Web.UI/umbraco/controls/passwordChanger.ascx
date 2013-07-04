@@ -1,4 +1,4 @@
-<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="passwordChanger.ascx.cs" Inherits="umbraco.controls.passwordChanger" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="passwordChanger.ascx.cs" Inherits="umbraco.controls.passwordChanger" %>
 
 <a href="#" onclick="if (document.getElementById('umbPasswordChanger').style.display == '' || document.getElementById('umbPasswordChanger').style.display == 'none') {document.getElementById('umbPasswordChanger').style.display = 'block'; this.style.display = 'none';}">Change password</a><br />
 

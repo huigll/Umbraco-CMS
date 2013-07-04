@@ -1,4 +1,4 @@
-<%@ Register Namespace="umbraco" TagPrefix="umb" Assembly="umbraco" %>
+﻿<%@ Register Namespace="umbraco" TagPrefix="umb" Assembly="umbraco" %>
 <%@ Register TagPrefix="cc1" Namespace="umbraco.uicontrols" Assembly="controls" %>
 
 <%@ Page Language="c#" MasterPageFile="../masterpages/umbracoDialog.Master" Codebehind="about.aspx.cs" AutoEventWireup="True" Inherits="umbraco.dialogs.about" %>
@@ -13,7 +13,7 @@
         <p style="padding-right: 5px; padding-left: 5px; padding-bottom: 0px; margin: 0px; padding-top: 5px">
           Umbraco v<asp:Literal ID="version" runat="server"></asp:Literal><br />
           <br />
-          Copyright � 2001 - 
+          Copyright © 2001 - 
           <asp:Literal ID="thisYear" runat="server"></asp:Literal>
           Umbraco / Niels Hartvig<br />
           Developed by the <a href="http://our.umbraco.org/wiki/about/core-team" target="_blank">Umbraco Core

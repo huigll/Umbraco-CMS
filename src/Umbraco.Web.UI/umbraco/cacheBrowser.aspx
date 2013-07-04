@@ -1,4 +1,4 @@
-<%@ Page language="c#" Codebehind="cacheBrowser.aspx.cs" AutoEventWireup="True" Inherits="umbraco.cms.presentation.cacheBrowser" trace="true" %>
+﻿<%@ Page language="c#" Codebehind="cacheBrowser.aspx.cs" AutoEventWireup="True" Inherits="umbraco.cms.presentation.cacheBrowser" trace="true" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
 <HTML>
 	<HEAD>

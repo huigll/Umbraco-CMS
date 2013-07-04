@@ -1,4 +1,4 @@
-<%@ Control Language="c#" AutoEventWireup="True" CodeBehind="TheEnd.ascx.cs" Inherits="Umbraco.Web.UI.Install.Steps.TheEnd"
+ï»¿<%@ Control Language="c#" AutoEventWireup="True" CodeBehind="TheEnd.ascx.cs" Inherits="Umbraco.Web.UI.Install.Steps.TheEnd"
 	TargetSchema="http://schemas.microsoft.com/intellisense/ie5" %>
 <script type="text/javascript">
 jQuery(document).ready(function () {
@@ -24,7 +24,7 @@ jQuery(document).ready(function () {
 <div class="tab main-tabinfo">
 	<div class="container">
 		<h1>
-			You’re done...now what?</h1>
+			Youâ€™re done...now what?</h1>
 		<p>
 			Excellent, you are now ready to start using Umbraco, one of the worlds most popular open
 			source .NET CMS.
@@ -41,7 +41,7 @@ jQuery(document).ready(function () {
 		<div class="hold">
 			<aside class="col1">
 				<h2>Useful links</h2>
-				<p>We’ve put together some useful links to help you get started with Umbraco.</p>
+				<p>Weâ€™ve put together some useful links to help you get started with Umbraco.</p>
 				<nav class="links">
 					<ul>
                         <li><a href="http://umbraco.codeplex.com/documentation" target="_blank">Getting Started Guide</a></li>

@@ -1,4 +1,4 @@
-/*
+﻿/*
   base2 - copyright 2007-2011, Dean Edwards
   http://code.google.com/p/base2/
   http://www.opensource.org/licenses/mit-license.php

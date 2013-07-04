@@ -1,4 +1,4 @@
-// Initiate ModeTest and set defaults
+﻿// Initiate ModeTest and set defaults
 var MT = ModeTest;
 MT.modeName = 'css';
 MT.modeOptions = {};

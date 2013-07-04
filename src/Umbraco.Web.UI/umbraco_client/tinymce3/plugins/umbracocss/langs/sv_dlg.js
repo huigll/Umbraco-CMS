@@ -1,3 +1,3 @@
-tinyMCE.addI18n('sv.example_dlg',{
-	title : 'Detta är bara ett exempel på en titel'
+﻿tinyMCE.addI18n('sv.example_dlg',{
+	title : 'Detta Ã¤r bara ett exempel pÃ¥ en titel'
 });

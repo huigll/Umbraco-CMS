@@ -1,4 +1,4 @@
-<%@ Control Language="c#" AutoEventWireup="True" Codebehind="ValidatePermissions.ascx.cs" Inherits="Umbraco.Web.UI.Install.Steps.ValidatePermissions" TargetSchema="http://schemas.microsoft.com/intellisense/ie5"%>
+﻿<%@ Control Language="c#" AutoEventWireup="True" Codebehind="ValidatePermissions.ascx.cs" Inherits="Umbraco.Web.UI.Install.Steps.ValidatePermissions" TargetSchema="http://schemas.microsoft.com/intellisense/ie5"%>
 <h1>Step 3/5: Validating File Permissions</h1>
 <p>
 umbraco needs write/modify access to certain directories in order to store files like pictures and PDF's. 

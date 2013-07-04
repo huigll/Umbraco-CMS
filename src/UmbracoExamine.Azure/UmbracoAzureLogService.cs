@@ -1,4 +1,4 @@
-using Examine;
+﻿using Examine;
 using Examine.Azure;
 using UmbracoExamine.DataServices;
 

@@ -1,4 +1,4 @@
-<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="LoadNitros.ascx.cs" Inherits="umbraco.presentation.developer.packages.LoadNitros" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="LoadNitros.ascx.cs" Inherits="umbraco.presentation.developer.packages.LoadNitros" %>
 
 <asp:Panel id="loadNitros" runat="server">
 

@@ -1,4 +1,4 @@
-(function ($) {
+﻿(function ($) {
 	$.extend($.tree.plugins, {
 		"checkbox" : {
 			defaults : {

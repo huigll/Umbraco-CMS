@@ -1,4 +1,4 @@
-
+﻿
 (function () {
     tinymce.create('tinymce.plugins.Umbracoshortcut', {
         init: function (ed, url) {

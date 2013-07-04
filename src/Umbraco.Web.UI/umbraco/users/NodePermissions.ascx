@@ -1,4 +1,4 @@
-<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="NodePermissions.ascx.cs" Inherits="umbraco.cms.presentation.user.NodePermissions" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="NodePermissions.ascx.cs" Inherits="umbraco.cms.presentation.user.NodePermissions" %>
 <h3>
 	<%=umbraco.ui.Text("user", "permissionSelectedPages")%>
 	<br/>

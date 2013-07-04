@@ -1,4 +1,4 @@
-<%@ Page Language="c#" MasterPageFile="../masterpages/umbracoDialog.Master" Codebehind="AssignDomain2.aspx.cs" AutoEventWireup="True" Inherits="umbraco.dialogs.AssignDomain2" %>
+﻿<%@ Page Language="c#" MasterPageFile="../masterpages/umbracoDialog.Master" Codebehind="AssignDomain2.aspx.cs" AutoEventWireup="True" Inherits="umbraco.dialogs.AssignDomain2" %>
 <%@ Import Namespace="Umbraco.Web" %>
 <%@ Register TagPrefix="umb" Namespace="ClientDependency.Core.Controls" Assembly="ClientDependency.Core" %>
 <%@ Register TagPrefix="cc1" Namespace="umbraco.uicontrols" Assembly="controls" %>

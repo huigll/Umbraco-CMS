@@ -1,4 +1,4 @@
-CodeMirror.defineMode("velocity", function(config) {
+﻿CodeMirror.defineMode("velocity", function(config) {
     function parseWords(str) {
         var obj = {}, words = str.split(" ");
         for (var i = 0; i < words.length; ++i) obj[words[i]] = true;

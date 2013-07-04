@@ -1,4 +1,4 @@
-tinyMCE.addI18n('it.embed_dlg', {    
+﻿tinyMCE.addI18n('it.embed_dlg', {    
 title: 'Integra media di terze parti',    
 general: 'Generale',    
 url: 'Url:',    

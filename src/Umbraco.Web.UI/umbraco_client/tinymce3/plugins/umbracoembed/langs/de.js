@@ -1,4 +1,4 @@
-tinyMCE.addI18n('de.embed_dlg', {
+﻿tinyMCE.addI18n('de.embed_dlg', {
     title: 'Medien von Drittanbietern einbetten',
     general: 'Allgemein',
     url: 'Url:',

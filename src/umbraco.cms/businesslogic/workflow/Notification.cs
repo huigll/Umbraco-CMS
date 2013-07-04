@@ -1,4 +1,4 @@
-using System;
+Ôªøusing System;
 using System.Collections.Generic;
 using System.Net.Mail;
 using System.Runtime.CompilerServices;
@@ -343,8 +343,8 @@ namespace umbraco.cms.businesslogic.workflow
             oldString = oldString.Replace("&nbsp;", " ");
             oldString = oldString.Replace("&rsquo;", "'");
             oldString = oldString.Replace("&amp;", "&");
-            oldString = oldString.Replace("&ldquo;", "ì");
-            oldString = oldString.Replace("&rdquo;", "î");
+            oldString = oldString.Replace("&ldquo;", "‚Äú");
+            oldString = oldString.Replace("&rdquo;", "‚Äù");
             oldString = oldString.Replace("&quot;", "\"");
         }
 

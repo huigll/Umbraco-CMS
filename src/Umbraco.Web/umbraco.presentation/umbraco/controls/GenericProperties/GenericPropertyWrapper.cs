@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using umbraco.IO;
 using umbraco.cms.businesslogic.propertytype;

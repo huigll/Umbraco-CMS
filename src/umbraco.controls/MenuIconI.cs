@@ -1,4 +1,4 @@
-namespace umbraco.uicontrols {
+﻿namespace umbraco.uicontrols {
     public interface MenuIconI {
         string ImageURL {
             get;

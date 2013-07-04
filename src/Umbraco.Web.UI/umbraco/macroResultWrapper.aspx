@@ -1,4 +1,4 @@
-<%@ Page language="c#" Codebehind="macroResultWrapper.aspx.cs" ValidateRequest="false" AutoEventWireup="True" Inherits="umbraco.presentation.macroResultWrapper" %>
+﻿<%@ Page language="c#" Codebehind="macroResultWrapper.aspx.cs" ValidateRequest="false" AutoEventWireup="True" Inherits="umbraco.presentation.macroResultWrapper" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
 <HTML>
 	<HEAD>

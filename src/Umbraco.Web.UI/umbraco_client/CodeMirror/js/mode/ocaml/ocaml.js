@@ -1,4 +1,4 @@
-CodeMirror.defineMode('ocaml', function(config) {
+﻿CodeMirror.defineMode('ocaml', function(config) {
 
   var words = {
     'true': 'atom',

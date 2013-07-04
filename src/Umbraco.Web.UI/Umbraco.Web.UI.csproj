@@ -96,6 +96,10 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Runway.Blog\Runway.Blog.csproj">
+      <Project>{FF5F489F-94B2-405F-A408-F0486E92ECC3}</Project>
+      <Name>Runway.Blog</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UmbracoExamine\UmbracoExamine.csproj">
       <Project>{07fbc26b-2927-4a22-8d96-d644c667fecc}</Project>
       <Name>UmbracoExamine</Name>
@@ -2088,9 +2092,6 @@
     <Content Include="Umbraco_client\CodeMirror\js\mode\sieve\LICENSE" />
     <None Include="Umbraco_client\CodeMirror\js\mode\xquery\LICENSE" />
     <Content Include="Views\Web.config" />
-    <Content Include="Web.config">
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="Views\Web.config.transform" />
     <None Include="web.Template.Debug.config">
       <DependentUpon>Web.Template.config</DependentUpon>

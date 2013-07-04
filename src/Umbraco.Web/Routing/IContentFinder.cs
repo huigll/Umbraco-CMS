@@ -1,4 +1,4 @@
-namespace Umbraco.Web.Routing
+﻿namespace Umbraco.Web.Routing
 {
 	/// <summary>
 	/// Provides a method to try to find and assign an Umbraco document to a <c>PublishedContentRequest</c>.

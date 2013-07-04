@@ -1,4 +1,4 @@
-<%@ Page Language="c#" ValidateRequest="false" CodeBehind="insertMacro.aspx.cs" AutoEventWireup="True"
+﻿<%@ Page Language="c#" ValidateRequest="false" CodeBehind="insertMacro.aspx.cs" AutoEventWireup="True"
     Inherits="umbraco.presentation.tinymce3.insertMacro" Trace="false" %>
 
 <%@ Register TagPrefix="ui" Namespace="umbraco.uicontrols" Assembly="controls" %>

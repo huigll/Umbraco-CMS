@@ -1,4 +1,4 @@
-namespace Umbraco.Core.Models
+﻿namespace Umbraco.Core.Models
 {
 	/// <summary>
 	/// The type of published item

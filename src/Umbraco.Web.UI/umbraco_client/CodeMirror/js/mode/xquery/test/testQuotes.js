@@ -1,4 +1,4 @@
-  $(document).ready(function(){
+﻿  $(document).ready(function(){
     module("testQuoteEscape");
     test("testQuoteEscapeDouble", function() {
       expect(1);

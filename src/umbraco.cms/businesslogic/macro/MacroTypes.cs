@@ -1,4 +1,4 @@
-namespace umbraco.cms.businesslogic.macro
+﻿namespace umbraco.cms.businesslogic.macro
 {
 	public enum MacroTypes
 	{

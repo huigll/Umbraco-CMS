@@ -1,4 +1,4 @@
-<%@ Page language="c#" Codebehind="autoDoc.aspx.cs" AutoEventWireup="True" Inherits="umbraco.developer.autoDoc" %>
+﻿<%@ Page language="c#" Codebehind="autoDoc.aspx.cs" AutoEventWireup="True" Inherits="umbraco.developer.autoDoc" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
 <HTML>
 	<HEAD>

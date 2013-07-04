@@ -1,10 +1,10 @@
-tinyMCE.addI18n('ru.embed_dlg', {
-    title: 'Вставить внеший элемент медиа',
-    general: 'Общее',
-    url: 'Ссылка:',
-    size: 'Размер:',
-    constrain_proportions: 'Сохранять пропорции',
-    preview: 'Просмотр',
-    source: 'Источник'
+﻿tinyMCE.addI18n('ru.embed_dlg', {
+    title: 'Ð’ÑÑ‚Ð°Ð²Ð¸Ñ‚ÑŒ Ð²Ð½ÐµÑˆÐ¸Ð¹ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ Ð¼ÐµÐ´Ð¸Ð°',
+    general: 'ÐžÐ±Ñ‰ÐµÐµ',
+    url: 'Ð¡ÑÑ‹Ð»ÐºÐ°:',
+    size: 'Ð Ð°Ð·Ð¼ÐµÑ€:',
+    constrain_proportions: 'Ð¡Ð¾Ñ…Ñ€Ð°Ð½ÑÑ‚ÑŒ Ð¿Ñ€Ð¾Ð¿Ð¾Ñ€Ñ†Ð¸Ð¸',
+    preview: 'ÐŸÑ€Ð¾ÑÐ¼Ð¾Ñ‚Ñ€',
+    source: 'Ð˜ÑÑ‚Ð¾Ñ‡Ð½Ð¸Ðº'
 
 });

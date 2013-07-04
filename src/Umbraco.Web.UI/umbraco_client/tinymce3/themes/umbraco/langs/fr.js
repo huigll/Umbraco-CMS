@@ -1,4 +1,4 @@
-tinyMCE.addI18n('fr.umbraco',{
+﻿tinyMCE.addI18n('fr.umbraco',{
 style_select:"Styles",
 font_size:"Taille police",
 fontdefault:"Police",

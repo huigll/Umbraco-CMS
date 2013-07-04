@@ -1,4 +1,4 @@
-// MSDropDown - uncompressed.jquery.dd
+﻿// MSDropDown - uncompressed.jquery.dd
 // author: Marghoob Suleman - Search me on google
 // Date: 12th Aug, 2009
 // Version: 2.38.4 

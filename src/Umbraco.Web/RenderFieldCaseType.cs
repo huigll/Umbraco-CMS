@@ -1,4 +1,4 @@
-namespace Umbraco.Web
+﻿namespace Umbraco.Web
 {
 	/// <summary>
 	/// Used in the .Field method when rendering an Umbraco field to specify what case type it should be

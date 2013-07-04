@@ -1,4 +1,4 @@
-namespace Umbraco.Core
+﻿namespace Umbraco.Core
 {
     /// <summary>
     /// A plugin type that allows developers to execute code during the Umbraco bootup process

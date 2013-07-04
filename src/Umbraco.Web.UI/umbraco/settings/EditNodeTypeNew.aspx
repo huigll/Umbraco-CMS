@@ -1,4 +1,4 @@
-<%@ Page Language="c#" CodeBehind="EditNodeTypeNew.aspx.cs" AutoEventWireup="True"
+﻿<%@ Page Language="c#" CodeBehind="EditNodeTypeNew.aspx.cs" AutoEventWireup="True"
     Async="true" AsyncTimeOut="300" Trace="false" Inherits="Umbraco.Web.UI.Umbraco.Settings.EditNodeTypeNew" MasterPageFile="../masterpages/umbracoPage.Master" %>
 
 <%@ Register TagPrefix="cc1" Namespace="umbraco.uicontrols" Assembly="controls" %>

@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="../masterpages/umbracoDialog.Master" CodeBehind="RegexWs.aspx.cs" Inherits="umbraco.presentation.dialogs.RegexWs" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="../masterpages/umbracoDialog.Master" CodeBehind="RegexWs.aspx.cs" Inherits="umbraco.presentation.dialogs.RegexWs" %>
 <%@ Register TagPrefix="cc1" Namespace="umbraco.uicontrols" Assembly="controls" %>
 <%@ Register TagPrefix="umb" Namespace="ClientDependency.Core.Controls" Assembly="ClientDependency.Core" %>
 

@@ -1,4 +1,4 @@
-function resizePanel(PanelName, hasMenu, redoOnResize) {
+﻿function resizePanel(PanelName, hasMenu, redoOnResize) {
     var clientHeight = jQuery(window).height();
     var clientWidth = jQuery(window).width();
 

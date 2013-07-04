@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using umbraco.DataLayer;
 
 namespace umbraco.editorControls

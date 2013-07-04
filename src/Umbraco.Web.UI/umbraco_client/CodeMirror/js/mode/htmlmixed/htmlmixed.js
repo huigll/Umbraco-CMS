@@ -1,4 +1,4 @@
-CodeMirror.defineMode("htmlmixed", function(config) {
+﻿CodeMirror.defineMode("htmlmixed", function(config) {
   var htmlMode = CodeMirror.getMode(config, {name: "xml", htmlMode: true});
   var jsMode = CodeMirror.getMode(config, "javascript");
   var cssMode = CodeMirror.getMode(config, "css");

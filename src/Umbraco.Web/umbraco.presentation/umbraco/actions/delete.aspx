@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="../masterpages/umbracoPage.Master" CodeBehind="delete.aspx.cs" Inherits="umbraco.presentation.actions.delete" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="../masterpages/umbracoPage.Master" CodeBehind="delete.aspx.cs" Inherits="umbraco.presentation.actions.delete" %>
 <%@ Register TagPrefix="cc1" Namespace="umbraco.uicontrols" Assembly="controls" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">

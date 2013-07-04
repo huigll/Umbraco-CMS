@@ -1,4 +1,4 @@
-var ctrlDown = false;
+﻿var ctrlDown = false;
 var shiftDown = false;
 var keycode = 0
 

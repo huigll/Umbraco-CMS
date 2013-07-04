@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Xml;
 using Umbraco.Core.Logging;
 using umbraco.cms.businesslogic.propertytype;
@@ -95,7 +95,7 @@ namespace umbraco.cms.businesslogic.member
 		/// Set if the member should be able to edit the data defined by its propertytype
 		/// </summary>
 		/// <param name="pt">PropertyType</param>
-		/// <param name="value">True/False if Members of the type sho�ld be able to edit the data</param>
+		/// <param name="value">True/False if Members of the type shoúld be able to edit the data</param>
         public void setMemberCanEdit(PropertyType pt, bool value)
         {
             int tmpval = 0;

@@ -1,4 +1,4 @@
-
+﻿
 function dualSelectBoxShift(id) {
     var posVal = document.getElementById(id + "_posVals");
 	var selVal = document.getElementById(id + "_selVals");

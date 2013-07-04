@@ -1,4 +1,4 @@
-<%@ Register TagPrefix="cc2" Namespace="umbraco.uicontrols" Assembly="controls" %>
+﻿<%@ Register TagPrefix="cc2" Namespace="umbraco.uicontrols" Assembly="controls" %>
 
 <%@ Page Language="c#" CodeBehind="EditMediaType.aspx.cs" MasterPageFile="../masterpages/umbracoPage.Master"
     AutoEventWireup="True" Inherits="umbraco.cms.presentation.settings.EditMediaType" %>

@@ -1,4 +1,4 @@
-<%@ Page Language="c#" MasterPageFile="../masterpages/umbracoPage.Master" ValidateRequest="false" Codebehind="insertMacro.aspx.cs" AutoEventWireup="True"
+﻿<%@ Page Language="c#" MasterPageFile="../masterpages/umbracoPage.Master" ValidateRequest="false" Codebehind="insertMacro.aspx.cs" AutoEventWireup="True"
   Inherits="umbraco.dialogs.insertMacro" Trace="false" %>
 <%@ Register TagPrefix="cc1" Namespace="umbraco.uicontrols" Assembly="controls" %>
 

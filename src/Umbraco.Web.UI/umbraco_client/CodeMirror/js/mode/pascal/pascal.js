@@ -1,4 +1,4 @@
-CodeMirror.defineMode("pascal", function(config) {
+﻿CodeMirror.defineMode("pascal", function(config) {
   function words(str) {
     var obj = {}, words = str.split(" ");
     for (var i = 0; i < words.length; ++i) obj[words[i]] = true;

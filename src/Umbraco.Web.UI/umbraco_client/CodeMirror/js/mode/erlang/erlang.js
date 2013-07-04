@@ -1,4 +1,4 @@
-// block; "begin", "case", "fun", "if", "receive", "try": closed by "end"
+﻿// block; "begin", "case", "fun", "if", "receive", "try": closed by "end"
 // block internal; "after", "catch", "of"
 // guard; "when", closed by "->"
 // "->" opens a clause, closed by ";" or "."

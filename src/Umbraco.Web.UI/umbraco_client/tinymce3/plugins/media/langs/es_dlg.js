@@ -1,4 +1,4 @@
-tinyMCE.addI18n('es.media_dlg',{
+﻿tinyMCE.addI18n('es.media_dlg',{
 title:"Insertar/editar medio embebido",
 general:"General",
 advanced:"Avanzado",

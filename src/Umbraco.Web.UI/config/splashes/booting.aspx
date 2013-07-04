@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" Inherits="System.Web.UI.Page" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" Inherits="System.Web.UI.Page" %>
 
 <%
     // NH: Adds this inline check to avoid a simple codebehind file in the legacy project!

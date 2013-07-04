@@ -1,4 +1,4 @@
-/**
+﻿/**
  * acronym.js
  *
  * Copyright 2009, Moxiecode Systems AB

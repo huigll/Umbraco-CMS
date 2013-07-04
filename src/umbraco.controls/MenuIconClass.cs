@@ -1,4 +1,4 @@
-namespace umbraco.uicontrols {
+﻿namespace umbraco.uicontrols {
     public class MenuIconClass : MenuIconI {
 
         private string _id;

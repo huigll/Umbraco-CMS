@@ -1,4 +1,4 @@
-// ---------------------------------------------
+ï»¿// ---------------------------------------------
 // guiFunctions
 // ---------------------------------------------
 function toggleTree(sender) {
@@ -118,7 +118,7 @@ function resizeGuiWindowWithTabs(windowName, newWidth, newHeight) {
     right.document.all[windowName].style.width = newWidth
 
 
-    // Der skal forskellig størrelse på højden afhængig af om vinduet har en label i bunden
+    // Der skal forskellig stÃ¸rrelse pÃ¥ hÃ¸jden afhÃ¦ngig af om vinduet har en label i bunden
     if (right.document.all[windowName + 'BottomLabel']) {
         right.document.all[windowName + "ContainerTable"].height = newHeight - 13;
         right.document.all[windowName].style.height = newHeight - 13;

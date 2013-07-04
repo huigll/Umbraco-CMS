@@ -1,4 +1,4 @@
-(function ($) {
+﻿(function ($) {
     ///<summary>Custom plugin to create the Umbraco context menu, this configures the context menu plugin before it's callbacks eecute</summary>
 
     $.extend($.tree.plugins, {

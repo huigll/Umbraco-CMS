@@ -1,4 +1,4 @@
-// ============== Formatting extensions ============================
+﻿// ============== Formatting extensions ============================
 (function() {
   // Define extensions for a few modes
   CodeMirror.extendMode("css", {

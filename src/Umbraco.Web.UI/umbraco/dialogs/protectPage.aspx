@@ -1,4 +1,4 @@
-<%@ Page Language="c#" MasterPageFile="../masterpages/umbracoDialog.Master" Codebehind="protectPage.aspx.cs" AutoEventWireup="True" Inherits="umbraco.presentation.umbraco.dialogs.protectPage" %>
+﻿<%@ Page Language="c#" MasterPageFile="../masterpages/umbracoDialog.Master" Codebehind="protectPage.aspx.cs" AutoEventWireup="True" Inherits="umbraco.presentation.umbraco.dialogs.protectPage" %>
 <%@ Register TagPrefix="cc1" Namespace="umbraco.uicontrols" Assembly="controls" %>
 
 

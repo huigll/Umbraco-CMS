@@ -1,4 +1,4 @@
-<%@ Page language="c#" Codebehind="logout.aspx.cs" AutoEventWireup="True" Inherits="umbraco.logout" %>
+﻿<%@ Page language="c#" Codebehind="logout.aspx.cs" AutoEventWireup="True" Inherits="umbraco.logout" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" > 
 
 <html>
