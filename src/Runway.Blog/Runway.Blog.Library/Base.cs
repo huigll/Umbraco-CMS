@@ -37,7 +37,7 @@ namespace Runway.Blog.Library
 						{
 							flag = checker.Check(parentId, request.UserAgent, request.UserHostAddress, text3, text, text4, text2);
 						}
-						ISqlHelper sqlHelper = DataLayerHelper.CreateSqlHelper(GlobalSettings.DbDSN);
+						ISqlHelper sqlHelper = DataLayerHelper.CreateSqlHelper(GlobalSettings.DbDSN,false);
 						sqlHelper.ExecuteNonQuery("insert into Comment(mainid,nodeid,name,email,website,comment,spam,created) \r\n                    values(@mainid,@nodeid,@name,@email,@website,@comment,@spam,@created)", new IParameter[]
 						{
 							sqlHelper.CreateParameter("@mainid", id), 

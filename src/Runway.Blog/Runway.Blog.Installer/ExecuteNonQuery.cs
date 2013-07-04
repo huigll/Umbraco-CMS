@@ -25,7 +25,7 @@ namespace Runway.Blog.Installer
 					innerText = xmlData.SelectSingleNode("//VistaDB").InnerText;
 				}
 			}
-			ISqlHelper sqlHelper = DataLayerHelper.CreateSqlHelper(GlobalSettings.DbDSN);
+			ISqlHelper sqlHelper = DataLayerHelper.CreateSqlHelper(GlobalSettings.DbDSN,false);
 			sqlHelper.ExecuteNonQuery(innerText, new IParameter[0]);
 			return true;
 		}

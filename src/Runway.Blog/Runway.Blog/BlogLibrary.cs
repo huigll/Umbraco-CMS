@@ -56,13 +56,13 @@ namespace Runway.Blog
 		}
 		public static System.Xml.XPath.XPathNodeIterator GetComments()
 		{
-			ISqlHelper sqlHelper = DataLayerHelper.CreateSqlHelper(GlobalSettings.DbDSN);
+			ISqlHelper sqlHelper = DataLayerHelper.CreateSqlHelper(GlobalSettings.DbDSN,false);
 			IRecordsReader rr = sqlHelper.ExecuteReader("select * from comment where spam != 1", new IParameter[0]);
 			return BlogLibrary.CommentsToXml(rr);
 		}
 		public static System.Xml.XPath.XPathNodeIterator GetCommentsForBlog(int id)
 		{
-			ISqlHelper sqlHelper = DataLayerHelper.CreateSqlHelper(GlobalSettings.DbDSN);
+			ISqlHelper sqlHelper = DataLayerHelper.CreateSqlHelper(GlobalSettings.DbDSN,false);
 			IRecordsReader rr = sqlHelper.ExecuteReader("select * from comment where mainid = @mainid and spam != 1", new IParameter[]
 			{
 				sqlHelper.CreateParameter("@mainid", id)
@@ -71,7 +71,7 @@ namespace Runway.Blog
 		}
 		public static System.Xml.XPath.XPathNodeIterator GetCommentsForPost(int id)
 		{
-			ISqlHelper sqlHelper = DataLayerHelper.CreateSqlHelper(GlobalSettings.DbDSN);
+			ISqlHelper sqlHelper = DataLayerHelper.CreateSqlHelper(GlobalSettings.DbDSN,false);
 			IRecordsReader rr = sqlHelper.ExecuteReader("select * from comment where nodeid = @nodeid and spam != 1", new IParameter[]
 			{
 				sqlHelper.CreateParameter("@nodeid", id)
