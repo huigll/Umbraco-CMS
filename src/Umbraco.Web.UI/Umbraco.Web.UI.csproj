@@ -560,6 +560,26 @@
       <SubType>
       </SubType>
     </Content>
+    <Content Include="Xslt\u.mediaSliderImages.xslt" />
+    <Content Include="Xslt\umb2ndLevelNavigation.xslt" />
+    <Content Include="Xslt\umbBlogArchive.xslt" />
+    <Content Include="Xslt\umbBlogCategories.xslt" />
+    <Content Include="Xslt\umbBlogFullArchive.xslt" />
+    <Content Include="Xslt\umbBlogLatestComments.xslt" />
+    <Content Include="Xslt\umbBlogListPosts.xslt" />
+    <Content Include="Xslt\umbBlogMetaWeblogChannel.xslt" />
+    <Content Include="Xslt\umbBlogpages.xslt" />
+    <Content Include="Xslt\umbBlogPostListComments.xslt" />
+    <Content Include="Xslt\umbBlogpostRelatedPages.xslt" />
+    <Content Include="Xslt\umbBlogroll.xslt" />
+    <Content Include="Xslt\umbBlogRss.xslt" />
+    <Content Include="Xslt\umbBlogRssFeedLink.xslt" />
+    <Content Include="Xslt\umbBlogTagcloud.xslt" />
+    <Content Include="Xslt\umbBusinessFrontpageBlog.xslt" />
+    <Content Include="Xslt\umbBusinessFrontpageNews.xslt" />
+    <Content Include="Xslt\umbfeedViewer.xslt" />
+    <Content Include="Xslt\umbNewsListItems.xslt" />
+    <Content Include="Xslt\umbTopNavigation.xslt" />
     <None Include="Config\404handlers.Release.config">
       <DependentUpon>404handlers.config</DependentUpon>
     </None>
@@ -2527,7 +2547,6 @@
     <Content Include="Config\log4net.config" />
     <Content Include="Config\FileSystemProviders.config" />
     <Content Include="Config\EmbeddedMedia.config" />
-    <Content Include="Xslt\Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />
