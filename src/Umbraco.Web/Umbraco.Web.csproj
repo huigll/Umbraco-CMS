@@ -1787,8 +1787,12 @@
     <Content Include="umbraco.presentation\umbraco\dashboard\DesktopMediaUploader.ascx" />
     <Content Include="umbraco.presentation\umbraco\dashboard\ChangePassword.ascx" />
     <Content Include="umbraco.presentation\umbraco\dashboard\DeveloperDashboardIntro.ascx" />
-    <Content Include="umbraco.presentation\umbraco\dashboard\DeveloperDashboardVideos.ascx" />
-    <Content Include="umbraco.presentation\umbraco\dashboard\FeedProxy.aspx" />
+    <Content Include="umbraco.presentation\umbraco\dashboard\DeveloperDashboardVideos.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="umbraco.presentation\umbraco\dashboard\FeedProxy.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
     <Content Include="umbraco.presentation\umbraco\dashboard\MediaDashboardIntro.ascx" />
     <Content Include="umbraco.presentation\umbraco\dashboard\MediaDashboardVideos.ascx" />
     <Content Include="umbraco.presentation\umbraco\dashboard\MembersDashboardIntro.ascx" />
@@ -1851,7 +1855,9 @@
     <Content Include="umbraco.presentation\umbraco\developer\Packages\editPackage.aspx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
-    <Content Include="umbraco.presentation\umbraco\developer\Packages\installedPackage.aspx" />
+    <Content Include="umbraco.presentation\umbraco\developer\Packages\installedPackage.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
     <Content Include="umbraco.presentation\umbraco\developer\Packages\LoadNitros.ascx" />
     <Content Include="umbraco.presentation\umbraco\developer\Packages\SubmitPackage.aspx" />
     <Content Include="umbraco.presentation\umbraco\dialogs\about.aspx">
@@ -1937,7 +1943,9 @@
     <Content Include="umbraco.presentation\umbraco\developer\Xslt\getXsltStatus.asmx" />
     <Content Include="umbraco.presentation\umbraco\developer\Cache\viewCacheItem.aspx" />
     <Content Include="umbraco.presentation\umbraco\developer\Xslt\xsltChooseExtension.aspx" />
-    <Content Include="umbraco.presentation\umbraco\developer\Xslt\xsltInsertValueOf.aspx" />
+    <Content Include="umbraco.presentation\umbraco\developer\Xslt\xsltInsertValueOf.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
     <Content Include="umbraco.presentation\umbraco\js\language.aspx" />
     <Content Include="umbraco.presentation\umbraco\members\EditMember.aspx" />
     <Content Include="umbraco.presentation\umbraco\members\EditMemberGroup.aspx">

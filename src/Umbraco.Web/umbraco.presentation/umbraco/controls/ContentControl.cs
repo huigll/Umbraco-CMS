@@ -44,9 +44,13 @@ namespace umbraco.controls
         public TabPage tpProp;
         public bool DoesPublish = false;
         public TextBox NameTxt = new TextBox();
+        public TextBox UrlNameTxt = new TextBox();
         public PlaceHolder NameTxtHolder = new PlaceHolder();
+        public PlaceHolder UrlNameTxtHolder = new PlaceHolder();
         public RequiredFieldValidator NameTxtValidator = new RequiredFieldValidator();
+        public RequiredFieldValidator UrlNameTxtValidator = new RequiredFieldValidator();
         private readonly CustomValidator _nameTxtCustomValidator = new CustomValidator();
+        private readonly CustomValidator _urlNameTxtCustomValidator = new CustomValidator();
         private static readonly string UmbracoPath = SystemDirectories.Umbraco;
         public Pane PropertiesPane = new Pane();
         // zb-00036 #29889 : load it only once
@@ -270,27 +274,45 @@ namespace umbraco.controls
             {
 
                 NameTxt.ID = "NameTxt";
+                UrlNameTxt.ID = "UrlNameTxt";
                 if (!Page.IsPostBack)
                 {
                     NameTxt.Text = _content.Text;
+                    UrlNameTxt.Text = _content.UrlName;
                 }
 
                 // Name validation
                 NameTxtValidator.ControlToValidate = NameTxt.ID;
+                UrlNameTxtValidator.ControlToValidate = UrlNameTxt.ID;
                 _nameTxtCustomValidator.ControlToValidate = NameTxt.ID;
+                _urlNameTxtCustomValidator.ControlToValidate = UrlNameTxt.ID;
                 string[] errorVars = { ui.Text("name") };
                 NameTxtValidator.ErrorMessage = " " + ui.Text("errorHandling", "errorMandatoryWithoutTab", errorVars, null) + "<br/>";
                 NameTxtValidator.EnableClientScript = false;
-                NameTxtValidator.Display = ValidatorDisplay.Dynamic;                
+                NameTxtValidator.Display = ValidatorDisplay.Dynamic;
+                UrlNameTxtValidator.ErrorMessage = " " + ui.Text("errorHandling", "errorMandatoryWithoutTab", errorVars, null) + "<br/>";
+                UrlNameTxtValidator.EnableClientScript = false;
+                UrlNameTxtValidator.Display = ValidatorDisplay.Dynamic;                
                 _nameTxtCustomValidator.EnableClientScript = false;
                 _nameTxtCustomValidator.Display = ValidatorDisplay.Dynamic;
                 _nameTxtCustomValidator.ServerValidate += NameTxtCustomValidatorServerValidate;
                 _nameTxtCustomValidator.ValidateEmptyText = false;
 
+                _urlNameTxtCustomValidator.EnableClientScript = false;
+                _urlNameTxtCustomValidator.Display = ValidatorDisplay.Dynamic;
+                _urlNameTxtCustomValidator.ServerValidate += UrlNameTxtCustomValidatorServerValidate;
+                _urlNameTxtCustomValidator.ValidateEmptyText = false;
+
                 NameTxtHolder.Controls.Add(NameTxt);
                 NameTxtHolder.Controls.Add(NameTxtValidator);
                 NameTxtHolder.Controls.Add(_nameTxtCustomValidator);
+
+                UrlNameTxtHolder.Controls.Add(UrlNameTxt);
+                UrlNameTxtHolder.Controls.Add(UrlNameTxtValidator);
+                UrlNameTxtHolder.Controls.Add(_urlNameTxtCustomValidator);
+
                 PropertiesPane.addProperty(ui.Text("general", "name", null), NameTxtHolder);
+                PropertiesPane.addProperty(ui.Text("general", "UrlName", null), UrlNameTxtHolder);
 
                 Literal ltt = new Literal();
                 ltt.Text = _content.User.Name;
@@ -330,7 +352,12 @@ namespace umbraco.controls
             NameTxt.Text = NameTxt.Text.StripHtml();
             args.IsValid = true;
         }
-
+        void UrlNameTxtCustomValidatorServerValidate(object source, ServerValidateEventArgs args)
+        {
+            UrlNameTxt.Text = UrlNameTxt.Text.StripHtml();
+            args.IsValid = true;
+        }
+        
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
@@ -365,6 +392,12 @@ namespace umbraco.controls
                 if (!NameTxt.Text.IsNullOrWhiteSpace())
                 {
                     _content.Text = NameTxt.Text;
+
+                }
+                if (!UrlNameTxt.Text.IsNullOrWhiteSpace())
+                {
+                
+                    _content.UrlName = UrlNameTxt.Text;
                 }
             }
         }

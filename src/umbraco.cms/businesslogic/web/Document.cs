@@ -699,6 +699,18 @@ namespace umbraco.cms.businesslogic.web
             }
         }
 
+        public override string UrlName
+        {
+            get
+            {
+                return Content.UrlName;
+            }
+            set
+            {
+                Content.UrlName = value;
+            }
+        }
+
         /// <summary>
         /// The date of the last update of the document
         /// </summary>
@@ -1473,7 +1485,7 @@ namespace umbraco.cms.businesslogic.web
             _creator = User.GetUser(Content.CreatorId);
             _writer = User.GetUser(Content.WriterId);
             _updated = Content.UpdateDate;
-
+           
             if (Content.Template != null)
                 _template = Content.Template.Id;
 

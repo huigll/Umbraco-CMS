@@ -15,6 +15,7 @@ namespace dashboardUtilities
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            return;
             try
             {
                 if (Request.QueryString.AllKeys.Contains("url") && Request.QueryString["url"] != null)

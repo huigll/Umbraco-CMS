@@ -327,6 +327,7 @@
     <key alias="welcome">欢迎…</key>
     <key alias="width">宽</key>
     <key alias="yes">是</key>
+    <key alias="UrlName">URL</key>
   </area>
   <area alias="graphicheadline">
     <key alias="backgroundcolor">背景色</key>

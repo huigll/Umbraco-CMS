@@ -556,6 +556,9 @@
     </Compile>
     <Content Include="Config\Splashes\booting.aspx" />
     <Content Include="Config\Splashes\noNodes.aspx" />
+    <Content Include="Css\Custom.css" />
+    <Content Include="Css\Starterkit.css" />
+    <Content Include="MasterPages\Umedia\skin.xml" />
     <Content Include="Umbraco\Xslt\Web.config">
       <SubType>
       </SubType>
@@ -643,6 +646,32 @@
     <None Include="Config\Dashboard.Release.config">
       <DependentUpon>Dashboard.config</DependentUpon>
     </None>
+    <Content Include="MasterPages\CommentRss.master" />
+    <Content Include="MasterPages\Rss.master" />
+    <Content Include="MasterPages\umbBlogDatefolder.master" />
+    <Content Include="MasterPages\umbBlogpost.master" />
+    <Content Include="MasterPages\umbBusinessHomepage.master" />
+    <Content Include="MasterPages\umbHomepage.master" />
+    <Content Include="MasterPages\umbMaster.master" />
+    <Content Include="MasterPages\umbNews.master" />
+    <Content Include="MasterPages\umbNewsArticle.master" />
+    <Content Include="MasterPages\umbTextpage.master" />
+    <Content Include="MasterPages\Umedia\backup\umbBlogDatefolder.master" />
+    <Content Include="MasterPages\Umedia\backup\umbBlogpost.master" />
+    <Content Include="MasterPages\Umedia\backup\umbBusinessHomepage.master" />
+    <Content Include="MasterPages\Umedia\backup\umbHomepage.master" />
+    <Content Include="MasterPages\Umedia\backup\umbMaster.master" />
+    <Content Include="MasterPages\Umedia\backup\umbNews.master" />
+    <Content Include="MasterPages\Umedia\backup\umbNewsArticle.master" />
+    <Content Include="MasterPages\Umedia\backup\umbTextpage.master" />
+    <Content Include="MasterPages\Umedia\umbBlogDatefolder.master" />
+    <Content Include="MasterPages\Umedia\umbBlogpost.master" />
+    <Content Include="MasterPages\Umedia\umbBusinessHomepage.master" />
+    <Content Include="MasterPages\Umedia\umbHomepage.master" />
+    <Content Include="MasterPages\Umedia\umbMaster.master" />
+    <Content Include="MasterPages\Umedia\umbNews.master" />
+    <Content Include="MasterPages\Umedia\umbNewsArticle.master" />
+    <Content Include="MasterPages\Umedia\umbTextpage.master" />
     <None Include="packages.config" />
     <None Include="Umbraco\Config\Create\UI.Release.xml">
       <DependentUpon>UI.xml</DependentUpon>
@@ -2113,7 +2142,9 @@
     <None Include="Umbraco_client\CodeMirror\js\mode\xquery\LICENSE" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Web.config.transform" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="web.Template.Debug.config">
       <DependentUpon>Web.Template.config</DependentUpon>
       <SubType>Designer</SubType>
@@ -2552,9 +2583,7 @@
     <Folder Include="App_Code\" />
     <Folder Include="App_Data\" />
     <Folder Include="App_Plugins\" />
-    <Folder Include="Css\" />
     <Folder Include="MacroScripts\" />
-    <Folder Include="MasterPages\" />
     <Folder Include="Media\" />
     <Folder Include="Scripts\" />
     <Folder Include="Umbraco_Client\FolderBrowser\Images\" />

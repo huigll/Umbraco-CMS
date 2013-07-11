@@ -8,7 +8,7 @@ namespace Umbraco.Core.Persistence.SqlSyntax
     /// <summary>
     /// A resolver to return all ISqlSyntaxProvider objects
     /// </summary>
-    internal sealed class SqlSyntaxProvidersResolver : ManyObjectsResolverBase<SqlSyntaxProvidersResolver, ISqlSyntaxProvider>
+    public sealed class SqlSyntaxProvidersResolver : ManyObjectsResolverBase<SqlSyntaxProvidersResolver, ISqlSyntaxProvider>
     {
         /// <summary>
 		/// Constructor

@@ -8,7 +8,7 @@ namespace Umbraco.Core.ObjectResolution
 	/// <summary>
 	/// A resolver to return all IApplicationEvents objects
 	/// </summary>
-    internal sealed class ApplicationEventsResolver : ManyObjectsResolverBase<ApplicationEventsResolver, IApplicationEventHandler>
+    public sealed class ApplicationEventsResolver : ManyObjectsResolverBase<ApplicationEventsResolver, IApplicationEventHandler>
 	{
 
 	    private readonly LegacyStartupHandlerResolver _legacyResolver;

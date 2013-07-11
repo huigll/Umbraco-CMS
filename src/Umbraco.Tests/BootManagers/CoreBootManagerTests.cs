@@ -9,16 +9,21 @@ using Umbraco.Core.ObjectResolution;
 using Umbraco.Core.Persistence.SqlSyntax;
 using Umbraco.Tests.TestHelpers;
 using umbraco.interfaces;
+using Umbraco.Core.Persistence;
+using Umbraco.Core.Persistence.UnitOfWork;
+
 
 namespace Umbraco.Tests.BootManagers
 {
     [TestFixture]
+    [Microsoft.VisualStudio.TestTools.UnitTesting.TestClass()]
     public class CoreBootManagerTests : BaseUmbracoApplicationTest
     {
 
         private TestApp _testApp;
 
         [SetUp]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestInitialize]
         public override void Initialize()
         {
             base.Initialize();
@@ -26,6 +31,7 @@ namespace Umbraco.Tests.BootManagers
         }
 
         [TearDown]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCleanup]
         public override void TearDown()
         {
             base.TearDown();
@@ -158,6 +164,17 @@ namespace Umbraco.Tests.BootManagers
             TestApp.ApplicationStarting -= started;
 
         }
-
+        [Test]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethod()]
+        public void MyTest()
+        {
+            RepositoryFactory factor = new RepositoryFactory();
+            PetaPocoUnitOfWorkProvider pp = new PetaPocoUnitOfWorkProvider();
+            SqlSyntaxProvidersResolver.Current = new SqlSyntaxProvidersResolver(
+              new List<Type> { typeof(MySqlSyntaxProvider), typeof(SqlCeSyntaxProvider), typeof(SqlServerSyntaxProvider) }) { CanResolveBeforeFrozen = true };
+            SqlSyntaxContext.SqlSyntaxProvider = new MySqlSyntaxProvider();
+            var content = factor.CreateContentRepository(pp.GetUnitOfWork());
+            var aaa =content.Get(1064);
+        }
     }
 }

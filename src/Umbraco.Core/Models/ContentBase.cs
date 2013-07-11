@@ -20,6 +20,7 @@ namespace Umbraco.Core.Models
         protected IContentTypeComposition ContentTypeBase;
         private Lazy<int> _parentId;
         private string _name;//NOTE Once localization is introduced this will be the localized Name of the Content/Media.
+        private string _urlName;
         private int _sortOrder;
         private int _level;
         private string _path;
@@ -127,7 +128,22 @@ namespace Umbraco.Core.Models
                 }, _name, NameSelector);
             }
         }
-
+        /// <summary>
+        /// Gets or sets the name of the entity
+        /// </summary>
+        [DataMember]
+        public virtual string UrlName
+        {
+            get { return _urlName; }
+            set
+            {
+                SetPropertyValueAndDetectChanges(o =>
+                {
+                    _urlName = value;
+                    return _urlName;
+                }, _urlName, NameSelector);
+            }
+        }
         /// <summary>
         /// Gets or sets the sort order of the content entity
         /// </summary>

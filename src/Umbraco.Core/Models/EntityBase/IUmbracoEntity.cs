@@ -16,6 +16,10 @@
         /// Gets or Sets the Name of the Entity
         /// </summary>
         string Name { get; set; }
+        /// <summary>
+        /// Gets or Sets the Url Name of the Entity , may different with Name
+        /// </summary>
+        string UrlName { get; set; }
 
         /// <summary>
         /// Gets or sets the Id of the Parent Entity

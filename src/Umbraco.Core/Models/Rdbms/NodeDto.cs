@@ -44,6 +44,8 @@ namespace Umbraco.Core.Models.Rdbms
         [NullSetting(NullSetting = NullSettings.Null)]
         public string Text { get; set; }
 
+      
+
         [Column("nodeObjectType")]
         [NullSetting(NullSetting = NullSettings.Null)]
         [IndexAttribute(IndexTypes.NonClustered, Name = "IX_umbracoNodeObjectType")]

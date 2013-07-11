@@ -351,6 +351,7 @@
     <key alias="width">Width</key>
     <key alias="yes">Yes</key>
     <key alias="folder">Folder</key>
+    <key alias="UrlName">URL</key>
   </area>
   <area alias="graphicheadline">
     <key alias="backgroundcolor">Background color</key>

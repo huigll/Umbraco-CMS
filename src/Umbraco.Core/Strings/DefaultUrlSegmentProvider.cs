@@ -35,7 +35,7 @@ namespace Umbraco.Core.Strings
             if (content.HasProperty(Constants.Conventions.Content.UrlName))
                 source = (content.GetValue<string>(Constants.Conventions.Content.UrlName) ?? string.Empty).Trim();
             if (string.IsNullOrWhiteSpace(source))
-                source = content.Name;
+                source = content.UrlName;
             return source;
         }
     }

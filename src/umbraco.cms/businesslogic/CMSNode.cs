@@ -36,6 +36,7 @@ namespace umbraco.cms.businesslogic
         #region Private Members
 
         private string _text;
+        
         private int _id = 0;
         private Guid _uniqueID;
         private int _parentid;
@@ -939,6 +940,13 @@ order by level,sortOrder";
                     _entity.Name = value;
             }
         }
+
+        public virtual string UrlName
+        {
+            get;
+            set;
+        }
+        
 
         /// <summary>
         /// The menu items used in the tree view

@@ -13,6 +13,7 @@ namespace Umbraco.Core.Models
         private int _creatorId;
         private int _level;
         private string _name;
+        private string _urlName;
         private int _parentId;
         private string _path;
         private int _sortOrder;
@@ -89,6 +90,20 @@ namespace Umbraco.Core.Models
                 }, _name, NameSelector);  
             }
         }
+
+        public string UrlName
+        {
+            get { return _urlName; }
+            set
+            {
+                SetPropertyValueAndDetectChanges(o =>
+                {
+                    _urlName = value;
+                    return _urlName;
+                }, _urlName, NameSelector);
+            }
+        }
+
 
         public int ParentId
         {

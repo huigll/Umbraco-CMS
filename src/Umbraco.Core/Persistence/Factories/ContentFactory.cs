@@ -37,6 +37,7 @@ namespace Umbraco.Core.Persistence.Factories
                         ? dto.ContentVersionDto.ContentDto.NodeDto.UniqueId.Value
                         : _id.ToGuid(),
                 Name = dto.Text,
+                UrlName = dto.UrlName,
                 NodeName = dto.ContentVersionDto.ContentDto.NodeDto.Text,
                 Language = dto.ContentVersionDto.Language,
                 Path = dto.ContentVersionDto.ContentDto.NodeDto.Path,
@@ -69,6 +70,7 @@ namespace Umbraco.Core.Persistence.Factories
                                       NodeId = entity.Id,
                                       Published = entity.Published,
                                       Text = entity.Name,
+                                      UrlName=entity.UrlName,
                                       UpdateDate = entity.UpdateDate,
                                       WriterUserId = entity.WriterId,
                                       VersionId = entity.Version,
