@@ -7,7 +7,6 @@ using System.Web.UI.WebControls;
 using System.Text;
 using System.Xml;
 using System.IO;
-using umbraco.IO;
 
 namespace umbraco.presentation.umbraco.developer.Xslt
 {
@@ -47,7 +46,7 @@ namespace umbraco.presentation.umbraco.developer.Xslt
             {
                 System.IO.StreamReader xsltFile =
                 System.IO.File.OpenText(
-                    IOHelper.MapPath(SystemDirectories.Umbraco + "/xslt/templates/clean.xslt")
+                    Umbraco.Core.IO.IOHelper.MapPath(Umbraco.Core.IO.SystemDirectories.Umbraco + "/xslt/templates/clean.xslt")
                 );
 
                 xslt = xsltFile.ReadToEnd();

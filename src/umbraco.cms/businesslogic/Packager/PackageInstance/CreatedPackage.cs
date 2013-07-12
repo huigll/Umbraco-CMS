@@ -7,21 +7,20 @@ using Umbraco.Core.Logging;
 using umbraco.cms.businesslogic.template;
 using umbraco.cms.businesslogic.web;
 using umbraco.cms.businesslogic.macro;
-using umbraco.IO;
 
 
 namespace umbraco.cms.businesslogic.packager {
     public class CreatedPackage {
 
         public static CreatedPackage GetById(int id) {
-            CreatedPackage pack = new CreatedPackage(); 
-            pack.Data = data.Package(id, IOHelper.MapPath(Settings.CreatedPackagesSettings));
+            CreatedPackage pack = new CreatedPackage();
+            pack.Data = data.Package(id, Umbraco.Core.IO.IOHelper.MapPath(Settings.CreatedPackagesSettings));
             return pack;    
         }
 
         public static CreatedPackage MakeNew(string name) {
             CreatedPackage pack = new CreatedPackage();
-            pack.Data = data.MakeNew(name, IOHelper.MapPath(Settings.CreatedPackagesSettings));
+            pack.Data = data.MakeNew(name, Umbraco.Core.IO.IOHelper.MapPath(Settings.CreatedPackagesSettings));
 
             NewEventArgs e = new NewEventArgs();
             pack.OnNew(e);
@@ -34,7 +33,7 @@ namespace umbraco.cms.businesslogic.packager {
             FireBeforeSave(e);
 
             if (!e.Cancel) {
-                data.Save(this.Data, IOHelper.MapPath(Settings.CreatedPackagesSettings));
+                data.Save(this.Data, Umbraco.Core.IO.IOHelper.MapPath(Settings.CreatedPackagesSettings));
                 FireAfterSave(e);
             }
         }
@@ -44,7 +43,7 @@ namespace umbraco.cms.businesslogic.packager {
             FireBeforeDelete(e);
 
             if (!e.Cancel) {
-                data.Delete(this.Data.Id, IOHelper.MapPath(Settings.CreatedPackagesSettings));
+                data.Delete(this.Data.Id, Umbraco.Core.IO.IOHelper.MapPath(Settings.CreatedPackagesSettings));
                 FireAfterDelete(e);
             }
         }
@@ -58,7 +57,7 @@ namespace umbraco.cms.businesslogic.packager {
         public static List<CreatedPackage> GetAllCreatedPackages() {
             List<CreatedPackage> val = new List<CreatedPackage>();
 
-            foreach (PackageInstance pack in data.GetAllPackages(IOHelper.MapPath(Settings.CreatedPackagesSettings)))
+            foreach (PackageInstance pack in data.GetAllPackages(Umbraco.Core.IO.IOHelper.MapPath(Settings.CreatedPackagesSettings)))
             {
                 CreatedPackage crPack = new CreatedPackage();
                 crPack.Data = pack;
@@ -104,7 +103,7 @@ namespace umbraco.cms.businesslogic.packager {
 					int outInt = 0;
 
 					//Path checking...
-					string localPath = IOHelper.MapPath(IO.SystemDirectories.Media + "/" + pack.Folder);
+                    string localPath = Umbraco.Core.IO.IOHelper.MapPath(Umbraco.Core.IO.SystemDirectories.Media + "/" + pack.Folder);
 
 					if (!System.IO.Directory.Exists(localPath))
 						System.IO.Directory.CreateDirectory(localPath);
@@ -271,13 +270,13 @@ namespace umbraco.cms.businesslogic.packager {
 					//string packPath = Settings.PackagerRoot.Replace(System.IO.Path.DirectorySeparatorChar.ToString(), "/") + "/" + pack.Name.Replace(' ', '_') + "_" + pack.Version.Replace(' ', '_') + "." + Settings.PackageFileExtension;
 
 					// check if there's a packages directory below media
-					string packagesDirectory = IO.SystemDirectories.Media + "/created-packages";
-					if (!System.IO.Directory.Exists(IOHelper.MapPath(packagesDirectory)))
-						System.IO.Directory.CreateDirectory(IOHelper.MapPath(packagesDirectory));
+                    string packagesDirectory = Umbraco.Core.IO.SystemDirectories.Media + "/created-packages";
+                    if (!System.IO.Directory.Exists(Umbraco.Core.IO.IOHelper.MapPath(packagesDirectory)))
+                        System.IO.Directory.CreateDirectory(Umbraco.Core.IO.IOHelper.MapPath(packagesDirectory));
 
 
 					string packPath = packagesDirectory + "/" + (pack.Name + "_" + pack.Version).Replace(' ', '_') + "." + Settings.PackageFileExtension;
-					utill.ZipPackage(localPath, IOHelper.MapPath(packPath));
+                    utill.ZipPackage(localPath, Umbraco.Core.IO.IOHelper.MapPath(packPath));
 
 					pack.PackagePath = packPath;
 

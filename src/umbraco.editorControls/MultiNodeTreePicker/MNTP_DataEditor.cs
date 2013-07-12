@@ -12,7 +12,6 @@ using Umbraco.Core;
 using umbraco.cms.presentation.Trees;
 using umbraco.controls.Images;
 using umbraco.controls.Tree;
-using umbraco.IO;
 
 [assembly: WebResource("umbraco.editorControls.MultiNodeTreePicker.MultiNodePickerStyles.css", "text/css")]
 [assembly: WebResource("umbraco.editorControls.MultiNodeTreePicker.MultiNodePickerScripts.js", "application/x-javascript")]
@@ -552,7 +551,7 @@ namespace umbraco.editorControls.MultiNodeTreePicker
 
 			writer.RenderEndTag(); //end multiNodePicker div
 
-			var tooltipAjaxUrl = IOHelper.ResolveUrl(SystemDirectories.Umbraco) + @"/controls/Tree/CustomTreeService.asmx/GetNodeInfo";
+            var tooltipAjaxUrl = Umbraco.Core.IO.IOHelper.ResolveUrl(Umbraco.Core.IO.SystemDirectories.Umbraco) + @"/controls/Tree/CustomTreeService.asmx/GetNodeInfo";
 
 			//add jquery window load event to create the js tree picker
 			var jsMethod = string.Format("jQuery('#{0}').MultiNodeTreePicker('{1}', {2}, '{3}', {4}, {5}, '{6}', '{7}');",
@@ -562,7 +561,7 @@ namespace umbraco.editorControls.MultiNodeTreePicker
 				tooltipAjaxUrl,
 				ShowToolTips.ToString().ToLower(),
 				(TreeToRender == Umbraco.Core.Constants.Applications.Media && ShowThumbnailsForMedia).ToString().ToLower(),
-				IOHelper.ResolveUrl(SystemDirectories.Umbraco),
+                Umbraco.Core.IO.IOHelper.ResolveUrl(Umbraco.Core.IO.SystemDirectories.Umbraco),
 				TreeToRender);
 			var js = "jQuery(window).load(function() { " + jsMethod + " });";
 
@@ -678,6 +677,6 @@ namespace umbraco.editorControls.MultiNodeTreePicker
 		/// <summary>
 		/// A reference path to where the icons are actually stored as compared to where the tree themes folder is
 		/// </summary>
-		private static readonly string IconPath = IOHelper.ResolveUrl(SystemDirectories.Umbraco) + "/images/umbraco/";
+        private static readonly string IconPath = Umbraco.Core.IO.IOHelper.ResolveUrl(Umbraco.Core.IO.SystemDirectories.Umbraco) + "/images/umbraco/";
 	}
 }

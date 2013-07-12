@@ -7,7 +7,6 @@ using System.IO;
 using System.Linq;
 using System.Xml;
 using Umbraco.Core;
-using umbraco.IO;
 
 namespace umbraco.BusinessLogic.Utils
 {

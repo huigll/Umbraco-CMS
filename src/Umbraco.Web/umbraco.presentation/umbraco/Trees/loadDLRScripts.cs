@@ -22,7 +22,6 @@ using umbraco.interfaces;
 using umbraco.DataLayer;
 using umbraco.BusinessLogic.Utils;
 using umbraco.cms.presentation.Trees;
-using umbraco.IO;
 
 
 namespace umbraco
@@ -54,7 +53,7 @@ namespace umbraco
         {
             get
             {
-                return SystemDirectories.MacroScripts + "/";
+                return Umbraco.Core.IO.SystemDirectories.MacroScripts + "/";
             }
         }
 

@@ -16,7 +16,6 @@ using umbraco.DataLayer;
 using System.Diagnostics;
 using umbraco.cms.businesslogic.macro;
 using umbraco.cms.businesslogic.template;
-using umbraco.IO;
 
 namespace umbraco.cms.businesslogic.packager
 {
@@ -155,9 +154,9 @@ namespace umbraco.cms.businesslogic.packager
                 () => "Package file " + InputFile + "imported"))
             {
                 string tempDir = "";
-                if (File.Exists(IOHelper.MapPath(SystemDirectories.Data + Path.DirectorySeparatorChar + InputFile)))
+                if (File.Exists(Umbraco.Core.IO.IOHelper.MapPath(Umbraco.Core.IO.SystemDirectories.Data + Path.DirectorySeparatorChar + InputFile)))
                 {
-                    FileInfo fi = new FileInfo(IOHelper.MapPath(SystemDirectories.Data + Path.DirectorySeparatorChar + InputFile));
+                    FileInfo fi = new FileInfo(Umbraco.Core.IO.IOHelper.MapPath(Umbraco.Core.IO.SystemDirectories.Data + Path.DirectorySeparatorChar + InputFile));
                     // Check if the file is a valid package
                     if (fi.Extension.ToLower() == ".umb")
                     {
@@ -175,7 +174,8 @@ namespace umbraco.cms.businesslogic.packager
                         throw new Exception("Error - file isn't a package (doesn't have a .umb extension). Check if the file automatically got named '.zip' upon download.");
                 }
                 else
-                    throw new Exception("Error - file not found. Could find file named '" + IOHelper.MapPath(SystemDirectories.Data + Path.DirectorySeparatorChar + InputFile) + "'");
+                    throw new Exception("Error - file not found. Could find file named '" +
+                        Umbraco.Core.IO.IOHelper.MapPath(Umbraco.Core.IO.SystemDirectories.Data + Path.DirectorySeparatorChar + InputFile) + "'");
                 return tempDir;
             }
         }
@@ -830,10 +830,10 @@ namespace umbraco.cms.businesslogic.packager
                 string destPath = GetFileName(basePath, Umbraco.Core.XmlHelper.GetNodeValue(n.SelectSingleNode("orgPath")));
                 string destFile = GetFileName(destPath, Umbraco.Core.XmlHelper.GetNodeValue(n.SelectSingleNode("orgName")));
 
-                if (destPath.ToLower().Contains(IOHelper.DirSepChar + "app_code"))
+                if (destPath.ToLower().Contains(Umbraco.Core.IO.IOHelper.DirSepChar + "app_code"))
                     badFile = true;
 
-                if (destPath.ToLower().Contains(IOHelper.DirSepChar + "bin"))
+                if (destPath.ToLower().Contains(Umbraco.Core.IO.IOHelper.DirSepChar + "bin"))
                     badFile = true;
 
                 if (destFile.ToLower().EndsWith(".dll"))
@@ -912,14 +912,14 @@ namespace umbraco.cms.businesslogic.packager
         public string Fetch(Guid Package)
         {
             // Check for package directory
-            if (!Directory.Exists(IOHelper.MapPath(SystemDirectories.Packages)))
-                Directory.CreateDirectory(IOHelper.MapPath(SystemDirectories.Packages));
+            if (!Directory.Exists(Umbraco.Core.IO.IOHelper.MapPath(Umbraco.Core.IO.SystemDirectories.Packages)))
+                Directory.CreateDirectory(Umbraco.Core.IO.IOHelper.MapPath(Umbraco.Core.IO.SystemDirectories.Packages));
 
             var wc = new System.Net.WebClient();
 
             wc.DownloadFile(
                 "http://" + UmbracoSettings.PackageServer + "/fetch?package=" + Package.ToString(),
-                IOHelper.MapPath(SystemDirectories.Packages + "/" + Package.ToString() + ".umb"));
+                Umbraco.Core.IO.IOHelper.MapPath(Umbraco.Core.IO.SystemDirectories.Packages + "/" + Package.ToString() + ".umb"));
 
             return "packages\\" + Package.ToString() + ".umb";
         }
@@ -956,19 +956,19 @@ namespace umbraco.cms.businesslogic.packager
         private static String GetFileName(String path, string fileName)
         {
             // virtual dir support
-            fileName = IOHelper.FindFile(fileName);
+            fileName = Umbraco.Core.IO.IOHelper.FindFile(fileName);
 
             if (path.Contains("[$"))
             {
                 //this is experimental and undocumented...
-                path = path.Replace("[$UMBRACO]", IO.SystemDirectories.Umbraco);
-                path = path.Replace("[$UMBRACOCLIENT]", IO.SystemDirectories.Umbraco_client);
-                path = path.Replace("[$CONFIG]", IO.SystemDirectories.Config);
-                path = path.Replace("[$DATA]", IO.SystemDirectories.Data);
+                path = path.Replace("[$UMBRACO]", Umbraco.Core.IO.SystemDirectories.Umbraco);
+                path = path.Replace("[$UMBRACOCLIENT]", Umbraco.Core.IO.SystemDirectories.UmbracoClient);
+                path = path.Replace("[$CONFIG]", Umbraco.Core.IO.SystemDirectories.Config);
+                path = path.Replace("[$DATA]", Umbraco.Core.IO.SystemDirectories.Data);
             }
 
             //to support virtual dirs we try to lookup the file... 
-            path = IOHelper.FindFile(path);
+            path = Umbraco.Core.IO.IOHelper.FindFile(path);
 
 
 
@@ -1018,7 +1018,7 @@ namespace umbraco.cms.businesslogic.packager
         private static string UnPack(string zipName)
         {
             // Unzip
-            string tempDir = IOHelper.MapPath(SystemDirectories.Data) + Path.DirectorySeparatorChar + Guid.NewGuid().ToString();
+            string tempDir = Umbraco.Core.IO.IOHelper.MapPath(Umbraco.Core.IO.SystemDirectories.Data) + Path.DirectorySeparatorChar + Guid.NewGuid().ToString();
             Directory.CreateDirectory(tempDir);
 
             var s = new ZipInputStream(File.OpenRead(zipName));

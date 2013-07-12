@@ -138,7 +138,7 @@ namespace Umbraco.Core.Models
             {
                 var styleSheet = parser.StyleSheet;//Get stylesheet to invoke parsing
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 //Log exception?
                 return false;

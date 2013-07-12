@@ -5,7 +5,6 @@ using umbraco.cms.businesslogic.web;
 using umbraco.presentation.LiveEditing.Controls;
 using umbraco.BusinessLogic.Actions;
 using ClientDependency.Core;
-using umbraco.IO;
 namespace umbraco.presentation.LiveEditing.Modules.UnpublishModule
 {
     [ClientDependency(200, ClientDependencyType.Javascript, "LiveEditing/Modules/UnpublishModule/UnpublishModule.js", "UmbracoRoot")]
@@ -70,7 +69,7 @@ namespace umbraco.presentation.LiveEditing.Modules.UnpublishModule
             m_UnpublishButton.ID = "LeUnpublishButton";
             m_UnpublishButton.CssClass = "button";
             m_UnpublishButton.ToolTip = "Unpublish";
-            m_UnpublishButton.ImageUrl = String.Format("{0}/LiveEditing/Modules/UnpublishModule/unpublish.png", SystemDirectories.Umbraco);
+            m_UnpublishButton.ImageUrl = String.Format("{0}/LiveEditing/Modules/UnpublishModule/unpublish.png", Umbraco.Core.IO.SystemDirectories.Umbraco);
             m_UnpublishButton.Visible = UmbracoContext.Current.HasPermission(ActionUnPublish.Instance.Letter);
             m_UnpublishButton.OnClientClick = "jQuery('#" + m_UnpublishModal.ClientID + @"').ModalWindowShow('" + ui.GetText("unPublish") + "',true,300,200,50,0, ['.modalbuton'], null);return false;";
 

@@ -8,7 +8,6 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.IO;
-using umbraco.IO;
 
 namespace umbraco.cms.businesslogic.packager
 {
@@ -17,27 +16,35 @@ namespace umbraco.cms.businesslogic.packager
 
 		public static string PackagerRoot
 		{
-            get { return SystemDirectories.Packages; }
+            get { return Umbraco.Core.IO.SystemDirectories.Packages; }
 		}
 
 		public static string PackagesStorage
 		{
-            get { return SystemDirectories.Packages + IOHelper.DirSepChar + "created"; }
+            get { return Umbraco.Core.IO.SystemDirectories.Packages + Umbraco.Core.IO.IOHelper.DirSepChar + "created"; }
 		}
 
 		public static string InstalledPackagesStorage
 		{
-            get { return SystemDirectories.Packages + IOHelper.DirSepChar + "installed"; }
+            get { return Umbraco.Core.IO.SystemDirectories.Packages + Umbraco.Core.IO.IOHelper.DirSepChar + "installed"; }
 		}
 
 		public static string InstalledPackagesSettings
 		{
-            get { return SystemDirectories.Packages + IOHelper.DirSepChar + "installed" + IOHelper.DirSepChar + "installedPackages.config"; }
+            get
+            {
+                return Umbraco.Core.IO.SystemDirectories.Packages + Umbraco.Core.IO.IOHelper.DirSepChar + "installed" +
+                Umbraco.Core.IO.IOHelper.DirSepChar + "installedPackages.config";
+            }
 		}
 
 		public static string CreatedPackagesSettings
 		{
-            get { return SystemDirectories.Packages + IOHelper.DirSepChar + "created" + IOHelper.DirSepChar + "createdPackages.config"; }
+            get
+            {
+                return Umbraco.Core.IO.SystemDirectories.Packages + Umbraco.Core.IO.IOHelper.DirSepChar + "created" +
+                Umbraco.Core.IO.IOHelper.DirSepChar + "createdPackages.config";
+            }
 		}
 
 		public static string PackageFileExtension
@@ -52,17 +59,17 @@ namespace umbraco.cms.businesslogic.packager
 			StreamWriter sw2 = null;
 			try
 			{
-				sw1 = System.IO.File.AppendText(IOHelper.MapPath(InstalledPackagesSettings));
+                sw1 = System.IO.File.AppendText(Umbraco.Core.IO.IOHelper.MapPath(InstalledPackagesSettings));
 				sw1.Close();
 
-                sw2 = System.IO.File.AppendText(IOHelper.MapPath(CreatedPackagesSettings));
+                sw2 = System.IO.File.AppendText(Umbraco.Core.IO.IOHelper.MapPath(CreatedPackagesSettings));
 				sw1.Close();
 
-                System.IO.Directory.CreateDirectory(IOHelper.MapPath(PackagesStorage) + IOHelper.DirSepChar + "__testFolder__");
-                System.IO.Directory.CreateDirectory(IOHelper.MapPath(InstalledPackagesStorage) + IOHelper.DirSepChar + "__testFolder__");
+                System.IO.Directory.CreateDirectory(Umbraco.Core.IO.IOHelper.MapPath(PackagesStorage) + Umbraco.Core.IO.IOHelper.DirSepChar + "__testFolder__");
+                System.IO.Directory.CreateDirectory(Umbraco.Core.IO.IOHelper.MapPath(InstalledPackagesStorage) + Umbraco.Core.IO.IOHelper.DirSepChar + "__testFolder__");
 
-                System.IO.Directory.Delete(IOHelper.MapPath(PackagesStorage) + IOHelper.DirSepChar + "__testFolder__", true);
-                System.IO.Directory.Delete(IOHelper.MapPath(InstalledPackagesStorage) + IOHelper.DirSepChar + "__testFolder__", true);
+                System.IO.Directory.Delete(Umbraco.Core.IO.IOHelper.MapPath(PackagesStorage) + Umbraco.Core.IO.IOHelper.DirSepChar + "__testFolder__", true);
+                System.IO.Directory.Delete(Umbraco.Core.IO.IOHelper.MapPath(InstalledPackagesStorage) + Umbraco.Core.IO.IOHelper.DirSepChar + "__testFolder__", true);
 
 				hasAccess = true;
 			}

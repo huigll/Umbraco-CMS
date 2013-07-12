@@ -6,7 +6,7 @@ using Umbraco.Core.Logging;
 using umbraco.BusinessLogic;
 using umbraco.DataLayer;
 using umbraco.BasePages;
-using umbraco.IO;
+
 using umbraco.cms.businesslogic.member;
 
 namespace umbraco
@@ -74,19 +74,19 @@ namespace umbraco
             string scriptContent = "";
             if (!string.IsNullOrEmpty(template))
             {
-                System.IO.StreamReader templateFile = System.IO.File.OpenText(IOHelper.MapPath(IO.SystemDirectories.Umbraco + "/scripting/templates/" + template));
+                System.IO.StreamReader templateFile = System.IO.File.OpenText(Umbraco.Core.IO.IOHelper.MapPath(Umbraco.Core.IO.SystemDirectories.Umbraco + "/scripting/templates/" + template));
                 scriptContent = templateFile.ReadToEnd();
                 templateFile.Close();
             }
 
-			string abFileName = IOHelper.MapPath(SystemDirectories.MacroScripts + "/" + fileName);
+            string abFileName = Umbraco.Core.IO.IOHelper.MapPath(Umbraco.Core.IO.SystemDirectories.MacroScripts + "/" + fileName);
 
 			if (!System.IO.File.Exists(abFileName))
 			{
 				if (fileName.Contains("/")) //if there's a / create the folder structure for it
 				{
 					string[] folders = fileName.Split("/".ToCharArray());
-					string basePath = IOHelper.MapPath(SystemDirectories.MacroScripts);
+                    string basePath = Umbraco.Core.IO.IOHelper.MapPath(Umbraco.Core.IO.SystemDirectories.MacroScripts);
 					for (int i = 0; i < folders.Length - 1; i++)
 					{
 						basePath = System.IO.Path.Combine(basePath, folders[i]);
@@ -110,14 +110,14 @@ namespace umbraco
 				}
 			}
 
-            m_returnUrl = string.Format(SystemDirectories.Umbraco + "/developer/python/editPython.aspx?file={0}", fileName);
+            m_returnUrl = string.Format(Umbraco.Core.IO.SystemDirectories.Umbraco + "/developer/python/editPython.aspx?file={0}", fileName);
             return true;
         }
 
         public bool Delete()
         {
 
-            string path = IOHelper.MapPath(SystemDirectories.MacroScripts + "/" + Alias.TrimStart('/'));
+            string path = Umbraco.Core.IO.IOHelper.MapPath(Umbraco.Core.IO.SystemDirectories.MacroScripts + "/" + Alias.TrimStart('/'));
 
             System.Web.HttpContext.Current.Trace.Warn("", "*" + path + "*");
             try

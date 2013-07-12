@@ -6,7 +6,6 @@ using umbraco.presentation.LiveEditing.Controls;
 using Content = umbraco.cms.businesslogic.Content;
 using umbraco.BusinessLogic.Actions;
 using ClientDependency.Core;
-using umbraco.IO;
 namespace umbraco.presentation.LiveEditing.Modules.CreateModule
 {
 	[ClientDependency(200, ClientDependencyType.Javascript, "LiveEditing/Modules/CreateModule/CreateModule.js", "UmbracoRoot")]
@@ -81,7 +80,7 @@ namespace umbraco.presentation.LiveEditing.Modules.CreateModule
             m_CreateButton.ID = "LeCreateButton";
             m_CreateButton.CssClass = "button";
             m_CreateButton.ToolTip = ui.GetText("create");
-            m_CreateButton.ImageUrl = String.Format("{0}/LiveEditing/Modules/CreateModule/create.png", SystemDirectories.Umbraco);
+            m_CreateButton.ImageUrl = String.Format("{0}/LiveEditing/Modules/CreateModule/create.png", Umbraco.Core.IO.SystemDirectories.Umbraco);
             m_CreateButton.Visible = UmbracoContext.Current.HasPermission(ActionNew.Instance.Letter);
             m_CreateButton.OnClientClick = "jQuery('#" + m_CreateModal.ClientID + @"').ModalWindowShow('" + ui.GetText("create") + "',true,300,200,50,0, ['.modalbuton'], null);return false;";
             

@@ -14,7 +14,6 @@ using umbraco.BasePages;
 using System.Collections.Generic;
 using umbraco.interfaces;
 using umbraco.BusinessLogic.Actions;
-using umbraco.IO;
 
 namespace umbraco.cms.presentation.user
 {
@@ -41,7 +40,7 @@ namespace umbraco.cms.presentation.user
 
             Page page = new Page();
 
-            string path = SystemDirectories.Umbraco + "/users/NodePermissions.ascx";
+            string path = Umbraco.Core.IO.SystemDirectories.Umbraco + "/users/NodePermissions.ascx";
             NodePermissions nodePermissions = page.LoadControl(path) as NodePermissions;
 
             nodePermissions.UserID = userID;

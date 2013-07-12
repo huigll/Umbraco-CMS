@@ -3,7 +3,6 @@ using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using umbraco.controls.Images;
-using umbraco.IO;
 
 namespace umbraco.editorControls.MultiNodeTreePicker
 {
@@ -26,7 +25,7 @@ namespace umbraco.editorControls.MultiNodeTreePicker
 
             var page = (Page)HttpContext.Current.CurrentHandler;
             var imgPreview = (ImageViewer)page.LoadControl(
-                string.Concat(SystemDirectories.Umbraco, "/controls/Images/ImageViewer.ascx"));
+                string.Concat(Umbraco.Core.IO.SystemDirectories.Umbraco, "/controls/Images/ImageViewer.ascx"));
 
             imgPreview.ID = "ImgPreview";
             imgPreview.Visible = false; //hidden by default

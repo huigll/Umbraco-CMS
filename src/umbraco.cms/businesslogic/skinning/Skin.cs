@@ -99,7 +99,7 @@ namespace umbraco.cms.businesslogic.skinning
 
         public static Skin CreateFromAlias(string alias)
         {
-            string manifest = Path.Combine(IO.IOHelper.MapPath( IO.SystemDirectories.Masterpages + "/" + alias), "skin.xml");
+            string manifest = Path.Combine(Umbraco.Core.IO.IOHelper.MapPath(Umbraco.Core.IO.SystemDirectories.Masterpages + "/" + alias), "skin.xml");
             return CreateFromFile(manifest);
         }
 
@@ -115,12 +115,12 @@ namespace umbraco.cms.businesslogic.skinning
         }
         public bool OverridesTemplates()
         {
-            return (System.IO.Directory.GetFiles(IO.IOHelper.MapPath(SkinFolder), "*.master").Count() > 0);
+            return (System.IO.Directory.GetFiles(Umbraco.Core.IO.IOHelper.MapPath(SkinFolder), "*.master").Count() > 0);
         }
 
         public bool HasBackupFiles()
         {
-            return System.IO.Directory.Exists( IO.IOHelper.MapPath(SkinBackupFolder) );
+            return System.IO.Directory.Exists(Umbraco.Core.IO.IOHelper.MapPath(SkinBackupFolder));
         }
         
 
@@ -222,24 +222,24 @@ namespace umbraco.cms.businesslogic.skinning
 
         public void DeployTemplateFiles()
         {
-            DeployTemplateFiles(IO.SystemDirectories.Masterpages);
+            DeployTemplateFiles(Umbraco.Core.IO.SystemDirectories.Masterpages);
         }
 
 
         public void DeployTemplateFiles(string folder)
         {
-            string[] masterFiles = System.IO.Directory.GetFiles(IO.IOHelper.MapPath(SkinFolder), "*.master");
+            string[] masterFiles = System.IO.Directory.GetFiles(Umbraco.Core.IO.IOHelper.MapPath(SkinFolder), "*.master");
 
             if (masterFiles.Count() > 0)
             {
-                if (!System.IO.Directory.Exists(IO.IOHelper.MapPath(SkinBackupFolder)))
-                    System.IO.Directory.CreateDirectory(IO.IOHelper.MapPath(SkinBackupFolder));
+                if (!System.IO.Directory.Exists(Umbraco.Core.IO.IOHelper.MapPath(SkinBackupFolder)))
+                    System.IO.Directory.CreateDirectory(Umbraco.Core.IO.IOHelper.MapPath(SkinBackupFolder));
 
                 foreach (string master in masterFiles)
                 {
                     FileInfo fi = new FileInfo(master);
-                    string original = Path.Combine(IO.IOHelper.MapPath(IO.SystemDirectories.Masterpages), fi.Name);
-                    string backup = Path.Combine(IO.IOHelper.MapPath(SkinBackupFolder), fi.Name);
+                    string original = Path.Combine(Umbraco.Core.IO.IOHelper.MapPath(Umbraco.Core.IO.SystemDirectories.Masterpages), fi.Name);
+                    string backup = Path.Combine(Umbraco.Core.IO.IOHelper.MapPath(SkinBackupFolder), fi.Name);
 
                     if (System.IO.File.Exists(original))
                         System.IO.File.Copy(original, backup, true);
@@ -251,12 +251,12 @@ namespace umbraco.cms.businesslogic.skinning
 
 
         public void RollbackTemplateFiles(){
-            RollbackTemplateFiles(IO.SystemDirectories.Masterpages);
+            RollbackTemplateFiles(Umbraco.Core.IO.SystemDirectories.Masterpages);
         }
 
         public void RollbackTemplateFiles(string folder)
         {
-            string[] masterFiles = System.IO.Directory.GetFiles(IO.IOHelper.MapPath(SkinFolder), "*.master");
+            string[] masterFiles = System.IO.Directory.GetFiles(Umbraco.Core.IO.IOHelper.MapPath(SkinFolder), "*.master");
 
             //1. take the skin files back into skin folder to store the changes made
             if (masterFiles.Count() > 0)
@@ -264,7 +264,7 @@ namespace umbraco.cms.businesslogic.skinning
                 foreach (string master in masterFiles)
                 {
                     FileInfo fi = new FileInfo(master);
-                    string inUse = Path.Combine(IO.IOHelper.MapPath(IO.SystemDirectories.Masterpages), fi.Name);
+                    string inUse = Path.Combine(Umbraco.Core.IO.IOHelper.MapPath(Umbraco.Core.IO.SystemDirectories.Masterpages), fi.Name);
 
 
                     if (System.IO.File.Exists(inUse))
@@ -274,11 +274,11 @@ namespace umbraco.cms.businesslogic.skinning
 
 
             //2. copy the /backup files back to the masterpages to restore the templates to the way they were before the skin was applied
-            string[] backedUpmasterFiles = System.IO.Directory.GetFiles(IO.IOHelper.MapPath(SkinBackupFolder), "*.master");
+            string[] backedUpmasterFiles = System.IO.Directory.GetFiles(Umbraco.Core.IO.IOHelper.MapPath(SkinBackupFolder), "*.master");
             foreach (string backup in backedUpmasterFiles)
             {
                 FileInfo fi = new FileInfo(backup);
-                string inUse = Path.Combine(IO.IOHelper.MapPath(IO.SystemDirectories.Masterpages), fi.Name);
+                string inUse = Path.Combine(Umbraco.Core.IO.IOHelper.MapPath(Umbraco.Core.IO.SystemDirectories.Masterpages), fi.Name);
 
                 System.IO.File.Copy(backup, inUse, true);
                 System.IO.File.Delete(backup);
@@ -328,7 +328,7 @@ namespace umbraco.cms.businesslogic.skinning
         {
             get
             {
-                return IO.SystemDirectories.Masterpages + "/" + Alias;
+                return Umbraco.Core.IO.SystemDirectories.Masterpages + "/" + Alias;
             }
         }
 

@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using Umbraco.Core.ObjectResolution;
-using umbraco.IO;
+
 
 namespace Umbraco.Web.Media.ThumbnailProviders
 {
@@ -31,8 +31,8 @@ namespace Umbraco.Web.Media.ThumbnailProviders
                 return false;
 
             // Make sure the thumbnail exists
-            var tmpThumbUrl = IOHelper.ResolveUrl(SystemDirectories.Umbraco + "/images/mediaThumbnails/"+ ext.TrimStart('.') +".png");
-            if (!File.Exists(IOHelper.MapPath(tmpThumbUrl)))
+            var tmpThumbUrl = Umbraco.Core.IO.IOHelper.ResolveUrl(Umbraco.Core.IO.SystemDirectories.Umbraco + "/images/mediaThumbnails/" + ext.TrimStart('.') + ".png");
+            if (!File.Exists(Umbraco.Core.IO.IOHelper.MapPath(tmpThumbUrl)))
                 return false;
 
             // We've got this far, so thumbnail must exist

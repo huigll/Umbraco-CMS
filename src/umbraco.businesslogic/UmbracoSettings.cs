@@ -3,7 +3,7 @@ using System.Linq;
 using System.Xml;
 using Umbraco.Core;
 using System.Collections.Generic;
-using umbraco.MacroEngines;
+//using umbraco.MacroEngines;
 
 namespace umbraco
 {
@@ -213,14 +213,15 @@ namespace umbraco
 			get { return Umbraco.Core.Configuration.UmbracoSettings.NotDynamicXmlDocumentElements.ToList(); }
         }
 
-        public static List<RazorDataTypeModelStaticMappingItem> RazorDataTypeModelStaticMapping
+        public static List<Umbraco.Core.Configuration.RazorDataTypeModelStaticMappingItem> RazorDataTypeModelStaticMapping
         {
 			get
 			{
+                
 				var mapping = Umbraco.Core.Configuration.UmbracoSettings.RazorDataTypeModelStaticMapping;
 				
 				//now we need to map to the old object until we can clean all this nonsense up
-				return mapping.Select(x => new RazorDataTypeModelStaticMappingItem()
+                return mapping.Select(x => new Umbraco.Core.Configuration.RazorDataTypeModelStaticMappingItem()
 					{
 						DataTypeGuid = x.DataTypeGuid,
 						NodeTypeAlias = x.NodeTypeAlias,
@@ -521,16 +522,16 @@ namespace umbraco
 			get { return Umbraco.Core.Configuration.UmbracoSettings.UseLegacyXmlSchema; }
         }
 
-    	public static IEnumerable<string> AppCodeFileExtensionsList
-    	{
-			get { return Umbraco.Core.Configuration.UmbracoSettings.AppCodeFileExtensionsList; }
-    	}
+        //public static IEnumerable<string> AppCodeFileExtensionsList
+        //{
+        //    get { return Umbraco.Core.Configuration.UmbracoSettings.AppCodeFileExtensionsList; }
+        //}
 
-		[Obsolete("Use AppCodeFileExtensionsList instead")]
-        public static XmlNode AppCodeFileExtensions
-        {
-			get { return Umbraco.Core.Configuration.UmbracoSettings.AppCodeFileExtensions; }
-        }
+        //[Obsolete("Use AppCodeFileExtensionsList instead")]
+        //public static XmlNode AppCodeFileExtensions
+        //{
+        //    get { return Umbraco.Core.Configuration.UmbracoSettings.AppCodeFileExtensions; }
+        //}
 
         /// <summary>
         /// Tells us whether the Xml to always update disk cache, when changes are made to content

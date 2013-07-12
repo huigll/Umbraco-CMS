@@ -22,7 +22,7 @@ namespace Umbraco.Core.Models
         private Guid _dataTypeId;
         private DataTypeDatabaseType _dataTypeDatabaseType;
         private bool _mandatory;
-        private string _helpText;
+   //     private string _helpText;
         private int _sortOrder;
         private string _validationRegExp;
 
@@ -48,7 +48,7 @@ namespace Umbraco.Core.Models
         private static readonly PropertyInfo DataTypeControlIdSelector = ExpressionHelper.GetPropertyInfo<PropertyType, Guid>(x => x.DataTypeId);
         private static readonly PropertyInfo DataTypeDatabaseTypeSelector = ExpressionHelper.GetPropertyInfo<PropertyType, DataTypeDatabaseType>(x => x.DataTypeDatabaseType);
         private static readonly PropertyInfo MandatorySelector = ExpressionHelper.GetPropertyInfo<PropertyType, bool>(x => x.Mandatory);
-        private static readonly PropertyInfo HelpTextSelector = ExpressionHelper.GetPropertyInfo<PropertyType, string>(x => x.HelpText);
+        //private static readonly PropertyInfo HelpTextSelector = ExpressionHelper.GetPropertyInfo<PropertyType, string>(x => x.HelpText);
         private static readonly PropertyInfo SortOrderSelector = ExpressionHelper.GetPropertyInfo<PropertyType, int>(x => x.SortOrder);
         private static readonly PropertyInfo ValidationRegExpSelector = ExpressionHelper.GetPropertyInfo<PropertyType, string>(x => x.ValidationRegExp);
         private static readonly PropertyInfo PropertyGroupIdSelector = ExpressionHelper.GetPropertyInfo<PropertyType, Lazy<int>>(x => x.PropertyGroupId);
@@ -191,23 +191,23 @@ namespace Umbraco.Core.Models
             }
         }
 
-        /// <summary>
-        /// Gets of Sets the Help text for the current PropertyType
-        /// </summary>
-        [DataMember]
-        [Obsolete("Not used anywhere in the UI")]
-        public string HelpText
-        {
-            get { return _helpText; }
-            set
-            {
-                SetPropertyValueAndDetectChanges(o =>
-                {
-                    _helpText = value;
-                    return _helpText;
-                }, _helpText, HelpTextSelector);
-            }
-        }
+        ///// <summary>
+        ///// Gets of Sets the Help text for the current PropertyType
+        ///// </summary>
+        //[DataMember]
+        //[Obsolete("Not used anywhere in the UI")]
+        //public string HelpText
+        //{
+        //    get { return _helpText; }
+        //    set
+        //    {
+        //        SetPropertyValueAndDetectChanges(o =>
+        //        {
+        //            _helpText = value;
+        //            return _helpText;
+        //        }, _helpText, HelpTextSelector);
+        //    }
+        //}
 
         /// <summary>
         /// Gets of Sets the Sort order of the PropertyType, which is used for sorting within a group

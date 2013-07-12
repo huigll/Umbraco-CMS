@@ -8,7 +8,6 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.HtmlControls;
 using umbraco.cms.businesslogic.web;
-using umbraco.IO;
 
 namespace umbraco.presentation.actions
 {
@@ -27,8 +26,9 @@ namespace umbraco.presentation.actions
         /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            Document doc = new Document(int.Parse(helper.Request("id")));       
-            Response.Redirect(IOHelper.ResolveUrl(string.Format("{0}/dialogs/preview.aspx?id= {1}", IO.SystemDirectories.Umbraco, doc.Id)));
+            Document doc = new Document(int.Parse(helper.Request("id")));
+            Response.Redirect(Umbraco.Core.IO.IOHelper.ResolveUrl(string.Format("{0}/dialogs/preview.aspx?id= {1}",
+                Umbraco.Core.IO.SystemDirectories.Umbraco, doc.Id)));
         }
     }
 }

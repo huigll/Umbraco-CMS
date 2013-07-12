@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Xml;
-using umbraco.IO;
 
 namespace umbraco.cms.businesslogic.packager.standardPackageActions
 {
@@ -14,7 +13,7 @@ namespace umbraco.cms.businesslogic.packager.standardPackageActions
 			string _assembly = xmlData.Attributes["assembly"].Value;
 			string _type = xmlData.Attributes["type"].Value;
 			string _alias = xmlData.Attributes["extensionAlias"].Value;
-			string xeConfig = SystemFiles.XsltextensionsConfig;
+            string xeConfig = Umbraco.Core.IO.SystemFiles.XsltextensionsConfig;
 
 			XmlDocument xdoc = new XmlDocument();
 			xdoc.PreserveWhitespace = true;
@@ -42,7 +41,7 @@ namespace umbraco.cms.businesslogic.packager.standardPackageActions
 					xn.AppendChild(newExt);
 
 
-					xdoc.Save(IOHelper.MapPath(xeConfig));
+                    xdoc.Save(Umbraco.Core.IO.IOHelper.MapPath(xeConfig));
 					return true;
 				}
 			}
@@ -59,7 +58,7 @@ namespace umbraco.cms.businesslogic.packager.standardPackageActions
 			string _assembly = xmlData.Attributes["assembly"].Value;
 			string _type = xmlData.Attributes["type"].Value;
 			string _alias = xmlData.Attributes["extensionAlias"].Value;
-			string xeConfig = SystemFiles.XsltextensionsConfig;
+            string xeConfig = Umbraco.Core.IO.SystemFiles.XsltextensionsConfig;
 
 			XmlDocument xdoc = new XmlDocument();
 			xdoc.PreserveWhitespace = true;
@@ -84,7 +83,7 @@ namespace umbraco.cms.businesslogic.packager.standardPackageActions
 
 				if (inserted)
 				{
-					xdoc.Save(IOHelper.MapPath(xeConfig));
+                    xdoc.Save(Umbraco.Core.IO.IOHelper.MapPath(xeConfig));
 					return true;
 				}
 			}

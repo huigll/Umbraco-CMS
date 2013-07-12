@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Umbraco.Core.Logging;
-using umbraco.IO;
 
 namespace umbraco.cms.businesslogic.packager {
     public class InstalledPackage
@@ -11,19 +10,19 @@ namespace umbraco.cms.businesslogic.packager {
 
         public static InstalledPackage GetById(int id) {
             InstalledPackage pack = new InstalledPackage();
-            pack.Data = data.Package(id, IOHelper.MapPath(Settings.InstalledPackagesSettings));
+            pack.Data = data.Package(id, Umbraco.Core.IO.IOHelper.MapPath(Settings.InstalledPackagesSettings));
             return pack;
         }
 
         public static InstalledPackage GetByGuid(string packageGuid) {
             InstalledPackage pack = new InstalledPackage();
-            pack.Data = data.Package(packageGuid, IOHelper.MapPath(Settings.InstalledPackagesSettings));
+            pack.Data = data.Package(packageGuid, Umbraco.Core.IO.IOHelper.MapPath(Settings.InstalledPackagesSettings));
             return pack;
         }
 
         public static InstalledPackage MakeNew(string name) {
             InstalledPackage pack = new InstalledPackage();
-            pack.Data = data.MakeNew(name, IOHelper.MapPath(Settings.InstalledPackagesSettings));
+            pack.Data = data.MakeNew(name, Umbraco.Core.IO.IOHelper.MapPath(Settings.InstalledPackagesSettings));
             pack.OnNew(EventArgs.Empty);
             return pack;
         }
@@ -35,7 +34,7 @@ namespace umbraco.cms.businesslogic.packager {
             LogHelper.Info<InstalledPackage>("The InstalledPackage class save method has been hit " + _saveHitCount + " times.");
 #endif
             this.FireBeforeSave(EventArgs.Empty);
-            data.Save(this.Data, IOHelper.MapPath(Settings.InstalledPackagesSettings));
+            data.Save(this.Data, Umbraco.Core.IO.IOHelper.MapPath(Settings.InstalledPackagesSettings));
             this.FireAfterSave(EventArgs.Empty);
         }
 
@@ -43,7 +42,7 @@ namespace umbraco.cms.businesslogic.packager {
 
             List<InstalledPackage> val = new List<InstalledPackage>();
 
-            foreach (PackageInstance pack in data.GetAllPackages(IOHelper.MapPath(Settings.InstalledPackagesSettings)))
+            foreach (PackageInstance pack in data.GetAllPackages(Umbraco.Core.IO.IOHelper.MapPath(Settings.InstalledPackagesSettings)))
             {
                 InstalledPackage insPackage = new InstalledPackage();
                 insPackage.Data = pack;
@@ -62,14 +61,14 @@ namespace umbraco.cms.businesslogic.packager {
 
         public void Delete() {
             this.FireBeforeDelete(EventArgs.Empty);
-            data.Delete(this.Data.Id, IOHelper.MapPath(Settings.InstalledPackagesSettings));
+            data.Delete(this.Data.Id, Umbraco.Core.IO.IOHelper.MapPath(Settings.InstalledPackagesSettings));
             this.FireAfterDelete(EventArgs.Empty);
         }
 
         public static bool isPackageInstalled(string packageGuid) {
 			try
 			{
-				if (data.GetFromGuid(packageGuid, IOHelper.MapPath(Settings.InstalledPackagesSettings), true) == null)
+                if (data.GetFromGuid(packageGuid, Umbraco.Core.IO.IOHelper.MapPath(Settings.InstalledPackagesSettings), true) == null)
 					return false;
 				else
 					return true;

@@ -10,7 +10,6 @@ using Umbraco.Tests.TestHelpers;
 using Umbraco.Web;
 using Umbraco.Web.Routing;
 using umbraco.BusinessLogic;
-using umbraco.IO;
 using umbraco.cms.businesslogic.cache;
 using umbraco.cms.businesslogic.template;
 

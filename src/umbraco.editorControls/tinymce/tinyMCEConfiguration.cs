@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Text;
 using System.Collections;
 using System.Xml;
-using umbraco.IO;
 
 namespace umbraco.editorControls.tinymce
 {
@@ -43,8 +42,8 @@ namespace umbraco.editorControls.tinymce
             set { _validElements = value; }
         }
 
-        public static string PluginPath = IOHelper.ResolveUrl( SystemDirectories.Umbraco ) + "/plugins/tinymce3";
-        public static string JavascriptPath = IOHelper.ResolveUrl( SystemDirectories.Umbraco_client ) + "/tinymce3";
+        public static string PluginPath = Umbraco.Core.IO.IOHelper.ResolveUrl(Umbraco.Core.IO.SystemDirectories.Umbraco) + "/plugins/tinymce3";
+        public static string JavascriptPath = Umbraco.Core.IO.IOHelper.ResolveUrl(Umbraco.Core.IO.SystemDirectories.UmbracoClient) + "/tinymce3";
 
         private static string _invalidElements;
 
@@ -103,7 +102,7 @@ namespace umbraco.editorControls.tinymce
         {
             // Load config
             XmlDocument xd = new XmlDocument();
-            xd.Load( IOHelper.MapPath( SystemFiles.TinyMceConfig ) );
+            xd.Load(Umbraco.Core.IO.IOHelper.MapPath(Umbraco.Core.IO.SystemFiles.TinyMceConfig));
 
             foreach (XmlNode n in xd.DocumentElement.SelectNodes("//command"))
             {
@@ -224,7 +223,7 @@ namespace umbraco.editorControls.tinymce
 
         public string Icon
         {
-            get { return IOHelper.ResolveUrl( SystemDirectories.Umbraco ) + "/" + _icon; }
+            get { return Umbraco.Core.IO.IOHelper.ResolveUrl(Umbraco.Core.IO.SystemDirectories.Umbraco) + "/" + _icon; }
             set { _icon = value; }
         }
 

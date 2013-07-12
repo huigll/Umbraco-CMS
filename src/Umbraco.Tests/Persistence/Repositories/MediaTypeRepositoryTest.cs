@@ -75,7 +75,7 @@ namespace Umbraco.Tests.Persistence.Repositories
                 Alias = "subtitle",
                 Name = "Subtitle",
                 Description = "Optional Subtitle",
-                HelpText = "",
+                
                 Mandatory = false,
                 SortOrder = 1,
                 DataTypeDefinitionId = -88

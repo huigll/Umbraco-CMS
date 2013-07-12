@@ -9,8 +9,7 @@ namespace dashboardUtilities
     using umbraco;
     using umbraco.BasePages;
     using umbraco.BusinessLogic;
-    using umbraco.IO;
-
+    
     public partial class FeedProxy : UmbracoEnsuredPage
     {
         protected void Page_Load(object sender, EventArgs e)
@@ -26,7 +25,7 @@ namespace dashboardUtilities
                         Uri requestUri;
                         if (Uri.TryCreate(url, UriKind.Absolute, out requestUri))
                         {
-                            var feedProxyXml = Umbraco.Core.XmlHelper.OpenAsXmlDocument(IOHelper.MapPath(SystemFiles.FeedProxyConfig));
+                            var feedProxyXml = Umbraco.Core.XmlHelper.OpenAsXmlDocument(Umbraco.Core.IO.IOHelper.MapPath(Umbraco.Core.IO.SystemFiles.FeedProxyConfig));
                             if (feedProxyXml != null && feedProxyXml.SelectSingleNode(string.Concat("//allow[@host = '", requestUri.Host, "']")) != null)
                             {
                                 using (var client = new WebClient())

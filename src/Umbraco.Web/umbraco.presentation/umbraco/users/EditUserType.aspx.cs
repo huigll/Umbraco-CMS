@@ -15,7 +15,6 @@ using umbraco.BusinessLogic.Actions;
 using umbraco.BusinessLogic;
 using umbraco.uicontrols;
 using umbraco.cms.presentation.Trees;
-using umbraco.IO;
 
 namespace umbraco.cms.presentation.user
 {
@@ -30,7 +29,7 @@ namespace umbraco.cms.presentation.user
             pnlUmbraco.Text = umbraco.ui.Text("usertype", base.getUser());
 
             ImageButton save = pnlUmbraco.Menu.NewImageButton();
-            save.ImageUrl = SystemDirectories.Umbraco + "/images/editor/save.gif";
+            save.ImageUrl = Umbraco.Core.IO.SystemDirectories.Umbraco + "/images/editor/save.gif";
             save.Click += new ImageClickEventHandler(save_Click);
             save.ID = "save";
             pp_alias.Text = umbraco.ui.Text("usertype", base.getUser()) + " " + umbraco.ui.Text("alias", base.getUser());

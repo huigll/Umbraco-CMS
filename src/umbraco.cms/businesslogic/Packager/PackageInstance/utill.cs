@@ -18,7 +18,6 @@ using umbraco.cms.businesslogic.template;
 using umbraco.cms.businesslogic.web;
 using umbraco.cms.businesslogic.macro;
 using ICSharpCode.SharpZipLib.Zip;
-using umbraco.IO;
 
 namespace umbraco.cms.businesslogic.packager {
     /// <summary>
@@ -134,9 +133,9 @@ namespace umbraco.cms.businesslogic.packager {
          
             if (appendFile) {
                 if (!string.IsNullOrEmpty(mcr.Xslt))
-                    AppendFileToManifest(IOHelper.ResolveUrl(SystemDirectories.Xslt) + "/" + mcr.Xslt, packageDirectory, doc);
+                    AppendFileToManifest(Umbraco.Core.IO.IOHelper.ResolveUrl(Umbraco.Core.IO.SystemDirectories.Xslt) + "/" + mcr.Xslt, packageDirectory, doc);
                 if (!string.IsNullOrEmpty(mcr.ScriptingFile))
-                    AppendFileToManifest(IOHelper.ResolveUrl(SystemDirectories.MacroScripts) + "/" + mcr.ScriptingFile, packageDirectory, doc);
+                    AppendFileToManifest(Umbraco.Core.IO.IOHelper.ResolveUrl(Umbraco.Core.IO.SystemDirectories.MacroScripts) + "/" + mcr.ScriptingFile, packageDirectory, doc);
 
                 if (!string.IsNullOrEmpty(mcr.Type))
                     AppendFileToManifest(mcr.Type, packageDirectory, doc);
@@ -156,8 +155,8 @@ namespace umbraco.cms.businesslogic.packager {
 
             if (!path.StartsWith("~/") && !path.StartsWith("/"))
                 path = "~/" + path;
-            
-            string serverPath = IOHelper.MapPath(path);
+
+            string serverPath = Umbraco.Core.IO.IOHelper.MapPath(path);
 
             if (System.IO.File.Exists(serverPath)) {
 
@@ -173,7 +172,7 @@ namespace umbraco.cms.businesslogic.packager {
 
         //Process files in directory and add them to package
         private static void ProcessDirectory(string path, string packageDirectory, XmlDocument doc) {
-            string serverPath = IOHelper.MapPath(path);
+            string serverPath = Umbraco.Core.IO.IOHelper.MapPath(path);
             if (System.IO.Directory.Exists(serverPath)) {
                 
                 System.IO.DirectoryInfo di = new System.IO.DirectoryInfo(serverPath);
@@ -190,7 +189,7 @@ namespace umbraco.cms.businesslogic.packager {
 
         private static void AppendFileXml(string path, string packageDirectory, XmlDocument doc) {
 
-            string serverPath = IOHelper.MapPath(path);
+            string serverPath = Umbraco.Core.IO.IOHelper.MapPath(path);
 
             string orgPath = path.Substring(0, (path.LastIndexOf('/')));
             string orgName = path.Substring((path.LastIndexOf('/') + 1));

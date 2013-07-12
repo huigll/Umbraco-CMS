@@ -7,7 +7,6 @@ using Umbraco.Core;
 using Umbraco.Tests.TestHelpers;
 using umbraco.BusinessLogic;
 using umbraco.DataLayer;
-using umbraco.IO;
 using GlobalSettings = umbraco.GlobalSettings;
 
 namespace Umbraco.Tests.BusinessLogic
@@ -80,12 +79,12 @@ namespace Umbraco.Tests.BusinessLogic
 
         private void InitializeAppConfigFile()
         {
-            Application.AppConfigFilePath = IOHelper.MapPath(SystemDirectories.Config + "/" + Application.AppConfigFileName, false);
+            Application.AppConfigFilePath = Umbraco.Core.IO.IOHelper.MapPath(Umbraco.Core.IO.SystemDirectories.Config + "/" + Application.AppConfigFileName, false);
         }
 
         private void InitializeTreeConfigFile()
         {
-            ApplicationTree.TreeConfigFilePath = IOHelper.MapPath(SystemDirectories.Config + "/" + ApplicationTree.TreeConfigFileName, false);
+            ApplicationTree.TreeConfigFilePath = Umbraco.Core.IO.IOHelper.MapPath(Umbraco.Core.IO.SystemDirectories.Config + "/" + ApplicationTree.TreeConfigFileName, false);
         }
 
     }

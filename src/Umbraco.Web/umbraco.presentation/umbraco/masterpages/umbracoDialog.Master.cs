@@ -16,7 +16,8 @@ namespace umbraco.presentation.masterpages
 		protected void Page_Load(object sender, EventArgs e)
 		{
 			ClientLoader.DataBind();
-			ScriptManager.RegisterStartupScript(Page, Page.GetType(), "setRoot", "UmbClientMgr.setUmbracoPath(\"" + IO.IOHelper.ResolveUrl(IO.SystemDirectories.Umbraco) + "\");", true);
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "setRoot", "UmbClientMgr.setUmbracoPath(\"" +
+                Umbraco.Core.IO.IOHelper.ResolveUrl(Umbraco.Core.IO.SystemDirectories.Umbraco) + "\");", true);
 			FireOnLoad(e);
 		}
 

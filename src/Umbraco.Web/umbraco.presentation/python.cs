@@ -1,5 +1,4 @@
 ﻿using System;
-using umbraco.IO;
 
 namespace umbraco.scripting
 {
@@ -39,15 +38,15 @@ namespace umbraco.scripting
         private static void initEnv()
         {
             // Add umbracos bin folder to python's path
-            string path = IOHelper.MapPath(SystemDirectories.Bin);
+            string path = Umbraco.Core.IO.IOHelper.MapPath(Umbraco.Core.IO.SystemDirectories.Bin);
             Engine.AddToPath(path);
 
 			// Add umbracos python folder to python's path
-            path = IOHelper.MapPath(SystemDirectories.MacroScripts);
+            path = Umbraco.Core.IO.IOHelper.MapPath(Umbraco.Core.IO.SystemDirectories.MacroScripts);
 			Engine.AddToPath(path);
 
             // execute the site.py to do all the initial stuff
-            string initFile = IOHelper.MapPath(SystemDirectories.Root + "/site.py");
+            string initFile = Umbraco.Core.IO.IOHelper.MapPath(Umbraco.Core.IO.SystemDirectories.Root + "/site.py");
             Engine.ExecuteFile(initFile);
         }
 
@@ -58,7 +57,7 @@ namespace umbraco.scripting
 		private static void loadScripts()
 		{
 			scripts = new System.Collections.Hashtable();
-            string path = IOHelper.MapPath(SystemDirectories.MacroScripts);
+            string path = Umbraco.Core.IO.IOHelper.MapPath(Umbraco.Core.IO.SystemDirectories.MacroScripts);
 			System.IO.DirectoryInfo dir = new System.IO.DirectoryInfo(path);
 			foreach (System.IO.FileInfo f in dir.GetFiles("*.py"))
 			{
@@ -172,7 +171,7 @@ namespace umbraco.scripting
 
         public PythonEngine()
         {
-            string path = IOHelper.MapPath(SystemDirectories.Bin + "/IronPython.dll");
+            string path = Umbraco.Core.IO.IOHelper.MapPath(Umbraco.Core.IO.SystemDirectories.Bin + "/IronPython.dll");
             System.Reflection.Assembly asm = System.Reflection.Assembly.LoadFile(path);
             System.Type EngineType = asm.GetType("IronPython.Hosting.PythonEngine");
             Engine = System.Activator.CreateInstance(EngineType);

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Xml;
-using umbraco.IO;
 
 namespace umbraco.cms.businesslogic.packager.standardPackageActions
 {
@@ -16,7 +15,7 @@ namespace umbraco.cms.businesslogic.packager.standardPackageActions
 			if (_newExts.Count > 0)
 			{
 
-				string reConfig = SystemFiles.RestextensionsConfig;
+				string reConfig = Umbraco.Core.IO.SystemFiles.RestextensionsConfig;
 
 				XmlDocument xdoc = new XmlDocument();
 				xdoc.PreserveWhitespace = true;
@@ -48,7 +47,7 @@ namespace umbraco.cms.businesslogic.packager.standardPackageActions
 						}
 					}
 
-					xdoc.Save(IOHelper.MapPath(reConfig));
+                    xdoc.Save(Umbraco.Core.IO.IOHelper.MapPath(reConfig));
 					return true;
 				}
 			}
@@ -67,7 +66,7 @@ namespace umbraco.cms.businesslogic.packager.standardPackageActions
 
 			if (_newExts.Count > 0)
 			{
-				string reConfig = SystemFiles.RestextensionsConfig;
+                string reConfig = Umbraco.Core.IO.SystemFiles.RestextensionsConfig;
 
 				XmlDocument xdoc = new XmlDocument();
 				xdoc.PreserveWhitespace = true;
@@ -98,7 +97,7 @@ namespace umbraco.cms.businesslogic.packager.standardPackageActions
 
 					if (inserted)
 					{
-						xdoc.Save(IOHelper.MapPath(reConfig));
+                        xdoc.Save(Umbraco.Core.IO.IOHelper.MapPath(reConfig));
 						return true;
 					}
 				}

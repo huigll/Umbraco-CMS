@@ -17,7 +17,6 @@ using ICSharpCode.SharpZipLib.Zip;
 using ICSharpCode.SharpZipLib.Zip.Compression;
 using ICSharpCode.SharpZipLib.Zip.Compression.Streams;
 using ICSharpCode.SharpZipLib.GZip;
-using umbraco.IO;
 using System.Collections.Generic;
 
 namespace umbraco.presentation.translation
@@ -90,9 +89,9 @@ namespace umbraco.presentation.translation
             {
                 string tempFileName;
                 if (translationFile.PostedFile.FileName.ToLower().Contains(".zip"))
-                    tempFileName = IOHelper.MapPath(SystemDirectories.Data + "/" + "translationFile_" + Guid.NewGuid().ToString() + ".zip");
+                    tempFileName = Umbraco.Core.IO.IOHelper.MapPath(Umbraco.Core.IO.SystemDirectories.Data + "/" + "translationFile_" + Guid.NewGuid().ToString() + ".zip");
                 else
-                    tempFileName = IOHelper.MapPath(SystemDirectories.Data + "/" + "translationFile_" + Guid.NewGuid().ToString() + ".xml");
+                    tempFileName = Umbraco.Core.IO.IOHelper.MapPath(Umbraco.Core.IO.SystemDirectories.Data + "/" + "translationFile_" + Guid.NewGuid().ToString() + ".xml");
 
                 translationFile.PostedFile.SaveAs(tempFileName);
 
@@ -100,7 +99,7 @@ namespace umbraco.presentation.translation
                 if (new FileInfo(tempFileName).Extension.ToLower() == ".zip")
                 {
                     // Zip Directory
-                    string tempPath = IOHelper.MapPath(SystemDirectories.Data + "/" + "translationFiles_" + Guid.NewGuid().ToString());
+                    string tempPath = Umbraco.Core.IO.IOHelper.MapPath(Umbraco.Core.IO.SystemDirectories.Data + "/" + "translationFiles_" + Guid.NewGuid().ToString());
 
                     // Add the path to the zipfile to viewstate
                     ViewState.Add("zipFile", tempPath);

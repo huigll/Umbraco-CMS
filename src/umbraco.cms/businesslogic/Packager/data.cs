@@ -25,17 +25,17 @@ namespace umbraco.cms.businesslogic.packager
             //do some error checking and create the folders/files if they don't exist
             if (!File.Exists(dataSource))
             {
-                if (!Directory.Exists(IO.IOHelper.MapPath(Settings.PackagerRoot)))
+                if (!Directory.Exists(Umbraco.Core.IO.IOHelper.MapPath(Settings.PackagerRoot)))
                 {
-                    Directory.CreateDirectory(IO.IOHelper.MapPath(Settings.PackagerRoot));
+                    Directory.CreateDirectory(Umbraco.Core.IO.IOHelper.MapPath(Settings.PackagerRoot));
                 }
-                if (!Directory.Exists(IO.IOHelper.MapPath(Settings.PackagesStorage)))
+                if (!Directory.Exists(Umbraco.Core.IO.IOHelper.MapPath(Settings.PackagesStorage)))
                 {
-                    Directory.CreateDirectory(IO.IOHelper.MapPath(Settings.PackagesStorage));
+                    Directory.CreateDirectory(Umbraco.Core.IO.IOHelper.MapPath(Settings.PackagesStorage));
                 }
-                if (!Directory.Exists(IO.IOHelper.MapPath(Settings.InstalledPackagesStorage)))
+                if (!Directory.Exists(Umbraco.Core.IO.IOHelper.MapPath(Settings.InstalledPackagesStorage)))
                 {
-                    Directory.CreateDirectory(IO.IOHelper.MapPath(Settings.InstalledPackagesStorage));
+                    Directory.CreateDirectory(Umbraco.Core.IO.IOHelper.MapPath(Settings.InstalledPackagesStorage));
                 }
 
                 StreamWriter sw = File.CreateText(dataSource);

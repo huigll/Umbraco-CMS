@@ -4,7 +4,6 @@ using umbraco.presentation.LiveEditing;
 using umbraco.BasePages;
 using umbraco.cms.businesslogic.web;
 using System.Xml.Linq;
-using umbraco.IO;
 using umbraco.presentation.preview;
 using umbraco.BusinessLogic;
 using System.Xml;
@@ -232,7 +231,7 @@ namespace umbraco.presentation
         /// </exception>
         public override string MapPath(string path)
         {
-            return IOHelper.MapPath(path);
+            return Umbraco.Core.IO.IOHelper.MapPath(path);
         }  
        
         #endregion
@@ -241,7 +240,7 @@ namespace umbraco.presentation
         {
             get
             {
-                return IOHelper.ResolveUrl( SystemDirectories.Umbraco );
+                return Umbraco.Core.IO.IOHelper.ResolveUrl(Umbraco.Core.IO.SystemDirectories.Umbraco);
             }
         }
 
@@ -249,7 +248,7 @@ namespace umbraco.presentation
         {
             get
             {
-                return IOHelper.ResolveUrl( SystemFiles.ContentCacheXml );
+                return Umbraco.Core.IO.IOHelper.ResolveUrl(Umbraco.Core.IO.SystemFiles.ContentCacheXml);
             }
         }
 
@@ -298,7 +297,7 @@ namespace umbraco.presentation
         {
             get
             {
-                return IOHelper.ResolveUrl( SystemDirectories.Data );
+                return Umbraco.Core.IO.IOHelper.ResolveUrl(Umbraco.Core.IO.SystemDirectories.Data);
             }
         }
 

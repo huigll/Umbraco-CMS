@@ -3,7 +3,6 @@ using System.Collections;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using umbraco.cms.presentation.Trees;
-using umbraco.IO;
 
 namespace umbraco.cms.presentation.developer
 {
@@ -116,7 +115,7 @@ namespace umbraco.cms.presentation.developer
             save = Panel1.Menu.NewImageButton();
             save.ID = "save";
             save.Click += new System.Web.UI.ImageClickEventHandler(save_click);
-            save.ImageUrl = SystemDirectories.Umbraco + "/images/editor/save.gif";
+            save.ImageUrl = Umbraco.Core.IO.SystemDirectories.Umbraco + "/images/editor/save.gif";
 
             Panel1.hasMenu = true;
 

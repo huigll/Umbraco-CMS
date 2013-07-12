@@ -10,7 +10,6 @@ using umbraco.cms.businesslogic.property;
 using umbraco.cms.businesslogic.relation;
 using umbraco.cms.helpers;
 using umbraco.DataLayer;
-using umbraco.IO;
 
 namespace umbraco.cms.businesslogic.web
 {

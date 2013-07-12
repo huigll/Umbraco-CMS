@@ -30,7 +30,7 @@
 
 <script type="text/javascript">
 	var opts = {
-	umbPath: "<%#umbraco.IO.IOHelper.ResolveUrl(umbraco.IO.SystemDirectories.Umbraco)%>",
+	    umbPath: "<%#Umbraco.Core.IO.IOHelper.ResolveUrl(Umbraco.Core.IO.SystemDirectories.Umbraco)%>",
 		style: "<%#ViewerStyle.ToString()%>",
 		linkTarget: "<%#LinkTarget%>"
 };

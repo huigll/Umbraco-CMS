@@ -24,7 +24,6 @@ using umbraco.DataLayer;
 using umbraco.cms.presentation.Trees;
 using umbraco.BusinessLogic.Utils;
 using umbraco.BusinessLogic.Actions;
-using umbraco.IO;
 using Umbraco.Core;
 
 namespace umbraco
@@ -60,7 +59,7 @@ function openXslt(id) {
         
         protected override string FilePath
         {
-            get { return SystemDirectories.Xslt + "/"; }
+            get { return Umbraco.Core.IO.SystemDirectories.Xslt + "/"; }
         }
 
         protected override string FileSearchPattern

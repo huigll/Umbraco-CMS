@@ -13,7 +13,6 @@ using System.IO;
 using System.Xml;
 using System.Xml.XPath;
 using umbraco.uicontrols;
-using umbraco.IO;
 using umbraco.cms.helpers;
 using umbraco.BusinessLogic;
 
@@ -56,7 +55,7 @@ namespace umbraco.cms.presentation
                 _section = getUser().Applications[0].alias;
 
             XmlDocument dashBoardXml = new XmlDocument();
-            dashBoardXml.Load(IOHelper.MapPath(SystemFiles.DashboardConfig));
+            dashBoardXml.Load(Umbraco.Core.IO.IOHelper.MapPath(Umbraco.Core.IO.SystemFiles.DashboardConfig));
 
             // test for new tab interface
             foreach (XmlNode section in dashBoardXml.DocumentElement.SelectNodes("//section [areas/area = '" + _section.ToLower() + "']"))
@@ -79,7 +78,7 @@ namespace umbraco.cms.presentation
                                 if (validateAccess(uc))
                                 {
                                     string control = getFirstText(uc).Trim(' ', '\r', '\n');
-                                    string path = IOHelper.FindFile(control);
+                                    string path = Umbraco.Core.IO.IOHelper.FindFile(control);
 
 
                                     try
@@ -140,7 +139,7 @@ namespace umbraco.cms.presentation
                         }
                         else
                         {
-                            string path = IOHelper.FindFile(entry.FirstChild.Value);
+                            string path = Umbraco.Core.IO.IOHelper.FindFile(entry.FirstChild.Value);
 
                             try
                             {

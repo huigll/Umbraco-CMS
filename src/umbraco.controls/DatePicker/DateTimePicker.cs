@@ -5,7 +5,6 @@ using System.Text;
 using ClientDependency.Core;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using umbraco.IO;
 using System.Web.UI.HtmlControls;
 
 namespace umbraco.uicontrols.DatePicker

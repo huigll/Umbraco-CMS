@@ -9,7 +9,6 @@ using umbraco.cms.businesslogic.skinning;
 using System.Xml;
 using System.Text;
 using umbraco.interfaces.skinning;
-using umbraco.IO;
 using umbraco.cms.businesslogic.template;
 using umbraco.BusinessLogic;
 using umbraco.NodeFactory;
@@ -87,7 +86,7 @@ namespace umbraco.presentation.LiveEditing.Modules.SkinModule
 
                 //save
 
-                StreamWriter sw = File.AppendText(IO.IOHelper.MapPath(SystemDirectories.Css) + "/" + this.ActiveSkin.Css.TargetFile);
+                StreamWriter sw = File.AppendText(Umbraco.Core.IO.IOHelper.MapPath(Umbraco.Core.IO.SystemDirectories.Css) + "/" + this.ActiveSkin.Css.TargetFile);
                 sw.Write(content);
                 sw.Close();
             }
@@ -198,7 +197,7 @@ namespace umbraco.presentation.LiveEditing.Modules.SkinModule
             //check for local skins
 
             List<string> localSkins = new List<string>();
-            DirectoryInfo dirInfo = new DirectoryInfo(IOHelper.MapPath(SystemDirectories.Masterpages));
+            DirectoryInfo dirInfo = new DirectoryInfo(Umbraco.Core.IO.IOHelper.MapPath(Umbraco.Core.IO.SystemDirectories.Masterpages));
             foreach (DirectoryInfo subDur in dirInfo.GetDirectories())
             {
                 var skinFile = subDur.GetFiles("skin.xml");

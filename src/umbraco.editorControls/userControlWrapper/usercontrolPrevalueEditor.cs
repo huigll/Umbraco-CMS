@@ -13,7 +13,6 @@ using umbraco.DataLayer;
 using umbraco.BusinessLogic;
 
 using umbraco.editorControls;
-using umbraco.IO;
 using System.Collections.Generic;
 using umbraco.cms.businesslogic.datatype;
 
@@ -68,7 +67,7 @@ namespace umbraco.editorControls.userControlGrapper
 
 			// populate the usercontrol dropdown
 			_dropdownlistUserControl.Items.Add(new ListItem(ui.Text("choose"), ""));
-			populateUserControls( IOHelper.MapPath( SystemDirectories.Usercontrols) );
+            populateUserControls(Umbraco.Core.IO.IOHelper.MapPath(Umbraco.Core.IO.SystemDirectories.UserControls));
 
 		   
 		}
@@ -79,12 +78,12 @@ namespace umbraco.editorControls.userControlGrapper
 
 			foreach (FileInfo uc in di.GetFiles("*.ascx"))
 			{
-                string ucRoot = IOHelper.MapPath(SystemDirectories.Usercontrols);
+                string ucRoot = Umbraco.Core.IO.IOHelper.MapPath(Umbraco.Core.IO.SystemDirectories.UserControls);
 
 				_dropdownlistUserControl.Items.Add(
-					
-					new ListItem( SystemDirectories.Usercontrols +
-                            uc.FullName.Substring(ucRoot.Length).Replace(IOHelper.DirSepChar, '/'))
+
+                    new ListItem(Umbraco.Core.IO.SystemDirectories.UserControls +
+                            uc.FullName.Substring(ucRoot.Length).Replace(Umbraco.Core.IO.IOHelper.DirSepChar, '/'))
 
 					/*
 					new ListItem( 
@@ -169,7 +168,7 @@ namespace umbraco.editorControls.userControlGrapper
             if (fileName.StartsWith("~/"))
                 fileName = fileName.Substring(2);
 
-			if (System.IO.File.Exists(IOHelper.MapPath("~/" + fileName)))
+            if (System.IO.File.Exists(Umbraco.Core.IO.IOHelper.MapPath("~/" + fileName)))
 			{
 			  
 				UserControl oControl = (UserControl)this.Page.LoadControl(@"~/" + fileName);

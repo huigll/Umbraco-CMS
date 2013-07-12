@@ -40,7 +40,7 @@ namespace umbraco.presentation.umbracobase
             HttpApplication httpApp = (HttpApplication)sender;
             string url = httpApp.Context.Request.RawUrl;
 
-            string urlStart = IO.IOHelper.ResolveUrl( IO.SystemDirectories.Base ).TrimEnd('/').ToLower() + "/";
+            string urlStart = Umbraco.Core.IO.IOHelper.ResolveUrl(Umbraco.Core.IO.SystemDirectories.Base).TrimEnd('/').ToLower() + "/";
 
             if (url.ToLower().StartsWith(urlStart))
             {
@@ -61,7 +61,7 @@ namespace umbraco.presentation.umbracobase
 
             //remove extension and split the url
             string url = httpApp.Context.Request.RawUrl;
-            string urlStart = IO.IOHelper.ResolveUrl(IO.SystemDirectories.Base).TrimEnd('/').ToLower() + "/";
+            string urlStart = Umbraco.Core.IO.IOHelper.ResolveUrl(Umbraco.Core.IO.SystemDirectories.Base).TrimEnd('/').ToLower() + "/";
 
             if (url.ToLower().StartsWith(urlStart))
             {                
@@ -73,7 +73,7 @@ namespace umbraco.presentation.umbracobase
                     HttpContext.Current.Handler = resourceHttpHandler.OriginalHandler;
                 }
 
-                string basedir = "/" + IO.SystemDirectories.Base.TrimStart('~').Trim('/') + "/";
+                string basedir = "/" + Umbraco.Core.IO.SystemDirectories.Base.TrimStart('~').Trim('/') + "/";
                 int indexOfBase = url.ToLower().IndexOf(basedir);
                 url = url.Substring(indexOfBase);
 

@@ -9,7 +9,6 @@ using System.Web.WebPages;
 using Umbraco.Core;
 using umbraco.cms.businesslogic.macro;
 using umbraco.interfaces;
-using umbraco.IO;
 
 namespace umbraco.MacroEngines
 {
@@ -38,8 +37,8 @@ namespace umbraco.MacroEngines
                 throw new AbandonedMutexException("fileName");
 
             var relativePath = RazorTempDirectory + fileName;
-            var physicalPath = IOHelper.MapPath(relativePath);
-            var physicalDirectoryPath = IOHelper.MapPath(RazorTempDirectory);
+            var physicalPath = Umbraco.Core.IO.IOHelper.MapPath(relativePath);
+            var physicalDirectoryPath = Umbraco.Core.IO.IOHelper.MapPath(RazorTempDirectory);
 
             if (skipIfFileExists && File.Exists(physicalPath))
                 return relativePath;
@@ -97,7 +96,7 @@ namespace umbraco.MacroEngines
                 if (macro.ScriptName.StartsWith("~"))
                     fileLocation = macro.ScriptName;
                 else
-                    fileLocation = SystemDirectories.MacroScripts + "/" + macro.ScriptName;
+                    fileLocation = Umbraco.Core.IO.SystemDirectories.MacroScripts + "/" + macro.ScriptName;
             } else if (!string.IsNullOrEmpty(macro.ScriptCode) && !string.IsNullOrEmpty(macro.ScriptLanguage)) {
                 //Inline Razor Syntax
                 fileLocation = CreateInlineRazorFile(macro.ScriptCode, macro.ScriptLanguage);

@@ -13,7 +13,6 @@ using umbraco.cms.businesslogic.web;
 using umbraco.BusinessLogic.Actions;
 using umbraco.presentation.umbraco.controls;
 using ClientDependency.Core;
-using umbraco.IO;
 using umbraco.presentation.umbraco.LiveEditing.Modules.SkinModule;
 using umbraco.cms.businesslogic.skinning;
 using umbraco.BusinessLogic;
@@ -151,7 +150,7 @@ namespace umbraco.presentation.LiveEditing.Controls
             m_MainPanel.ContentTemplateContainer.Controls.Add(m_SaveButton);
             m_SaveButton.CssClass = "button";
             m_SaveButton.ToolTip = "Save";
-            m_SaveButton.ImageUrl = String.Format("{0}/images/editor/Save.gif", SystemDirectories.Umbraco);
+            m_SaveButton.ImageUrl = String.Format("{0}/images/editor/Save.gif", Umbraco.Core.IO.SystemDirectories.Umbraco);
             m_SaveButton.Click += new ImageClickEventHandler(SaveButton_Click);
             m_SaveButton.OnClientClick = "return LiveEditingToolbar._save()";
             m_SaveButton.Visible = UmbracoContext.Current.HasPermission(ActionUpdate.Instance.Letter);
@@ -160,7 +159,7 @@ namespace umbraco.presentation.LiveEditing.Controls
             m_MainPanel.ContentTemplateContainer.Controls.Add(m_SaveAndPublishButton);
             m_SaveAndPublishButton.CssClass = "button";
             m_SaveAndPublishButton.ToolTip = "Save and publish";
-            m_SaveAndPublishButton.ImageUrl = String.Format("{0}/images/editor/SaveAndPublish.gif", SystemDirectories.Umbraco);
+            m_SaveAndPublishButton.ImageUrl = String.Format("{0}/images/editor/SaveAndPublish.gif", Umbraco.Core.IO.SystemDirectories.Umbraco);
             m_SaveAndPublishButton.Click += new ImageClickEventHandler(SaveAndPublishButton_Click);
             m_SaveAndPublishButton.OnClientClick = "return LiveEditingToolbar._saveAndPublish()";
             m_SaveAndPublishButton.Visible = m_SaveButton.Visible
@@ -205,7 +204,7 @@ namespace umbraco.presentation.LiveEditing.Controls
         {
            
             ScriptManager.RegisterClientScriptBlock(Page, GetType(), new Guid().ToString(),
-                                        String.Format("window.location.href='{0}';", this.ResolveUrl(SystemDirectories.Umbraco + "/")), true);
+                                        String.Format("window.location.href='{0}';", this.ResolveUrl(Umbraco.Core.IO.SystemDirectories.Umbraco + "/")), true);
         }
 
 

@@ -17,7 +17,7 @@ namespace umbraco.uicontrols
             if(!string.IsNullOrEmpty(Title))
                 _title = Title;
 
-            base.ImageUrl = IO.SystemDirectories.Umbraco_client + "/images/progressBar.gif";
+            base.ImageUrl = Umbraco.Core.IO.SystemDirectories.UmbracoClient + "/images/progressBar.gif";
             base.AlternateText = _title;
 
             base.Render(writer);

@@ -6,7 +6,6 @@ using umbraco.interfaces.skinning;
 using System.Text.RegularExpressions;
 using System.IO;
 using System.Web;
-using umbraco.IO;
 using umbraco.cms.businesslogic.packager.standardPackageActions;
 using System.Xml;
 using HtmlAgilityPack;
@@ -32,7 +31,7 @@ namespace umbraco.cms.businesslogic.skinning.tasks
             //open template
 
             HtmlDocument doc = new HtmlDocument();
-            doc.Load(IO.IOHelper.MapPath(SystemDirectories.Masterpages) + "/" +TargetFile);
+            doc.Load(Umbraco.Core.IO.IOHelper.MapPath(Umbraco.Core.IO.SystemDirectories.Masterpages) + "/" + TargetFile);
 
             if (doc.DocumentNode.SelectNodes(string.Format("//*[@id = '{0}']", TargetID)) != null)
             {
@@ -57,7 +56,7 @@ namespace umbraco.cms.businesslogic.skinning.tasks
                     }
                 }
             }
-            doc.Save(IO.IOHelper.MapPath(SystemDirectories.Masterpages) + "/" + TargetFile);
+            doc.Save(Umbraco.Core.IO.IOHelper.MapPath(Umbraco.Core.IO.SystemDirectories.Masterpages) + "/" + TargetFile);
 
             d.TaskExecutionStatus = TaskExecutionStatus.Completed;
             d.NewValue = Value;

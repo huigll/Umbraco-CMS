@@ -11,7 +11,6 @@ using System.Web.UI.HtmlControls;
 using ClientDependency.Core;
 using System.Linq;
 using ClientDependency.Core.Controls;
-using umbraco.IO;
 
 namespace umbraco.uicontrols
 {

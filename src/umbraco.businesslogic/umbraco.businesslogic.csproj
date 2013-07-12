@@ -201,17 +201,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Interfaces\ILog.cs" />
-    <Compile Include="IO\FileMonitor.cs" />
-    <Compile Include="IO\IOHelper.cs" />
-    <Compile Include="IO\SystemDirectories.cs" />
-    <Compile Include="IO\SystemFiles.cs" />
     <Compile Include="Log.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="MenuItemI.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Razor\RazorDataTypeModelStaticMappingItem.cs" />
     <Compile Include="StateHelper.cs" />
     <Compile Include="ui.cs">
       <SubType>Code</SubType>
@@ -266,6 +261,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App\" />
+    <Folder Include="IO\" />
+    <Folder Include="Razor\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

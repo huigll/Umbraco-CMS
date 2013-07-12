@@ -7,7 +7,6 @@ using Umbraco.Core.IO;
 using Umbraco.Core.Logging;
 using umbraco.BusinessLogic;
 using umbraco.cms.businesslogic.Files;
-using umbraco.IO;
 
 namespace umbraco.editorControls.tinymce
 {

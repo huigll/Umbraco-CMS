@@ -14,7 +14,6 @@ using System.Xml;
 using System.Xml.XPath;
 using umbraco.BusinessLogic.Actions;
 using ClientDependency.Core;
-using umbraco.IO;
 using System.Linq;
 using System.Text;
 using ClientDependency.Core.Controls;
@@ -102,8 +101,8 @@ namespace umbraco.cms.presentation
 
                 // Add scriptmanager version check
                 ScriptManager sm = ScriptManager.GetCurrent(Page);
-                sm.Scripts.Add(new ScriptReference(SystemDirectories.Umbraco + "/js/umbracoUpgradeChecker.js"));
-                sm.Services.Add(new ServiceReference(SystemDirectories.Webservices + "/CheckForUpgrade.asmx"));
+                sm.Scripts.Add(new ScriptReference(Umbraco.Core.IO.SystemDirectories.Umbraco + "/js/umbracoUpgradeChecker.js"));
+                sm.Services.Add(new ServiceReference(Umbraco.Core.IO.SystemDirectories.WebServices + "/CheckForUpgrade.asmx"));
 
                 Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "upgradeChecker", "jQuery(document).ready(function() {umbraco.presentation.webservices.CheckForUpgrade.CallUpgradeService(umbracoCheckUpgrade);});", true);
 
@@ -126,7 +125,7 @@ namespace umbraco.cms.presentation
                 <meta name='msapplication-tooltip' content='Umbraco CMS - {1}' />
                 <meta name='msapplication-navbutton-color' content='#f36f21' />
                 <meta name='msapplication-starturl' content='./umbraco.aspx' />",
-    IOHelper.ResolveUrl(SystemDirectories.Umbraco + "/images/pinnedIcons/umb.ico"),
+    Umbraco.Core.IO.IOHelper.ResolveUrl(Umbraco.Core.IO.SystemDirectories.Umbraco + "/images/pinnedIcons/umb.ico"),
     HttpContext.Current.Request.Url.Host.ToLower().Replace("www.", ""));
 
                 var user = base.getUser();
@@ -137,11 +136,11 @@ namespace umbraco.cms.presentation
                         metadata.AppendFormat(
                             @"<meta name='msapplication-task' content='name={0}; action-uri={1}; icon-uri={2}' />",
                             ui.Text("sections", app.alias, user),
-                            IOHelper.ResolveUrl(string.Format("{0}/umbraco.aspx#{1}", SystemDirectories.Umbraco, app.alias)),
+                            Umbraco.Core.IO.IOHelper.ResolveUrl(string.Format("{0}/umbraco.aspx#{1}", Umbraco.Core.IO.SystemDirectories.Umbraco, app.alias)),
                             File.Exists(
-                                IOHelper.MapPath(
-                                    IOHelper.ResolveUrl(
-                                        string.Format("{0}/images/pinnedIcons/task_{1}.ico", SystemDirectories.Umbraco, app.alias))))
+                                Umbraco.Core.IO.IOHelper.MapPath(
+                                    Umbraco.Core.IO.IOHelper.ResolveUrl(
+                                        string.Format("{0}/images/pinnedIcons/task_{1}.ico", Umbraco.Core.IO.SystemDirectories.Umbraco, app.alias))))
                                 ? "/umbraco/images/pinnedIcons/task_" + app.alias + ".ico"
                                 : "/umbraco/images/pinnedIcons/task_default.ico");
                     }

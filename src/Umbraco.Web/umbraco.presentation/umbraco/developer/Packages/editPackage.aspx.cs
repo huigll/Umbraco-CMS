@@ -12,7 +12,6 @@ using umbraco.cms.businesslogic.template;
 using umbraco.cms.businesslogic.web;
 using umbraco.cms.presentation.Trees;
 using umbraco.controls;
-using umbraco.IO;
 
 namespace umbraco.presentation.developer.packages
 {
@@ -226,7 +225,7 @@ namespace umbraco.presentation.developer.packages
 
                     if (!string.IsNullOrEmpty(pack.PackagePath)) {
 
-                        packageUmbFile.Text = " &nbsp; <a href='" + IO.IOHelper.ResolveUrl(pack.PackagePath) + "'>Download</a>";
+                        packageUmbFile.Text = " &nbsp; <a href='" + Umbraco.Core.IO.IOHelper.ResolveUrl(pack.PackagePath) + "'>Download</a>";
 
                         this.ClientTools.ShowSpeechBubble(BasePages.BasePage.speechBubbleIcon.success, "Package saved and published", "");
                     } else {
@@ -407,7 +406,7 @@ namespace umbraco.presentation.developer.packages
             int count = 1;
             foreach (uicontrols.TabPage tp in TabView1.GetPanels()) {
                 ImageButton saves = tp.Menu.NewImageButton();
-                saves.ImageUrl = SystemDirectories.Umbraco + "/images/editor/save.gif";
+                saves.ImageUrl = Umbraco.Core.IO.SystemDirectories.Umbraco + "/images/editor/save.gif";
                 saves.CommandName = "save";
                 saves.AlternateText = "Save package";
                 saves.Command += new CommandEventHandler(saveOrPublish);
@@ -417,7 +416,7 @@ namespace umbraco.presentation.developer.packages
                 tp.Style["background"] = "none !Important"; 
                 
                 ImageButton publishes = tp.Menu.NewImageButton();
-                publishes.ImageUrl = SystemDirectories.Umbraco + "/images/editor/saveAndPublish.gif";
+                publishes.ImageUrl = Umbraco.Core.IO.SystemDirectories.Umbraco + "/images/editor/saveAndPublish.gif";
                 publishes.CommandName = "publish";
                 publishes.Command += new CommandEventHandler(saveOrPublish);
                 publishes.AlternateText = "Save and publish the package as a .umb file";

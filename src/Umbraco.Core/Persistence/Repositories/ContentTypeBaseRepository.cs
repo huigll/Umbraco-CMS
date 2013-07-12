@@ -370,7 +370,7 @@ namespace Umbraco.Core.Persistence.Repositories
                                     Description = dto.Description,
                                     Id = dto.Id,
                                     Name = dto.Name,
-                                    HelpText = dto.HelpText,
+                                    //HelpText = dto.HelpText,
                                     Mandatory = dto.Mandatory,
                                     SortOrder = dto.SortOrder,
                                     ValidationRegExp = dto.ValidationRegExp,

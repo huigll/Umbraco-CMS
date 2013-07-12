@@ -11,7 +11,6 @@ using umbraco.BusinessLogic.Utils;
 using umbraco.businesslogic;
 using umbraco.cms.businesslogic.cache;
 using System.Web.Caching;
-using umbraco.IO;
 using umbraco.interfaces;
 
 
@@ -150,15 +149,15 @@ namespace umbraco.presentation
 
 					if (needsConfiguration.HasValue && needsConfiguration.Value)
 					{
-						string url = SystemDirectories.Install;
-						string meh = IOHelper.ResolveUrl(url);
-						string installUrl = string.Format("{0}/default.aspx?redir=true&url={1}", IOHelper.ResolveUrl( SystemDirectories.Install ), context.Request.Path.ToLower());
+                        string url = Umbraco.Core.IO.SystemDirectories.Install;
+                        string meh = Umbraco.Core.IO.IOHelper.ResolveUrl(url);
+                        string installUrl = string.Format("{0}/default.aspx?redir=true&url={1}", Umbraco.Core.IO.IOHelper.ResolveUrl(Umbraco.Core.IO.SystemDirectories.Install), context.Request.Path.ToLower());
 						context.Response.Redirect(installUrl, true);
 					}
 
 					// show splash?
 					else if (UmbracoSettings.EnableSplashWhileLoading && content.Instance.isInitializing)
-						context.RewritePath(string.Format("{0}/splashes/booting.aspx", SystemDirectories.Config));
+                        context.RewritePath(string.Format("{0}/splashes/booting.aspx", Umbraco.Core.IO.SystemDirectories.Config));
 					// rewrite page path
 					else
 					{
@@ -202,7 +201,7 @@ namespace umbraco.presentation
 						context.Items["VirtualUrl"] = String.Format("{0}{1}", path, query);
 						// rewrite to the new URL
 						context.RewritePath(string.Format("{0}/default.aspx{2}",
-														  SystemDirectories.Root, path, query));
+                                                          Umbraco.Core.IO.SystemDirectories.Root, path, query));
 					}
 				}
 			}
@@ -388,7 +387,8 @@ namespace umbraco.presentation
 				/* Initialize SECTION END */
 
 				// add current default url
-				HttpApp.Application["umbracoUrl"] = string.Format("{0}:{1}{2}", HttpApp.Context.Request.ServerVariables["SERVER_NAME"], HttpApp.Context.Request.ServerVariables["SERVER_PORT"], IOHelper.ResolveUrl( SystemDirectories.Umbraco ));
+				HttpApp.Application["umbracoUrl"] = string.Format("{0}:{1}{2}", HttpApp.Context.Request.ServerVariables["SERVER_NAME"], HttpApp.Context.Request.ServerVariables["SERVER_PORT"],
+                    Umbraco.Core.IO.IOHelper.ResolveUrl(Umbraco.Core.IO.SystemDirectories.Umbraco));
 
 				// Start ping / keepalive timer
 				pingTimer = new Timer(new TimerCallback(keepAliveService.PingUmbraco), HttpApp.Context, 60000, 300000);

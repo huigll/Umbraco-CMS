@@ -9,7 +9,6 @@ using System;
 using System.Web;
 using System.Text.RegularExpressions;
 using System.IO;
-using umbraco.IO;
 
 namespace umbraco.editorControls.tinyMCE3.webcontrol.plugin
 {
@@ -62,23 +61,23 @@ namespace umbraco.editorControls.tinyMCE3.webcontrol.plugin
             gzipCompressor.AddData("var tinyMCEPreInit = {base : '" + configSection.InstallPath + "', suffix : '" + suffix + "'};");
 
             // Add core
-            gzipCompressor.AddFile(IOHelper.MapPath(configSection.InstallPath + "/tiny_mce" + suffix + ".js"));
+            gzipCompressor.AddFile(Umbraco.Core.IO.IOHelper.MapPath(configSection.InstallPath + "/tiny_mce" + suffix + ".js"));
 
             // Add core languages
             foreach (string lang in languages)
-                gzipCompressor.AddFile(IOHelper.MapPath(configSection.InstallPath + "/langs/" + lang + ".js"));
+                gzipCompressor.AddFile(Umbraco.Core.IO.IOHelper.MapPath(configSection.InstallPath + "/langs/" + lang + ".js"));
 
             // Add themes
             if (request.QueryString["themes"] != null)
             {
                 foreach (string theme in request.QueryString["themes"].Split(','))
                 {
-                    gzipCompressor.AddFile(IOHelper.MapPath(configSection.InstallPath + "/themes/" + theme + "/editor_template" + suffix + ".js"));
+                    gzipCompressor.AddFile(Umbraco.Core.IO.IOHelper.MapPath(configSection.InstallPath + "/themes/" + theme + "/editor_template" + suffix + ".js"));
 
                     // Add theme languages
                     foreach (string lang in languages)
                     {
-                        string path = IOHelper.MapPath(configSection.InstallPath + "/themes/" + theme + "/langs/" + lang + ".js");
+                        string path = Umbraco.Core.IO.IOHelper.MapPath(configSection.InstallPath + "/themes/" + theme + "/langs/" + lang + ".js");
 
                         if (File.Exists(path))
                             gzipCompressor.AddFile(path);
@@ -93,12 +92,12 @@ namespace umbraco.editorControls.tinyMCE3.webcontrol.plugin
             {
                 foreach (string plugin in request.QueryString["plugins"].Split(','))
                 {
-                    gzipCompressor.AddFile(IOHelper.MapPath(configSection.InstallPath + "/plugins/" + plugin + "/editor_plugin" + suffix + ".js"));
+                    gzipCompressor.AddFile(Umbraco.Core.IO.IOHelper.MapPath(configSection.InstallPath + "/plugins/" + plugin + "/editor_plugin" + suffix + ".js"));
 
                     // Add plugin languages
                     foreach (string lang in languages)
                     {
-                        string path = IOHelper.MapPath(configSection.InstallPath + "/plugins/" + plugin + "/langs/" + lang + ".js");
+                        string path = Umbraco.Core.IO.IOHelper.MapPath(configSection.InstallPath + "/plugins/" + plugin + "/langs/" + lang + ".js");
 
                         if (File.Exists(path))
                             gzipCompressor.AddFile(path);

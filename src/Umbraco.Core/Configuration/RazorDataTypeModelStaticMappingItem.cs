@@ -8,7 +8,7 @@ namespace Umbraco.Core.Configuration
 	// have converters registered in code so we don't have to rely on even more config sections. 
 	// These things probably won't need to be created all that often and in code is much easier to do.
 
-    internal class RazorDataTypeModelStaticMappingItem
+    public class RazorDataTypeModelStaticMappingItem
     {
 		public string Raw { get; set; }
         //if all of the set (non null) properties match the property data currently being evaluated

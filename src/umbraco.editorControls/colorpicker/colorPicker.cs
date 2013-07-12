@@ -3,7 +3,6 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.ComponentModel;
 using System.Collections;
-using umbraco.IO;
 using System.Collections.Generic;
 
 namespace umbraco.editorControls
@@ -90,7 +89,8 @@ namespace umbraco.editorControls
                 _bgColor = "FFF";
 		
 			base.Render(writer);
-            writer.WriteLine("<div style=\"clear:both;padding-top:5px\"><span id=\"" + this.ClientID + "holder\" style=\"border: 1px solid black; background-color: #" + _bgColor + "\"><img src=\"" + this.ResolveUrl(SystemDirectories.Umbraco) + "/images/nada.gif\" width=\"15\" height=\"15\" border=\"0\" /></span>&nbsp; - ");
+            writer.WriteLine("<div style=\"clear:both;padding-top:5px\"><span id=\"" + this.ClientID + "holder\" style=\"border: 1px solid black; background-color: #" + _bgColor + "\"><img src=\"" +
+                this.ResolveUrl(Umbraco.Core.IO.SystemDirectories.Umbraco) + "/images/nada.gif\" width=\"15\" height=\"15\" border=\"0\" /></span>&nbsp; - ");
 
             foreach (object color in _colors)
             {
@@ -98,7 +98,8 @@ namespace umbraco.editorControls
                 if (colorValue == "")
                     colorValue = "FFF";
 
-                writer.WriteLine("<span style=\"margin: 2px; border: 1px solid black; background-color: #" + color.ToString() + "\"><a href=\"javascript:void(0);\" onClick=\"document.forms[0]['" + this.ClientID + "'].value = '" + color.ToString() + "'; document.getElementById('" + this.ClientID + "holder').style.backgroundColor = '#" + colorValue + "'\"><img src=\"" + this.ResolveUrl(SystemDirectories.Umbraco) + "/images/nada.gif\" width=\"15\" height=\"15\" border=\"0\" /></a></span>");
+                writer.WriteLine("<span style=\"margin: 2px; border: 1px solid black; background-color: #" + color.ToString() + "\"><a href=\"javascript:void(0);\" onClick=\"document.forms[0]['" + this.ClientID + "'].value = '" + color.ToString() + "'; document.getElementById('" + this.ClientID + "holder').style.backgroundColor = '#" + colorValue + "'\"><img src=\"" +
+                    this.ResolveUrl(Umbraco.Core.IO.SystemDirectories.Umbraco) + "/images/nada.gif\" width=\"15\" height=\"15\" border=\"0\" /></a></span>");
             }
 
             writer.WriteLine("</div>");

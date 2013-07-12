@@ -4,7 +4,6 @@ using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using ClientDependency.Core;
 using umbraco.controls.Tree;
-using umbraco.IO;
 
 namespace umbraco.controls.Tree
 {
@@ -110,8 +109,8 @@ jQuery(document).ready(function() {
         functionToCall : functionToCall,
         nodeKey : nodeKey,
         treeMode: """ + Mode.ToString().ToLower() + @""",
-        dataUrl: """ + IOHelper.ResolveUrl(SystemDirectories.Umbraco) + @"/webservices/TreeDataService.ashx"",
-        serviceUrl: """ + IOHelper.ResolveUrl(SystemDirectories.Umbraco) + @"/controls/Tree/CustomTreeService.asmx/GetInitAppTreeData""});
+        dataUrl: """ + Umbraco.Core.IO.IOHelper.ResolveUrl(Umbraco.Core.IO.SystemDirectories.Umbraco) + @"/webservices/TreeDataService.ashx"",
+        serviceUrl: """ + Umbraco.Core.IO.IOHelper.ResolveUrl(Umbraco.Core.IO.SystemDirectories.Umbraco) + @"/controls/Tree/CustomTreeService.asmx/GetInitAppTreeData""});
         
      //add event handler for ajax errors, this will refresh the whole application
     var mainTree = UmbClientMgr.mainTree();

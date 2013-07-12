@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Xml;
-using umbraco.IO;
 
 namespace umbraco.cms.businesslogic.packager.standardPackageActions
 {
@@ -43,7 +42,7 @@ namespace umbraco.cms.businesslogic.packager.standardPackageActions
 			if (xmlData.HasChildNodes)
 			{
 				string sectionAlias = xmlData.Attributes["dashboardAlias"].Value;
-				string dbConfig = SystemFiles.DashboardConfig;
+                string dbConfig = Umbraco.Core.IO.SystemFiles.DashboardConfig;
 
 				XmlNode section = xmlData.SelectSingleNode("./section");
                 XmlDocument dashboardFile = Umbraco.Core.XmlHelper.OpenAsXmlDocument(dbConfig);
@@ -55,7 +54,7 @@ namespace umbraco.cms.businesslogic.packager.standardPackageActions
 
 				dashboardFile.DocumentElement.AppendChild(importedSection);
 
-				dashboardFile.Save(IOHelper.MapPath(dbConfig));
+                dashboardFile.Save(Umbraco.Core.IO.IOHelper.MapPath(dbConfig));
 
 				return true;
 			}
@@ -73,7 +72,7 @@ namespace umbraco.cms.businesslogic.packager.standardPackageActions
 		{
 
 			string sectionAlias = xmlData.Attributes["dashboardAlias"].Value;
-			string dbConfig = SystemFiles.DashboardConfig;
+            string dbConfig = Umbraco.Core.IO.SystemFiles.DashboardConfig;
             XmlDocument dashboardFile = Umbraco.Core.XmlHelper.OpenAsXmlDocument(dbConfig);
 
 			XmlNode section = dashboardFile.SelectSingleNode("//section [@alias = '" + sectionAlias + "']");
@@ -82,7 +81,7 @@ namespace umbraco.cms.businesslogic.packager.standardPackageActions
 			{
 
 				dashboardFile.SelectSingleNode("/dashBoard").RemoveChild(section);
-				dashboardFile.Save(IOHelper.MapPath(dbConfig));
+                dashboardFile.Save(Umbraco.Core.IO.IOHelper.MapPath(dbConfig));
 			}
 
 			return true;

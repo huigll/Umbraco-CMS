@@ -13,7 +13,6 @@ using Umbraco.Core.Logging;
 using umbraco.BusinessLogic;
 using System.Web.Security;
 using umbraco.businesslogic.Exceptions;
-using umbraco.IO;
 using umbraco.cms.businesslogic.web;
 using System.Linq;
 using Umbraco.Core;
@@ -92,7 +91,7 @@ namespace umbraco.cms.presentation
                             throw new Exception("There's currently no content to edit. Please contact your system administrator");
                         }
                     }
-                    string redir = String.Format("{0}/canvas.aspx?redir=/{1}.aspx", SystemDirectories.Umbraco, startNode);
+                    string redir = String.Format("{0}/canvas.aspx?redir=/{1}.aspx", Umbraco.Core.IO.SystemDirectories.Umbraco, startNode);
                     Response.Redirect(redir, true);
                 }
                 else if (u.DefaultToLiveEditing)

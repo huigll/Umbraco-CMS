@@ -9,7 +9,6 @@ using System.Web;
 using System.Web.UI;
 using System.Xml;
 using Umbraco.Core;
-using umbraco.IO;
 using umbraco.NodeFactory;
 using umbraco.cms.businesslogic.web;
 using umbraco.interfaces;
@@ -59,7 +58,7 @@ namespace umbraco
                 return string.Empty;
 
             string tmp = HttpContext.Current.Items["UmbPage"].ToString();
-            string root = SystemDirectories.Root.ToLower();
+            string root = Umbraco.Core.IO.SystemDirectories.Root.ToLower();
 
             //if we are running in a virtual dir
             if (!string.IsNullOrEmpty(root) && tmp.StartsWith(root))
@@ -315,7 +314,7 @@ namespace umbraco
                 {
                     _customHandlers = new XmlDocument();
                     _customHandlers.Load(
-                    IOHelper.MapPath(SystemFiles.NotFoundhandlersConfig));
+                    Umbraco.Core.IO.IOHelper.MapPath(Umbraco.Core.IO.SystemFiles.NotFoundhandlersConfig));
                 }
 
                 foreach (XmlNode notFoundHandler in _customHandlers.DocumentElement.SelectNodes("notFound"))
@@ -336,7 +335,7 @@ namespace umbraco
                                                 string.Format("Trying NotFoundHandler '{0}.{1}'...", _chAssembly, _chType));
                         Assembly assembly =
                             Assembly.LoadFrom(
-                                IOHelper.MapPath(SystemDirectories.Bin + "/" + _chAssembly + ".dll"));
+                                Umbraco.Core.IO.IOHelper.MapPath(Umbraco.Core.IO.SystemDirectories.Bin + "/" + _chAssembly + ".dll"));
 
                         Type type = assembly.GetType(_chNameSpace + "." + _chType);
                         INotFoundHandler typeInstance = Activator.CreateInstance(type) as INotFoundHandler;

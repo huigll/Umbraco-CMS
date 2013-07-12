@@ -15,7 +15,6 @@ using Umbraco.Web;
 using Umbraco.Web.Cache;
 using umbraco.DataLayer;
 using umbraco.BusinessLogic;
-using umbraco.IO;
 using System.Web;
 
 namespace umbraco
@@ -63,13 +62,13 @@ namespace umbraco
             {
 
                 string file = TemplateAlias.Replace(" ", "") + ".master";
-                string path = SystemDirectories.Masterpages + "/" + file;
+                string path = Umbraco.Core.IO.SystemDirectories.Masterpages + "/" + file;
 
 
-                if (System.IO.File.Exists(IOHelper.MapPath(VirtualPathUtility.ToAbsolute(path))))
+                if (System.IO.File.Exists(Umbraco.Core.IO.IOHelper.MapPath(VirtualPathUtility.ToAbsolute(path))))
                     return path;
                 else
-                    return SystemDirectories.Umbraco + "/masterPages/default.master";
+                    return Umbraco.Core.IO.SystemDirectories.Umbraco + "/masterPages/default.master";
             }
         }
 
@@ -78,14 +77,14 @@ namespace umbraco
         public string AlternateMasterPageFile(string templateFolder)
         {
             string file = TemplateAlias.Replace(" ", "") + ".master";
-            string path = SystemDirectories.Masterpages + "/" + templateFolder + "/" + file;
+            string path = Umbraco.Core.IO.SystemDirectories.Masterpages + "/" + templateFolder + "/" + file;
 
             //if it doesn't exists then we return the normal file
-            if (!System.IO.File.Exists(IOHelper.MapPath(VirtualPathUtility.ToAbsolute(path))))
+            if (!System.IO.File.Exists(Umbraco.Core.IO.IOHelper.MapPath(VirtualPathUtility.ToAbsolute(path))))
             {
 
-                string originalPath = IOHelper.MapPath(VirtualPathUtility.ToAbsolute(MasterPageFile));
-                string copyPath = IOHelper.MapPath(VirtualPathUtility.ToAbsolute(path));
+                string originalPath = Umbraco.Core.IO.IOHelper.MapPath(VirtualPathUtility.ToAbsolute(MasterPageFile));
+                string copyPath = Umbraco.Core.IO.IOHelper.MapPath(VirtualPathUtility.ToAbsolute(path));
 
                 FileStream fs = new FileStream(originalPath, FileMode.Open, FileAccess.ReadWrite);
                 StreamReader f = new StreamReader(fs);

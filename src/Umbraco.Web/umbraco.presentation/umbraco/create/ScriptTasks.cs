@@ -5,7 +5,6 @@ using Umbraco.Core.Logging;
 using umbraco.BusinessLogic;
 using umbraco.DataLayer;
 using umbraco.BasePages;
-using umbraco.IO;
 using umbraco.cms.businesslogic.member;
 
 namespace umbraco
@@ -52,7 +51,7 @@ namespace umbraco
 
             int createFolder = ParentID;
 
-            string basePath = IOHelper.MapPath(SystemDirectories.Scripts + "/" + relPath + fileName);
+            string basePath = Umbraco.Core.IO.IOHelper.MapPath(Umbraco.Core.IO.SystemDirectories.Scripts + "/" + relPath + fileName);
             if (System.IO.File.Exists(basePath))
             {
                 m_returnUrl = string.Format("settings/scripts/editScript.aspx?file={0}{1}.{2}", relPath, fileName, fileType);
@@ -76,7 +75,7 @@ namespace umbraco
 
         public bool Delete()
         {
-            string path = IOHelper.MapPath(SystemDirectories.Scripts + "/" + _alias.TrimStart('/'));
+            string path = Umbraco.Core.IO.IOHelper.MapPath(Umbraco.Core.IO.SystemDirectories.Scripts + "/" + _alias.TrimStart('/'));
 
             if (System.IO.File.Exists(path))
                 System.IO.File.Delete(path);

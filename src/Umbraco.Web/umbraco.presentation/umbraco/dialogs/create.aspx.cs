@@ -10,7 +10,6 @@ using System.Web.UI.WebControls;
 using System.Web.UI.HtmlControls;
 using System.Xml;
 using umbraco.cms.businesslogic;
-using umbraco.IO;
 using umbraco.presentation;
 using umbraco.BusinessLogic.Actions;
 using umbraco.BasePages;
@@ -50,13 +49,13 @@ namespace umbraco.dialogs
                     panel_buttons.Visible = false;
                     pane_chooseName.Visible = true;
                     XmlDocument createDef = new XmlDocument();
-                    XmlTextReader defReader = new XmlTextReader(Server.MapPath(umbraco.IO.IOHelper.ResolveUrl(umbraco.IO.SystemDirectories.Umbraco) + "/config/create/UI.xml"));
+                    XmlTextReader defReader = new XmlTextReader(Server.MapPath(Umbraco.Core.IO.IOHelper.ResolveUrl(Umbraco.Core.IO.SystemDirectories.Umbraco) + "/config/create/UI.xml"));
                     createDef.Load(defReader);
                     defReader.Close();
 
                     // Find definition for current nodeType
                     XmlNode def = createDef.SelectSingleNode("//nodeType [@alias = '" + Request.QueryString["app"] + "']");
-                    phCreate.Controls.Add(new UserControl().LoadControl(umbraco.IO.IOHelper.ResolveUrl(umbraco.IO.SystemDirectories.Umbraco) + def.SelectSingleNode("./usercontrol").FirstChild.Value));
+                    phCreate.Controls.Add(new UserControl().LoadControl(Umbraco.Core.IO.IOHelper.ResolveUrl(Umbraco.Core.IO.SystemDirectories.Umbraco) + def.SelectSingleNode("./usercontrol").FirstChild.Value));
                 }
                 else
                 {                    
@@ -71,8 +70,8 @@ namespace umbraco.dialogs
         protected override void OnPreRender(EventArgs e) {
             base.OnPreRender(e);
 
-            ScriptManager.GetCurrent(Page).Services.Add(new ServiceReference( IOHelper.ResolveUrl( SystemDirectories.Webservices) +"/cmsnode.asmx"));
-            ScriptManager.GetCurrent(Page).Services.Add(new ServiceReference( IOHelper.ResolveUrl( SystemDirectories.Webservices) +"/legacyAjaxCalls.asmx"));
+            ScriptManager.GetCurrent(Page).Services.Add(new ServiceReference(Umbraco.Core.IO.IOHelper.ResolveUrl(Umbraco.Core.IO.SystemDirectories.WebServices) + "/cmsnode.asmx"));
+            ScriptManager.GetCurrent(Page).Services.Add(new ServiceReference(Umbraco.Core.IO.IOHelper.ResolveUrl(Umbraco.Core.IO.SystemDirectories.WebServices) + "/legacyAjaxCalls.asmx"));
         }
 
         private bool CheckCreatePermissions(int nodeId)

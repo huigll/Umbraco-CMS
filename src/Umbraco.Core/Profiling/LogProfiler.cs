@@ -19,6 +19,7 @@ namespace Umbraco.Core.Profiling
         public IDisposable Step(string name)
         {
             LogHelper.Debug(typeof(LogProfiler), "Starting - " + name);
+            
             return DisposableTimer.Start(l => LogHelper.Info(typeof(LogProfiler), () => name + " (took " + l + "ms)"));
         }
 

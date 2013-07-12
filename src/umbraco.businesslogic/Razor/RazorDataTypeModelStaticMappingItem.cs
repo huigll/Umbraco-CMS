@@ -5,7 +5,7 @@ using System.Text;
 
 namespace umbraco.MacroEngines
 {
-	[Obsolete("use Umbraco.Core.RazorDataTypeModelStaticMappingItem instead")]
+    [Obsolete("use Umbraco.Core.Configuration.RazorDataTypeModelStaticMappingItem instead")]
     public class RazorDataTypeModelStaticMappingItem
 	{
 		private readonly Umbraco.Core.Configuration.RazorDataTypeModelStaticMappingItem _realMappingItem = new Umbraco.Core.Configuration.RazorDataTypeModelStaticMappingItem();

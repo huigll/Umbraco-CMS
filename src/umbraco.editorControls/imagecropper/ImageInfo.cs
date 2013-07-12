@@ -3,7 +3,6 @@ using System.Drawing;
 using System.IO;
 using System.Web;
 using umbraco.editorControls.imagecropper;
-using umbraco.IO;
 
 namespace umbraco.editorControls.imagecropper
 {
@@ -21,7 +20,7 @@ namespace umbraco.editorControls.imagecropper
         public ImageInfo(string relativePath)
         {
             RelativePath = relativePath;
-            Path = IOHelper.MapPath(relativePath);
+            Path = Umbraco.Core.IO.IOHelper.MapPath(relativePath);
             if (File.Exists(Path))
             {
                 string fileName = Path.Substring(Path.LastIndexOf('\\') + 1);

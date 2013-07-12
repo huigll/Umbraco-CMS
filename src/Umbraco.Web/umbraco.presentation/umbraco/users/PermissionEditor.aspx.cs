@@ -18,7 +18,6 @@ using umbraco.BusinessLogic.Actions;
 using umbraco.interfaces;
 using umbraco.cms.presentation.Trees;
 using System.Xml.XPath;
-using umbraco.IO;
 
 namespace umbraco.cms.presentation.user
 {
@@ -52,7 +51,7 @@ namespace umbraco.cms.presentation.user
 
             ImageButton save = pnlUmbraco.Menu.NewImageButton();
             save.ID = "btnSave";
-            save.ImageUrl = SystemDirectories.Umbraco + "/images/editor/save.gif";
+            save.ImageUrl = Umbraco.Core.IO.SystemDirectories.Umbraco + "/images/editor/save.gif";
 			save.OnClientClick = "SavePermissions(); return false;";
 
             nodePermissions.UserID = Convert.ToInt32(Request.QueryString["id"]);
@@ -97,7 +96,7 @@ namespace umbraco.cms.presentation.user
        
         protected override void OnPreRender(EventArgs e) {
             base.OnPreRender(e);
-            ScriptManager.GetCurrent(Page).Services.Add(new ServiceReference(SystemDirectories.Umbraco + "/users/PermissionsHandler.asmx"));
+            ScriptManager.GetCurrent(Page).Services.Add(new ServiceReference(Umbraco.Core.IO.SystemDirectories.Umbraco + "/users/PermissionsHandler.asmx"));
         }
 
     }

@@ -1085,35 +1085,35 @@ namespace Umbraco.Core.Configuration
 			}
 		}
 
-		[Obsolete("This setting is not used anymore, the only file extensions that are supported are .cs and .vb files")]
-        internal static IEnumerable<string> AppCodeFileExtensionsList
-		{
-			get
-			{
-				return (from XmlNode x in AppCodeFileExtensions
-						where !String.IsNullOrEmpty(x.InnerText)
-						select x.InnerText).ToList();
-			}
-		}
+        //[Obsolete("This setting is not used anymore, the only file extensions that are supported are .cs and .vb files")]
+        //internal static IEnumerable<string> AppCodeFileExtensionsList
+        //{
+        //    get
+        //    {
+        //        return (from XmlNode x in AppCodeFileExtensions
+        //                where !String.IsNullOrEmpty(x.InnerText)
+        //                select x.InnerText).ToList();
+        //    }
+        //}
 
-		[Obsolete("This setting is not used anymore, the only file extensions that are supported are .cs and .vb files")]
-        internal static XmlNode AppCodeFileExtensions
-		{
-			get
-			{
-				XmlNode value = GetKeyAsNode("/settings/developer/appCodeFileExtensions");
-				if (value != null)
-				{
-					return value;
-				}
+        //[Obsolete("This setting is not used anymore, the only file extensions that are supported are .cs and .vb files")]
+        //internal static XmlNode AppCodeFileExtensions
+        //{
+        //    get
+        //    {
+        //        XmlNode value = GetKeyAsNode("/settings/developer/appCodeFileExtensions");
+        //        if (value != null)
+        //        {
+        //            return value;
+        //        }
 
-				// default is .cs and .vb
-				value = UmbracoSettingsXmlDoc.CreateElement("appCodeFileExtensions");
-				value.AppendChild(XmlHelper.AddTextNode(UmbracoSettingsXmlDoc, "ext", "cs"));
-				value.AppendChild(XmlHelper.AddTextNode(UmbracoSettingsXmlDoc, "ext", "vb"));
-				return value;
-			}
-		}
+        //        // default is .cs and .vb
+        //        value = UmbracoSettingsXmlDoc.CreateElement("appCodeFileExtensions");
+        //        value.AppendChild(XmlHelper.AddTextNode(UmbracoSettingsXmlDoc, "ext", "cs"));
+        //        value.AppendChild(XmlHelper.AddTextNode(UmbracoSettingsXmlDoc, "ext", "vb"));
+        //        return value;
+        //    }
+        //}
 
 		/// <summary>
 		/// Tells us whether the Xml to always update disk cache, when changes are made to content

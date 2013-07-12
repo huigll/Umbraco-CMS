@@ -11,7 +11,6 @@ using umbraco.BusinessLogic;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.ComponentModel;
-using umbraco.IO;
 using System.Collections;
 using umbraco.cms.businesslogic.task;
 using umbraco.cms.businesslogic.workflow;
@@ -56,7 +55,7 @@ namespace umbraco.cms.businesslogic
 
         #region Private static
 
-        private static readonly string m_DefaultIconCssFile = IOHelper.MapPath(SystemDirectories.Umbraco_client + "/Tree/treeIcons.css");
+        private static readonly string m_DefaultIconCssFile = Umbraco.Core.IO.IOHelper.MapPath(Umbraco.Core.IO.SystemDirectories.UmbracoClient + "/Tree/treeIcons.css");
         private static List<string> m_DefaultIconClasses = new List<string>();
 
         private static void initializeIconClasses()

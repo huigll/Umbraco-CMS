@@ -5,7 +5,6 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using ClientDependency.Core;
 using umbraco.BasePages;
-using umbraco.IO;
 
 namespace Umbraco.Web.UI.Controls
 {
@@ -139,8 +138,8 @@ namespace Umbraco.Web.UI.Controls
                 "RegisterFolderBrowsers",
                 string.Format("$(function () {{ $(\".umbFolderBrowser\").folderBrowser({{ umbracoPath : '{0}', basePath : '{1}' }}); " +
                  "$(\".umbFolderBrowser #filterTerm\").keypress(function(event) {{ return event.keyCode != 13; }});}});",
-                IOHelper.ResolveUrl(SystemDirectories.Umbraco),
-                IOHelper.ResolveUrl(SystemDirectories.Base)),
+                Umbraco.Core.IO.IOHelper.ResolveUrl(Umbraco.Core.IO.SystemDirectories.Umbraco),
+                Umbraco.Core.IO.IOHelper.ResolveUrl(Umbraco.Core.IO.SystemDirectories.Base)),
                 true);
         }
 

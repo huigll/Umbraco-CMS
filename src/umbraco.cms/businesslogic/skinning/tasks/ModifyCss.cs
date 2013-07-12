@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using umbraco.interfaces.skinning;
 using System.IO;
-using umbraco.IO;
 using System.Web;
 
 namespace umbraco.cms.businesslogic.skinning.tasks
@@ -26,7 +25,7 @@ namespace umbraco.cms.businesslogic.skinning.tasks
             TaskExecutionDetails d = new TaskExecutionDetails();
 
             //currently just appending it to the end of the css file
-            StreamWriter sw = File.AppendText(IO.IOHelper.MapPath(SystemDirectories.Css) + "/" + TargetFile);
+            StreamWriter sw = File.AppendText(Umbraco.Core.IO.IOHelper.MapPath(Umbraco.Core.IO.SystemDirectories.Css) + "/" + TargetFile);
             sw.WriteLine(string.Format("{0}{{ {1}:{2};}}", TargetRule, TargetParameter, Value));
             sw.Close();
 
@@ -39,7 +38,7 @@ namespace umbraco.cms.businesslogic.skinning.tasks
 
         public override TaskExecutionStatus RollBack(string OriginalValue)
         {
-            string[] filecontents = File.ReadAllLines(IO.IOHelper.MapPath(SystemDirectories.Css) + "/" + TargetFile);
+            string[] filecontents = File.ReadAllLines(Umbraco.Core.IO.IOHelper.MapPath(Umbraco.Core.IO.SystemDirectories.Css) + "/" + TargetFile);
 
             for (int i = filecontents.Length; i > 0; i--)
             {
@@ -55,7 +54,7 @@ namespace umbraco.cms.businesslogic.skinning.tasks
             foreach (string line in filecontents)
                 s.AppendLine(line);
 
-            System.IO.StreamWriter file = new System.IO.StreamWriter(IO.IOHelper.MapPath(SystemDirectories.Css) + "/" + TargetFile);
+            System.IO.StreamWriter file = new System.IO.StreamWriter(Umbraco.Core.IO.IOHelper.MapPath(Umbraco.Core.IO.SystemDirectories.Css) + "/" + TargetFile);
             file.WriteLine(s.ToString());
 
             file.Close();

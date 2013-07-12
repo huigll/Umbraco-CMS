@@ -16,7 +16,7 @@ namespace umbraco.controls.Images
 		public ImageViewer()
 		{
 			MediaItemPath = "#";
-            MediaItemThumbnailPath = umbraco.IO.IOHelper.ResolveUrl(umbraco.IO.SystemDirectories.Umbraco) + "/images/blank.png";
+            MediaItemThumbnailPath = Umbraco.Core.IO.IOHelper.ResolveUrl(Umbraco.Core.IO.SystemDirectories.Umbraco) + "/images/blank.png";
 			AltText = "No Image";
 			ImageFound = false;
             ViewerStyle = Style.Basic;
@@ -95,7 +95,7 @@ namespace umbraco.controls.Images
                 }
 
                 MediaItemPath = pFile.Value != null && !string.IsNullOrEmpty(pFile.Value.ToString())
-                    ? umbraco.IO.IOHelper.ResolveUrl(pFile.Value.ToString())
+                    ? Umbraco.Core.IO.IOHelper.ResolveUrl(pFile.Value.ToString())
                     : "#";
                 AltText = MediaItemPath != "#" ? m.Text : ui.GetText("no") + " " + ui.GetText("media");
 

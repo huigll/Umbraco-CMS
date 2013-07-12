@@ -23,7 +23,6 @@ using umbraco.interfaces;
 using umbraco.DataLayer;
 using umbraco.BusinessLogic.Utils;
 using umbraco.cms.presentation.Trees;
-using umbraco.IO;
 using Umbraco.Core;
 
 

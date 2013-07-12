@@ -6,7 +6,6 @@ using ClientDependency.Core;
 using umbraco.presentation;
 using ClientDependency.Core.Controls;
 using umbraco.interfaces;
-using umbraco.IO;
 using umbraco.BasePages;
 using umbraco.controls.Images;
 using System.Web.UI.WebControls;
@@ -51,7 +50,7 @@ namespace umbraco.editorControls
         {
             get
             {
-                return _showadvanced ? umbraco.IO.IOHelper.ResolveUrl(umbraco.IO.SystemDirectories.Umbraco) + "/dialogs/mediaPicker.aspx" : TreeService.GetPickerUrl(Umbraco.Core.Constants.Applications.Media, "media");
+                return _showadvanced ? Umbraco.Core.IO.IOHelper.ResolveUrl(Umbraco.Core.IO.SystemDirectories.Umbraco) + "/dialogs/mediaPicker.aspx" : TreeService.GetPickerUrl(Umbraco.Core.Constants.Applications.Media, "media");
             }
         }
 
@@ -87,7 +86,7 @@ namespace umbraco.editorControls
                     TreePickerUrl,
                     ModalWidth.ToString(),
                     ModalHeight.ToString(),
-                    umbraco.IO.IOHelper.ResolveUrl(umbraco.IO.SystemDirectories.Umbraco).TrimEnd('/')
+                    Umbraco.Core.IO.IOHelper.ResolveUrl(Umbraco.Core.IO.SystemDirectories.Umbraco).TrimEnd('/')
                  });
             }           
         }
@@ -121,7 +120,7 @@ namespace umbraco.editorControls
                 PreviewContainer.ID = "preview";
                 this.Controls.Add(PreviewContainer);
 
-                ImgViewer = (ImageViewer)Page.LoadControl(umbraco.IO.IOHelper.ResolveUrl(umbraco.IO.SystemDirectories.Umbraco) + "/controls/Images/ImageViewer.ascx");
+                ImgViewer = (ImageViewer)Page.LoadControl(Umbraco.Core.IO.IOHelper.ResolveUrl(Umbraco.Core.IO.SystemDirectories.Umbraco) + "/controls/Images/ImageViewer.ascx");
 				ImgViewer.ID = "ImgViewer";
 				ImgViewer.ViewerStyle = ImageViewer.Style.ImageLink;				
 				

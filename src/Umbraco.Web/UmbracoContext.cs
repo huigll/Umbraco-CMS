@@ -7,7 +7,6 @@ using Umbraco.Web.PublishedCache;
 using Umbraco.Web.Routing;
 using Umbraco.Web.Security;
 using umbraco;
-using umbraco.IO;
 using umbraco.presentation;
 using umbraco.presentation.LiveEditing;
 using umbraco.BasePages;

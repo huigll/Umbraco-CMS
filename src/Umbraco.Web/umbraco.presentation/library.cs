@@ -30,7 +30,6 @@ using umbraco.scripting;
 using umbraco.DataLayer;
 using System.Web.Security;
 using umbraco.cms.businesslogic.language;
-using umbraco.IO;
 using System.Collections;
 using System.Collections.Generic;
 using umbraco.cms.businesslogic.cache;
@@ -126,7 +125,7 @@ namespace umbraco
         {
             try
             {
-                string path = IOHelper.MapPath(SystemDirectories.MacroScripts + "/" + file);
+                string path = Umbraco.Core.IO.IOHelper.MapPath(Umbraco.Core.IO.SystemDirectories.MacroScripts + "/" + file);
                 object res = python.executeFile(path);
                 return res.ToString();
             }
@@ -1129,7 +1128,7 @@ namespace umbraco
         /// </summary>
         public static void AddJquery()
         {
-            RegisterJavaScriptFile("jQuery", String.Format("{0}/ui/jquery.js", IOHelper.ResolveUrl(SystemDirectories.Umbraco_client)));
+            RegisterJavaScriptFile("jQuery", String.Format("{0}/ui/jquery.js", Umbraco.Core.IO.IOHelper.ResolveUrl(Umbraco.Core.IO.SystemDirectories.UmbracoClient)));
         }
 
 
@@ -1418,7 +1417,7 @@ namespace umbraco
             try
             {
                 if (Relative)
-                    xmlDoc.Load(IOHelper.MapPath(Path));
+                    xmlDoc.Load(Umbraco.Core.IO.IOHelper.MapPath(Path));
                 else
                     xmlDoc.Load(Path);
             }

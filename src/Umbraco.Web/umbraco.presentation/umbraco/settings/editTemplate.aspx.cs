@@ -10,7 +10,6 @@ using umbraco.cms.businesslogic.skinning;
 using umbraco.cms.businesslogic.template;
 using umbraco.cms.presentation.Trees;
 using umbraco.DataLayer;
-using umbraco.IO;
 using umbraco.uicontrols;
 using System.Linq;
 
@@ -33,9 +32,9 @@ namespace umbraco.cms.presentation.settings
 			base.OnPreRender(e);
 
 			ScriptManager.GetCurrent(Page).Services.Add(
-				new ServiceReference(IOHelper.ResolveUrl(SystemDirectories.Webservices + "/codeEditorSave.asmx")));
+                new ServiceReference(Umbraco.Core.IO.IOHelper.ResolveUrl(Umbraco.Core.IO.SystemDirectories.WebServices + "/codeEditorSave.asmx")));
 			ScriptManager.GetCurrent(Page).Services.Add(
-				new ServiceReference(IOHelper.ResolveUrl(SystemDirectories.Webservices + "/legacyAjaxCalls.asmx")));
+                new ServiceReference(Umbraco.Core.IO.IOHelper.ResolveUrl(Umbraco.Core.IO.SystemDirectories.WebServices+ "/legacyAjaxCalls.asmx")));
 		}
 
         protected string TemplateTreeSyncPath { get; private set; }
@@ -92,7 +91,7 @@ namespace umbraco.cms.presentation.settings
 			Panel1.hasMenu = true;
 
 			MenuIconI save = Panel1.Menu.NewIcon();
-			save.ImageURL = SystemDirectories.Umbraco + "/images/editor/save.gif";
+            save.ImageURL = Umbraco.Core.IO.SystemDirectories.Umbraco + "/images/editor/save.gif";
 			save.OnClickCommand = "doSubmit()";
 			save.AltText = ui.Text("save");
 			save.ID = "save";
@@ -108,7 +107,7 @@ namespace umbraco.cms.presentation.settings
 			umbField.ImageURL = UmbracoPath + "/images/editor/insField.gif";
 			umbField.OnClickCommand =
 				ClientTools.Scripts.OpenModalWindow(
-					IOHelper.ResolveUrl(SystemDirectories.Umbraco) + "/dialogs/umbracoField.aspx?objectId=" +
+                    Umbraco.Core.IO.IOHelper.ResolveUrl(Umbraco.Core.IO.SystemDirectories.Umbraco) + "/dialogs/umbracoField.aspx?objectId=" +
 					editorSource.ClientID + "&tagName=UMBRACOGETDATA", ui.Text("template", "insertPageField"), 640, 550);
 			umbField.AltText = ui.Text("template", "insertPageField");
 
@@ -117,7 +116,7 @@ namespace umbraco.cms.presentation.settings
 			umbDictionary.ImageURL = GlobalSettings.Path + "/images/editor/dictionaryItem.gif";
 			umbDictionary.OnClickCommand =
 				ClientTools.Scripts.OpenModalWindow(
-					IOHelper.ResolveUrl(SystemDirectories.Umbraco) + "/dialogs/umbracoField.aspx?objectId=" +
+                    Umbraco.Core.IO.IOHelper.ResolveUrl(Umbraco.Core.IO.SystemDirectories.Umbraco) + "/dialogs/umbracoField.aspx?objectId=" +
 					editorSource.ClientID + "&tagName=UMBRACOGETDICTIONARY", ui.Text("template", "insertDictionaryItem"),
 					640, 550);
 			umbDictionary.AltText = "Insert umbraco dictionary item";
@@ -125,7 +124,7 @@ namespace umbraco.cms.presentation.settings
 			//uicontrols.MenuIconI umbMacro = Panel1.Menu.NewIcon();
 			//umbMacro.ImageURL = UmbracoPath + "/images/editor/insMacro.gif";
 			//umbMacro.AltText = ui.Text("template", "insertMacro");
-			//umbMacro.OnClickCommand = umbraco.BasePages.ClientTools.Scripts.OpenModalWindow(umbraco.IO.IOHelper.ResolveUrl(umbraco.IO.SystemDirectories.Umbraco) + "/dialogs/editMacro.aspx?objectId=" + editorSource.ClientID, ui.Text("template", "insertMacro"), 470, 530);
+            //umbMacro.OnClickCommand = umbraco.BasePages.ClientTools.Scripts.OpenModalWindow(Umbraco.Core.IO.IOHelper.ResolveUrl(Umbraco.Core.IO.SystemDirectories.Umbraco) + "/dialogs/editMacro.aspx?objectId=" + editorSource.ClientID, ui.Text("template", "insertMacro"), 470, 530);
 
 			Panel1.Menu.NewElement("div", "splitButtonMacroPlaceHolder", "sbPlaceHolder", 40);
 
@@ -138,7 +137,7 @@ namespace umbraco.cms.presentation.settings
 				umbContainer.AltText = ui.Text("template", "insertContentAreaPlaceHolder");
 				umbContainer.OnClickCommand =
 					ClientTools.Scripts.OpenModalWindow(
-						IOHelper.ResolveUrl(SystemDirectories.Umbraco) +
+                        Umbraco.Core.IO.IOHelper.ResolveUrl(Umbraco.Core.IO.SystemDirectories.Umbraco) +
 						"/dialogs/insertMasterpagePlaceholder.aspx?&id=" + _template.Id,
 						ui.Text("template", "insertContentAreaPlaceHolder"), 470, 320);
 
@@ -147,7 +146,7 @@ namespace umbraco.cms.presentation.settings
 				umbContent.AltText = ui.Text("template", "insertContentArea");
 				umbContent.OnClickCommand =
 					ClientTools.Scripts.OpenModalWindow(
-						IOHelper.ResolveUrl(SystemDirectories.Umbraco) + "/dialogs/insertMasterpageContent.aspx?id=" +
+                        Umbraco.Core.IO.IOHelper.ResolveUrl(Umbraco.Core.IO.SystemDirectories.Umbraco) + "/dialogs/insertMasterpageContent.aspx?id=" +
 						_template.Id, ui.Text("template", "insertContentArea"), 470, 300);
 			}
 
@@ -162,7 +161,7 @@ namespace umbraco.cms.presentation.settings
 				MenuIconI umbContainer = Panel1.Menu.NewIcon();
 				umbContainer.ImageURL = UmbracoPath + "/images/editor/skin.gif";
 				umbContainer.AltText = ui.Text("template", "modifyTemplateSkin");
-				//umbContainer.OnClickCommand = umbraco.BasePages.ClientTools.Scripts.OpenModalWindow(umbraco.IO.IOHelper.ResolveUrl(umbraco.IO.SystemDirectories.Umbraco) + "/dialogs/TemplateSkinning.aspx?&id=" + _template.Id.ToString(), ui.Text("template", "modifyTemplateSkin"), 570, 420);
+                //umbContainer.OnClickCommand = umbraco.BasePages.ClientTools.Scripts.OpenModalWindow(Umbraco.Core.IO.IOHelper.ResolveUrl(Umbraco.Core.IO.SystemDirectories.Umbraco) + "/dialogs/TemplateSkinning.aspx?&id=" + _template.Id.ToString(), ui.Text("template", "modifyTemplateSkin"), 570, 420);
 				umbContainer.OnClickCommand = "window.open('" + GlobalSettings.Path + "/canvas.aspx?redir=" +
 											  ResolveUrl("~/") + "&umbSkinning=true&umbSkinningConfigurator=true" +
 											  "','canvas')";
@@ -174,7 +173,7 @@ namespace umbraco.cms.presentation.settings
 			MenuIconI helpIcon = Panel1.Menu.NewIcon();
 			helpIcon.OnClickCommand =
 				ClientTools.Scripts.OpenModalWindow(
-					IOHelper.ResolveUrl(SystemDirectories.Umbraco) + "/settings/modals/showumbracotags.aspx?alias=" +
+                    Umbraco.Core.IO.IOHelper.ResolveUrl(Umbraco.Core.IO.SystemDirectories.Umbraco) + "/settings/modals/showumbracotags.aspx?alias=" +
 					_template.Alias, ui.Text("template", "quickGuide"), 600, 580);
 			helpIcon.ImageURL = UmbracoPath + "/images/editor/help.png";
 			helpIcon.AltText = ui.Text("template", "quickGuide");
@@ -183,8 +182,8 @@ namespace umbraco.cms.presentation.settings
 
 		private void LoadScriptingTemplates()
 		{
-			string path = SystemDirectories.Umbraco + "/scripting/templates/cshtml/";
-			string abPath = IOHelper.MapPath(path);
+            string path = Umbraco.Core.IO.SystemDirectories.Umbraco + "/scripting/templates/cshtml/";
+            string abPath = Umbraco.Core.IO.IOHelper.MapPath(path);
 
 			var files = new List<KeyValuePair<string, string>>();
 

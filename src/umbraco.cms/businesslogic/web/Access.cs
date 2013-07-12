@@ -6,7 +6,6 @@ using System.Collections;
 using System.IO;
 
 using System.Web.Security;
-using umbraco.IO;
 
 namespace umbraco.cms.businesslogic.web
 {
@@ -48,7 +47,7 @@ namespace umbraco.cms.businesslogic.web
                             if (_accessXmlSource == null)
                             {
                                 //if we pop it here it'll make for better stack traces ;)
-                                _accessXmlSource = IOHelper.MapPath(SystemFiles.AccessXml, true);
+                                _accessXmlSource = Umbraco.Core.IO.IOHelper.MapPath(Umbraco.Core.IO.SystemFiles.AccessXml, true);
                             }
 
                             _accessXmlContent = new XmlDocument();

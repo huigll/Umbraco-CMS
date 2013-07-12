@@ -83,7 +83,7 @@ namespace Umbraco.Tests.Persistence.Repositories
                 Alias = "subtitle",
                 Name = "Subtitle",
                 Description = "Optional Subtitle",
-                HelpText = "",
+
                 Mandatory = false,
                 SortOrder = 1,
                 DataTypeDefinitionId = -88
@@ -244,7 +244,7 @@ namespace Umbraco.Tests.Persistence.Repositories
                                    Alias = "urlAlias",
                                    Name = "Url Alias",
                                    Description = "",
-                                   HelpText = "",
+                                   
                                    Mandatory = false,
                                    SortOrder = 1,
                                    DataTypeDefinitionId = -88
@@ -346,7 +346,7 @@ namespace Umbraco.Tests.Persistence.Repositories
 
             // Act
             var propertyGroup = contentType.PropertyGroups.First(x => x.Name == "Meta");
-            propertyGroup.PropertyTypes.Add(new PropertyType(new Guid(), DataTypeDatabaseType.Ntext) { Alias = "metaAuthor", Name = "Meta Author", Description = "", HelpText = "", Mandatory = false, SortOrder = 1, DataTypeDefinitionId = -88 });
+            propertyGroup.PropertyTypes.Add(new PropertyType(new Guid(), DataTypeDatabaseType.Ntext) { Alias = "metaAuthor", Name = "Meta Author", Description = "",  Mandatory = false, SortOrder = 1, DataTypeDefinitionId = -88 });
             repository.AddOrUpdate(contentType);
             unitOfWork.Commit();
 
@@ -370,7 +370,7 @@ namespace Umbraco.Tests.Persistence.Repositories
             unitOfWork.Commit();
 
             var propertyGroup = contentType.PropertyGroups.First(x => x.Name == "Meta");
-            propertyGroup.PropertyTypes.Add(new PropertyType(new Guid(), DataTypeDatabaseType.Ntext) { Alias = "metaAuthor", Name = "Meta Author", Description = "", HelpText = "", Mandatory = false, SortOrder = 1, DataTypeDefinitionId = -88 });
+            propertyGroup.PropertyTypes.Add(new PropertyType(new Guid(), DataTypeDatabaseType.Ntext) { Alias = "metaAuthor", Name = "Meta Author", Description = "",  Mandatory = false, SortOrder = 1, DataTypeDefinitionId = -88 });
             repository.AddOrUpdate(contentType);
             unitOfWork.Commit();
 
@@ -407,7 +407,7 @@ namespace Umbraco.Tests.Persistence.Repositories
             contentType.RemovePropertyType("keywords");
             //Add PropertyType
             var propertyGroup = contentType.PropertyGroups.First(x => x.Name == "Meta");
-            propertyGroup.PropertyTypes.Add(new PropertyType(new Guid(), DataTypeDatabaseType.Ntext) { Alias = "metaAuthor", Name = "Meta Author", Description = "", HelpText = "", Mandatory = false, SortOrder = 1, DataTypeDefinitionId = -88 });
+            propertyGroup.PropertyTypes.Add(new PropertyType(new Guid(), DataTypeDatabaseType.Ntext) { Alias = "metaAuthor", Name = "Meta Author", Description = "",  Mandatory = false, SortOrder = 1, DataTypeDefinitionId = -88 });
             repository.AddOrUpdate(contentType);
             unitOfWork.Commit();
 
