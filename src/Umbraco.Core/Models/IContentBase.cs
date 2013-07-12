@@ -79,5 +79,6 @@ namespace Umbraco.Core.Models
         /// <param name="isTrashed">Boolean indicating whether content is trashed (true) or not trashed (false)</param>
         /// <param name="parentId"> </param>
         void ChangeTrashedState(bool isTrashed, int parentId = -20);
+
     }
 }

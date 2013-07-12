@@ -28,8 +28,6 @@ namespace Umbraco.Core.Models.Rdbms
         [Column("text")]
         public string Text { get; set; }
 
-        [Column("urlName")]
-        public string UrlName { get; set; }
 
         [Column("releaseDate")]
         [NullSetting(NullSetting = NullSettings.Null)]

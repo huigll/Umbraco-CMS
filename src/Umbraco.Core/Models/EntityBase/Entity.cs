@@ -20,6 +20,7 @@ namespace Umbraco.Core.Models.EntityBase
         private DateTime _createDate;
         private DateTime _updateDate;
         private bool _wasCancelled;
+        
 
         private static readonly PropertyInfo IdSelector = ExpressionHelper.GetPropertyInfo<Entity, int>(x => x.Id);
         private static readonly PropertyInfo KeySelector = ExpressionHelper.GetPropertyInfo<Entity, Guid>(x => x.Key);
@@ -27,8 +28,7 @@ namespace Umbraco.Core.Models.EntityBase
         private static readonly PropertyInfo UpdateDateSelector = ExpressionHelper.GetPropertyInfo<Entity, DateTime>(x => x.UpdateDate);
         private static readonly PropertyInfo HasIdentitySelector = ExpressionHelper.GetPropertyInfo<Entity, bool>(x => x.HasIdentity);
         private static readonly PropertyInfo WasCancelledSelector = ExpressionHelper.GetPropertyInfo<Entity, bool>(x => x.WasCancelled);
-        
-
+       
         /// <summary>
         /// Integer Id
         /// </summary>
@@ -128,7 +128,8 @@ namespace Umbraco.Core.Models.EntityBase
                 }, _updateDate, UpdateDateSelector);
             }
         }
-
+        
+        
         internal virtual void ResetIdentity()
         {
             _hasIdentity = false;

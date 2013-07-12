@@ -16,11 +16,12 @@
         /// Gets or Sets the Name of the Entity
         /// </summary>
         string Name { get; set; }
+       
+       
         /// <summary>
-        /// Gets or Sets the Url Name of the Entity , may different with Name
+        /// if false , we dont load them to xml
         /// </summary>
-        string UrlName { get; set; }
-
+    //    bool IsLoadFromDB { get; set; }
         /// <summary>
         /// Gets or sets the Id of the Parent Entity
         /// </summary>
