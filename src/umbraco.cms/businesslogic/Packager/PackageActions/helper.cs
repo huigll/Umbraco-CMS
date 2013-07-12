@@ -63,7 +63,7 @@ namespace umbraco.cms.businesslogic.packager.standardPackageActions
 		public static XmlNode parseStringToXmlNode(string value)
 		{
 			XmlDocument doc = new XmlDocument();
-			XmlNode node = xmlHelper.addTextNode(doc, "error", "");
+            XmlNode node = Umbraco.Core.XmlHelper.AddTextNode(doc, "error", "");
 
 			try
 			{

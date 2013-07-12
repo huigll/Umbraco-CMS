@@ -15,7 +15,7 @@ namespace Runway.Blog.Installer
 			{
 				System.Xml.XmlDocument xmlDocument = new System.Xml.XmlDocument();
 				xmlDocument.PreserveWhitespace = true;
-				xmlDocument = xmlHelper.OpenAsXmlDocument("/config/restExtensions.config");
+                xmlDocument = Umbraco.Core.XmlHelper.OpenAsXmlDocument("/config/restExtensions.config");
 				System.Xml.XmlNode xmlNode = xmlDocument.SelectSingleNode("//RestExtensions");
 				if (xmlNode != null)
 				{
@@ -59,7 +59,7 @@ namespace Runway.Blog.Installer
 			{
 				System.Xml.XmlDocument xmlDocument = new System.Xml.XmlDocument();
 				xmlDocument.PreserveWhitespace = true;
-				xmlDocument = xmlHelper.OpenAsXmlDocument("/config/restExtensions.config");
+                xmlDocument = Umbraco.Core.XmlHelper.OpenAsXmlDocument("/config/restExtensions.config");
 				System.Xml.XmlNode xmlNode = xmlDocument.SelectSingleNode("//RestExtensions");
 				if (xmlNode != null)
 				{

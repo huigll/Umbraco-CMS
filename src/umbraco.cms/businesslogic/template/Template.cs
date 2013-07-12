@@ -288,15 +288,15 @@ namespace umbraco.cms.businesslogic.template
         public XmlNode ToXml(XmlDocument doc)
         {
             XmlNode template = doc.CreateElement("Template");
-            template.AppendChild(xmlHelper.addTextNode(doc, "Name", this.Text));
-            template.AppendChild(xmlHelper.addTextNode(doc, "Alias", this.Alias));
+            template.AppendChild(Umbraco.Core.XmlHelper.AddTextNode(doc, "Name", this.Text));
+            template.AppendChild(Umbraco.Core.XmlHelper.AddTextNode(doc, "Alias", this.Alias));
 
             if (this.MasterTemplate != 0)
             {
-                template.AppendChild(xmlHelper.addTextNode(doc, "Master", new Template(this.MasterTemplate).Alias));
+                template.AppendChild(Umbraco.Core.XmlHelper.AddTextNode(doc, "Master", new Template(this.MasterTemplate).Alias));
             }
 
-            template.AppendChild(xmlHelper.addCDataNode(doc, "Design", this.Design));
+            template.AppendChild(Umbraco.Core.XmlHelper.AddCDataNode(doc, "Design", this.Design));
 
             return template;
         }
@@ -769,15 +769,15 @@ namespace umbraco.cms.businesslogic.template
 		
         public static Template Import(XmlNode n, User u)
         {
-            string alias = xmlHelper.GetNodeValue(n.SelectSingleNode("Alias"));
+            string alias = Umbraco.Core.XmlHelper.GetNodeValue(n.SelectSingleNode("Alias"));
 
             Template t = Template.GetByAlias(alias);
-	        var design = xmlHelper.GetNodeValue(n.SelectSingleNode("Design"));
+            var design = Umbraco.Core.XmlHelper.GetNodeValue(n.SelectSingleNode("Design"));
 
             if (t == null)
             {
 				//create the template with the design if one is specified
-				t = MakeNew(xmlHelper.GetNodeValue(n.SelectSingleNode("Name")), u, 
+                t = MakeNew(Umbraco.Core.XmlHelper.GetNodeValue(n.SelectSingleNode("Name")), u, 
 					design.IsNullOrWhiteSpace() ? null : design);
             }
 

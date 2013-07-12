@@ -1205,7 +1205,7 @@ order by umbracoNode.level, umbracoNode.sortOrder";
                 {
                     if (childContainer == null)
                     {
-                        childContainer = xmlHelper.addTextNode(parentNode.OwnerDocument,
+                        childContainer = Umbraco.Core.XmlHelper.AddTextNode(parentNode.OwnerDocument,
                                                                UmbracoSettings.
                                                                    TEMP_FRIENDLY_XML_CHILD_CONTAINER_NODENAME, "");
                         parentNode.AppendChild(childContainer);

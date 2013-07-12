@@ -21,7 +21,7 @@ namespace Umbraco.Core.Models
         private int _sortOrder;
         private int _parentId;
         private string _nodePath;
-        private int _masterTemplateId;
+  //      private int _masterTemplateId;
         private string _masterTemplateAlias;
 
         private static readonly PropertyInfo CreatorIdSelector = ExpressionHelper.GetPropertyInfo<Template, int>(x => x.CreatorId);

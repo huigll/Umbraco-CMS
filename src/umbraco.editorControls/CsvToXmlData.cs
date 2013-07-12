@@ -81,7 +81,7 @@ namespace umbraco.editorControls
             if (this.Value != null)
             {
                 // split the CSV data into an XML document.
-                var xml = xmlHelper.Split(new XmlDocument(), this.Value.ToString(), this.separator, this.rootName, this.elementName);
+                var xml = Umbraco.Core.XmlHelper.Split(new XmlDocument(), this.Value.ToString(), this.separator, this.rootName, this.elementName);
 
                 // return the XML node.
                 return data.ImportNode(xml.DocumentElement, true);

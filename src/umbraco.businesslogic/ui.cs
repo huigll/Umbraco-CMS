@@ -47,7 +47,8 @@ namespace umbraco
         /// <returns></returns>
         private static string GetLanguage()
         {
-            return GetLanguage(UmbracoEnsuredPage.CurrentUser);
+
+            return GetLanguage(BusinessLogic.User.GetCurrent()/*UmbracoEnsuredPage.CurrentUser*/);
         }
 
         /// <summary>
@@ -219,7 +220,8 @@ namespace umbraco
                     {
                         return GetStringWithVars(node, variables);
                     }
-                    return xmlHelper.GetNodeValue(node);
+
+                    return Umbraco.Core.XmlHelper.GetNodeValue(node);
                 }
             }
             return "[" + key + "]";
@@ -227,7 +229,7 @@ namespace umbraco
 
         private static string GetStringWithVars(XmlNode node, string[] variables)
         {
-            var stringWithVars = xmlHelper.GetNodeValue(node);
+            var stringWithVars = Umbraco.Core.XmlHelper.GetNodeValue(node);
             var vars = Regex.Matches(stringWithVars, @"\%(\d)\%",
                                      RegexOptions.IgnoreCase | RegexOptions.IgnorePatternWhitespace);
             foreach (Match var in vars)

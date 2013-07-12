@@ -169,27 +169,27 @@ namespace umbraco.cms.businesslogic.member
 
             var info = xd.CreateElement("Info");
             root.AppendChild(info);
-            info.AppendChild(xmlHelper.addTextNode(xd, "Name", this.Text));
-            info.AppendChild(xmlHelper.addTextNode(xd, "Alias", this.Alias));
-            info.AppendChild(xmlHelper.addTextNode(xd, "Icon", this.IconUrl));
-            info.AppendChild(xmlHelper.addTextNode(xd, "Thumbnail", this.Thumbnail));
-            info.AppendChild(xmlHelper.addTextNode(xd, "Description", this.Description));
+            info.AppendChild(Umbraco.Core.XmlHelper.AddTextNode(xd, "Name", this.Text));
+            info.AppendChild(Umbraco.Core.XmlHelper.AddTextNode(xd, "Alias", this.Alias));
+            info.AppendChild(Umbraco.Core.XmlHelper.AddTextNode(xd, "Icon", this.IconUrl));
+            info.AppendChild(Umbraco.Core.XmlHelper.AddTextNode(xd, "Thumbnail", this.Thumbnail));
+            info.AppendChild(Umbraco.Core.XmlHelper.AddTextNode(xd, "Description", this.Description));
 
             XmlElement pts = xd.CreateElement("GenericProperties");
             foreach (PropertyType pt in this.PropertyTypes)
             {
                 XmlElement ptx = xd.CreateElement("GenericProperty");
-                ptx.AppendChild(xmlHelper.addTextNode(xd, "Name", pt.Name));
-                ptx.AppendChild(xmlHelper.addTextNode(xd, "Alias", pt.Alias));
-                ptx.AppendChild(xmlHelper.addTextNode(xd, "Type", pt.DataTypeDefinition.DataType.Id.ToString()));
+                ptx.AppendChild(Umbraco.Core.XmlHelper.AddTextNode(xd, "Name", pt.Name));
+                ptx.AppendChild(Umbraco.Core.XmlHelper.AddTextNode(xd, "Alias", pt.Alias));
+                ptx.AppendChild(Umbraco.Core.XmlHelper.AddTextNode(xd, "Type", pt.DataTypeDefinition.DataType.Id.ToString()));
 
                 //Datatype definition guid was added in v4 to enable datatype imports
-                ptx.AppendChild(xmlHelper.addTextNode(xd, "Definition", pt.DataTypeDefinition.UniqueId.ToString()));
+                ptx.AppendChild(Umbraco.Core.XmlHelper.AddTextNode(xd, "Definition", pt.DataTypeDefinition.UniqueId.ToString()));
 
-                ptx.AppendChild(xmlHelper.addTextNode(xd, "Tab", Tab.GetCaptionById(pt.TabId)));
-                ptx.AppendChild(xmlHelper.addTextNode(xd, "Mandatory", pt.Mandatory.ToString()));
-                ptx.AppendChild(xmlHelper.addTextNode(xd, "Validation", pt.ValidationRegExp));
-                ptx.AppendChild(xmlHelper.addCDataNode(xd, "Description", pt.Description));
+                ptx.AppendChild(Umbraco.Core.XmlHelper.AddTextNode(xd, "Tab", Tab.GetCaptionById(pt.TabId)));
+                ptx.AppendChild(Umbraco.Core.XmlHelper.AddTextNode(xd, "Mandatory", pt.Mandatory.ToString()));
+                ptx.AppendChild(Umbraco.Core.XmlHelper.AddTextNode(xd, "Validation", pt.ValidationRegExp));
+                ptx.AppendChild(Umbraco.Core.XmlHelper.AddCDataNode(xd, "Description", pt.Description));
                 pts.AppendChild(ptx);
             }
             root.AppendChild(pts);
@@ -199,8 +199,8 @@ namespace umbraco.cms.businesslogic.member
             foreach (TabI t in getVirtualTabs.ToList())
             {
                 XmlElement tabx = xd.CreateElement("Tab");
-                tabx.AppendChild(xmlHelper.addTextNode(xd, "Id", t.Id.ToString()));
-                tabx.AppendChild(xmlHelper.addTextNode(xd, "Caption", t.Caption));
+                tabx.AppendChild(Umbraco.Core.XmlHelper.AddTextNode(xd, "Id", t.Id.ToString()));
+                tabx.AppendChild(Umbraco.Core.XmlHelper.AddTextNode(xd, "Caption", t.Caption));
                 tabs.AppendChild(tabx);
             }
             root.AppendChild(tabs);

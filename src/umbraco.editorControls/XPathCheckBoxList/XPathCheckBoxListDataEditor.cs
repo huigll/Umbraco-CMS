@@ -122,7 +122,7 @@ namespace umbraco.editorControls.XPathCheckBoxList
                 string value = this.data.Value.ToString();
                 List<string> selectedValues = new List<string>();
 
-                if (xmlHelper.CouldItBeXml(value))
+                if (Umbraco.Core.XmlHelper.CouldItBeXml(value))
                 {
                     // build selected values from XML fragment
                     foreach (XElement nodeXElement in XElement.Parse(value).Elements())

@@ -274,14 +274,14 @@ namespace umbraco.BusinessLogic
             return Apps;
         }
 
-        /// <summary>
-        /// Stores all references to classes that are of type IApplication
-        /// </summary>
-        [Obsolete("RegisterIApplications has been depricated. Please use ApplicationStartupHandler.RegisterHandlers() instead.")]
-        public static void RegisterIApplications()
-        {
-            ApplicationStartupHandler.RegisterHandlers();
-        }
+        ///// <summary>
+        ///// Stores all references to classes that are of type IApplication
+        ///// </summary>
+        //[Obsolete("RegisterIApplications has been depricated. Please use ApplicationStartupHandler.RegisterHandlers() instead.")]
+        //public static void RegisterIApplications()
+        //{
+        //    ApplicationStartupHandler.RegisterHandlers();
+        //}
    
         internal static void LoadXml(Action<XDocument> callback, bool saveAfterCallback)
         {

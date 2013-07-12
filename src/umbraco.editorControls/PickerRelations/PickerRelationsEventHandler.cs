@@ -99,7 +99,7 @@ namespace umbraco.editorControls.PickerRelations
 
 							var pickerStorageFormat = PickerStorageFormat.Csv; // Assume default of csv
 
-                            if (xmlHelper.CouldItBeXml(pickerPropertyValue))
+                            if (Umbraco.Core.XmlHelper.CouldItBeXml(pickerPropertyValue))
 							{
                                 pickerStorageFormat = PickerStorageFormat.Xml;
 							}

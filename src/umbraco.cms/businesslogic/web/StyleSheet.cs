@@ -281,9 +281,9 @@ namespace umbraco.cms.businesslogic.web
         public XmlNode ToXml(XmlDocument xd)
         {
             XmlNode doc = xd.CreateElement("Stylesheet");
-            doc.AppendChild(xmlHelper.addTextNode(xd, "Name", this.Text));
-            doc.AppendChild(xmlHelper.addTextNode(xd, "FileName", this.Filename));
-            doc.AppendChild(xmlHelper.addCDataNode(xd, "Content", this.Content));
+            doc.AppendChild(Umbraco.Core.XmlHelper.AddTextNode(xd, "Name", this.Text));
+            doc.AppendChild(Umbraco.Core.XmlHelper.AddTextNode(xd, "FileName", this.Filename));
+            doc.AppendChild(Umbraco.Core.XmlHelper.AddCDataNode(xd, "Content", this.Content));
 
             if (this.Properties.Length > 0)
             {
@@ -291,9 +291,9 @@ namespace umbraco.cms.businesslogic.web
                 foreach (StylesheetProperty sp in this.Properties)
                 {
                     XmlElement prop = xd.CreateElement("Property");
-                    prop.AppendChild(xmlHelper.addTextNode(xd, "Name", sp.Text));
-                    prop.AppendChild(xmlHelper.addTextNode(xd, "Alias", sp.Alias));
-                    prop.AppendChild(xmlHelper.addTextNode(xd, "Value", sp.value));
+                    prop.AppendChild(Umbraco.Core.XmlHelper.AddTextNode(xd, "Name", sp.Text));
+                    prop.AppendChild(Umbraco.Core.XmlHelper.AddTextNode(xd, "Alias", sp.Alias));
+                    prop.AppendChild(Umbraco.Core.XmlHelper.AddTextNode(xd, "Value", sp.value));
                     properties.AppendChild(prop);
                 }
                 doc.AppendChild(properties);
@@ -430,22 +430,22 @@ namespace umbraco.cms.businesslogic.web
 
         public static StyleSheet Import(XmlNode n, umbraco.BusinessLogic.User u)
         {
-            string stylesheetName = xmlHelper.GetNodeValue(n.SelectSingleNode("Name"));
+            string stylesheetName = Umbraco.Core.XmlHelper.GetNodeValue(n.SelectSingleNode("Name"));
             StyleSheet s = GetByName(stylesheetName);
             if (s == null)
             {
                 s = StyleSheet.MakeNew(
                     u,
                     stylesheetName,
-                    xmlHelper.GetNodeValue(n.SelectSingleNode("FileName")),
-                    xmlHelper.GetNodeValue(n.SelectSingleNode("Content")));
+                    Umbraco.Core.XmlHelper.GetNodeValue(n.SelectSingleNode("FileName")),
+                    Umbraco.Core.XmlHelper.GetNodeValue(n.SelectSingleNode("Content")));
             }
 
             foreach (XmlNode prop in n.SelectNodes("Properties/Property"))
             {
-                string alias = xmlHelper.GetNodeValue(prop.SelectSingleNode("Alias"));
+                string alias = Umbraco.Core.XmlHelper.GetNodeValue(prop.SelectSingleNode("Alias"));
                 var sp = s.Properties.SingleOrDefault(p => p != null && p.Alias == alias);
-                string name = xmlHelper.GetNodeValue(prop.SelectSingleNode("Name"));
+                string name = Umbraco.Core.XmlHelper.GetNodeValue(prop.SelectSingleNode("Name"));
                 if (sp == default(StylesheetProperty))
                 {
                     sp = StylesheetProperty.MakeNew(
@@ -458,7 +458,7 @@ namespace umbraco.cms.businesslogic.web
                     sp.Text = name;
                 }
                 sp.Alias = alias;
-                sp.value = xmlHelper.GetNodeValue(prop.SelectSingleNode("Value"));
+                sp.value = Umbraco.Core.XmlHelper.GetNodeValue(prop.SelectSingleNode("Value"));
             }
             s.saveCssToFile();
 

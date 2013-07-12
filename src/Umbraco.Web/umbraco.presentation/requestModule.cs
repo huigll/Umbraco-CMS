@@ -372,6 +372,7 @@ namespace umbraco.presentation
 
                 // Trigger startup handlers
 			    ApplicationStartupHandler.RegisterHandlers();
+                 
 
 			    // Check for configured key, checking for currentversion to ensure that a request with
 				// no httpcontext don't set the whole app in configure mode

@@ -9,7 +9,7 @@ namespace umbraco.BusinessLogic.console
 	{
 		Guid UniqueId{get;}
 		int Id{get;}
-		MenuItemI[] MenuItems {get;}
+		//MenuItemI[] MenuItems {get;}
 		IconI[] Children {get;}
 		string DefaultEditorURL{get;}
 		string Text{get;set;}

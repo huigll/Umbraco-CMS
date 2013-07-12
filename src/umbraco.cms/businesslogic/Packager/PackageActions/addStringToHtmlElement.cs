@@ -32,7 +32,7 @@ namespace umbraco.cms.businesslogic.packager.standardPackageActions
 			string templateAlias = xmlData.Attributes["templateAlias"].Value;
 			string htmlElementId = xmlData.Attributes["htmlElementId"].Value;
 			string position = xmlData.Attributes["position"].Value;
-			string value = xmlHelper.GetNodeValue(xmlData);
+            string value = Umbraco.Core.XmlHelper.GetNodeValue(xmlData);
 			template.Template tmp = template.Template.GetByAlias(templateAlias);
 
 			if (UmbracoSettings.UseAspNetMasterPages)
@@ -54,7 +54,7 @@ namespace umbraco.cms.businesslogic.packager.standardPackageActions
 		{
 			string templateAlias = xmlData.Attributes["templateAlias"].Value;
 			string htmlElementId = xmlData.Attributes["htmlElementId"].Value;
-			string value = xmlHelper.GetNodeValue(xmlData);
+            string value = Umbraco.Core.XmlHelper.GetNodeValue(xmlData);
 			template.Template tmp = template.Template.GetByAlias(templateAlias);
 
 			if (UmbracoSettings.UseAspNetMasterPages)

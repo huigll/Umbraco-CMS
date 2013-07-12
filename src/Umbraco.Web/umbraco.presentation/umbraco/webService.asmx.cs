@@ -112,7 +112,7 @@ namespace umbraco
             else
             {
                 XmlNode result = xd.CreateNode(XmlNodeType.Element, "error", "");
-                result.AppendChild(xmlHelper.addTextNode(xd, "error", "Not a valid login"));
+                result.AppendChild(Umbraco.Core.XmlHelper.AddTextNode(xd, "error", "Not a valid login"));
                 return result;
             }
         }
@@ -128,7 +128,7 @@ namespace umbraco
             else
             {
                 XmlNode result = xd.CreateNode(XmlNodeType.Element, "error", "");
-                result.AppendChild(xmlHelper.addTextNode(xd, "error", "Not a valid login"));
+                result.AppendChild(Umbraco.Core.XmlHelper.AddTextNode(xd, "error", "Not a valid login"));
                 return result;
             }
         }

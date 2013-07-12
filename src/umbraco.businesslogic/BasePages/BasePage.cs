@@ -13,7 +13,6 @@ using Umbraco.Core.Logging;
 using Umbraco.Core.Services;
 using umbraco.BusinessLogic;
 using umbraco.DataLayer;
-using Umbraco.Core;
 
 namespace umbraco.BasePages
 {

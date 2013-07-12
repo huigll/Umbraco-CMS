@@ -8,7 +8,6 @@ using Umbraco.Core;
 using Umbraco.Core.Cache;
 using Umbraco.Core.IO;
 using Umbraco.Core.Events;
-using Umbraco.Core.IO;
 using umbraco.DataLayer;
 
 namespace umbraco.BusinessLogic

@@ -247,7 +247,7 @@ namespace umbraco
 				{
 					if (childContainer == null)
 					{
-						childContainer = xmlHelper.addTextNode(parentNode.OwnerDocument, UmbracoSettings.TEMP_FRIENDLY_XML_CHILD_CONTAINER_NODENAME, string.Empty);
+                        childContainer = Umbraco.Core.XmlHelper.AddTextNode(parentNode.OwnerDocument, UmbracoSettings.TEMP_FRIENDLY_XML_CHILD_CONTAINER_NODENAME, string.Empty);
 						parentNode.AppendChild(childContainer);
 					}
 				}

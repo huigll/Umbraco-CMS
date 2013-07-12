@@ -81,7 +81,7 @@ namespace Runway.Blog
 		private static System.Xml.XPath.XPathNodeIterator CommentsToXml(IRecordsReader rr)
 		{
 			System.Xml.XmlDocument xmlDocument = new System.Xml.XmlDocument();
-			System.Xml.XmlNode xmlNode = xmlHelper.addTextNode(xmlDocument, "comments", "");
+            System.Xml.XmlNode xmlNode = Umbraco.Core.XmlHelper.AddTextNode(xmlDocument, "comments", "");
 			while (rr.Read())
 			{
 				System.Xml.XmlNode xmlNode2 = xmlDocument.CreateElement("comment");
@@ -89,17 +89,17 @@ namespace Runway.Blog
 				System.Xml.XmlDocument arg_4A_0 = xmlDocument;
 				string arg_4A_1 = "id";
 				int @int = rr.GetInt("id");
-				arg_4F_0.Append(xmlHelper.addAttribute(arg_4A_0, arg_4A_1, @int.ToString()));
+                arg_4F_0.Append(Umbraco.Core.XmlHelper.AddAttribute(arg_4A_0, arg_4A_1, @int.ToString()));
 				System.Xml.XmlAttributeCollection arg_7A_0 = xmlNode2.Attributes;
 				System.Xml.XmlDocument arg_75_0 = xmlDocument;
 				string arg_75_1 = "nodeid";
 				@int = rr.GetInt("nodeid");
-				arg_7A_0.Append(xmlHelper.addAttribute(arg_75_0, arg_75_1, @int.ToString()));
-				xmlNode2.Attributes.Append(xmlHelper.addAttribute(xmlDocument, "created", rr.GetDateTime("created").ToString()));
-				xmlNode2.AppendChild(xmlHelper.addCDataNode(xmlDocument, "name", rr.GetString("name")));
-				xmlNode2.AppendChild(xmlHelper.addCDataNode(xmlDocument, "email", rr.GetString("email")));
-				xmlNode2.AppendChild(xmlHelper.addCDataNode(xmlDocument, "website", rr.GetString("website")));
-				xmlNode2.AppendChild(xmlHelper.addCDataNode(xmlDocument, "message", rr.GetString("comment")));
+                arg_7A_0.Append(Umbraco.Core.XmlHelper.AddAttribute(arg_75_0, arg_75_1, @int.ToString()));
+                xmlNode2.Attributes.Append(Umbraco.Core.XmlHelper.AddAttribute(xmlDocument, "created", rr.GetDateTime("created").ToString()));
+				xmlNode2.AppendChild(Umbraco.Core.XmlHelper.AddCDataNode(xmlDocument, "name", rr.GetString("name")));
+                xmlNode2.AppendChild(Umbraco.Core.XmlHelper.AddCDataNode(xmlDocument, "email", rr.GetString("email")));
+                xmlNode2.AppendChild(Umbraco.Core.XmlHelper.AddCDataNode(xmlDocument, "website", rr.GetString("website")));
+                xmlNode2.AppendChild(Umbraco.Core.XmlHelper.AddCDataNode(xmlDocument, "message", rr.GetString("comment")));
 				xmlNode.AppendChild(xmlNode2);
 			}
 			xmlDocument.AppendChild(xmlNode);

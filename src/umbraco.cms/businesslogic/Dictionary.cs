@@ -376,12 +376,12 @@ namespace umbraco.cms.businesslogic
             {
 
                 XmlNode dictionaryItem = xd.CreateElement("DictionaryItem");
-                dictionaryItem.Attributes.Append(xmlHelper.addAttribute(xd, "Key", this.key));
+                dictionaryItem.Attributes.Append(Umbraco.Core.XmlHelper.AddAttribute(xd, "Key", this.key));
                 foreach (Language lang in Language.GetAllAsList())
                 {
-                    XmlNode itemValue = xmlHelper.addCDataNode(xd, "Value", this.Value(lang.id));
-                    itemValue.Attributes.Append(xmlHelper.addAttribute(xd, "LanguageId", lang.id.ToString()));
-                    itemValue.Attributes.Append(xmlHelper.addAttribute(xd, "LanguageCultureAlias", lang.CultureAlias));
+                    XmlNode itemValue = Umbraco.Core.XmlHelper.AddCDataNode(xd, "Value", this.Value(lang.id));
+                    itemValue.Attributes.Append(Umbraco.Core.XmlHelper.AddAttribute(xd, "LanguageId", lang.id.ToString()));
+                    itemValue.Attributes.Append(Umbraco.Core.XmlHelper.AddAttribute(xd, "LanguageCultureAlias", lang.CultureAlias));
                     dictionaryItem.AppendChild(itemValue);
                 }
 
@@ -425,7 +425,7 @@ namespace umbraco.cms.businesslogic
                         foreach (XmlNode xn in values)
                         {
                             string cA = xn.Attributes["LanguageCultureAlias"].Value;
-                            string keyValue = xmlHelper.GetNodeValue(xn);
+                            string keyValue = Umbraco.Core.XmlHelper.GetNodeValue(xn);
 
                             Language valueLang = Language.GetByCultureCode(cA);
 

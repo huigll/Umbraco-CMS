@@ -697,8 +697,8 @@ namespace umbraco.cms.businesslogic.member
             XmlNode x = base.ToXml(xd, Deep);
             if (x.Attributes["loginName"] == null)
             {
-                x.Attributes.Append(xmlHelper.addAttribute(xd, "loginName", LoginName));
-                x.Attributes.Append(xmlHelper.addAttribute(xd, "email", Email));
+                x.Attributes.Append(Umbraco.Core.XmlHelper.AddAttribute(xd, "loginName", LoginName));
+                x.Attributes.Append(Umbraco.Core.XmlHelper.AddAttribute(xd, "email", Email));
             }
             return x;
         }
@@ -793,8 +793,8 @@ namespace umbraco.cms.businesslogic.member
         {
             XmlNode node = xd.CreateNode(XmlNodeType.Element, "node", "");
             XmlPopulate(xd, ref node, false);
-            node.Attributes.Append(xmlHelper.addAttribute(xd, "loginName", LoginName));
-            node.Attributes.Append(xmlHelper.addAttribute(xd, "email", Email));
+            node.Attributes.Append(Umbraco.Core.XmlHelper.AddAttribute(xd, "loginName", LoginName));
+            node.Attributes.Append(Umbraco.Core.XmlHelper.AddAttribute(xd, "email", Email));
             return node;
         }
 

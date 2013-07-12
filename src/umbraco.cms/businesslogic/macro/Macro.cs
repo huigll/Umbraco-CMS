@@ -309,7 +309,7 @@ namespace umbraco.cms.businesslogic.macro
         {
 
             Macro m = null;
-            string alias = xmlHelper.GetNodeValue(n.SelectSingleNode("alias"));
+            string alias = Umbraco.Core.XmlHelper.GetNodeValue(n.SelectSingleNode("alias"));
             try
             {
                 //check to see if the macro alreay exists in the system
@@ -319,27 +319,27 @@ namespace umbraco.cms.businesslogic.macro
             }
             catch (IndexOutOfRangeException)
             {
-                m = MakeNew(xmlHelper.GetNodeValue(n.SelectSingleNode("name")));
+                m = MakeNew(Umbraco.Core.XmlHelper.GetNodeValue(n.SelectSingleNode("name")));
             }
 
             try
             {
                 m.Alias = alias;
-                m.Assembly = xmlHelper.GetNodeValue(n.SelectSingleNode("scriptAssembly"));
-                m.Type = xmlHelper.GetNodeValue(n.SelectSingleNode("scriptType"));
-                m.Xslt = xmlHelper.GetNodeValue(n.SelectSingleNode("xslt"));
-                m.RefreshRate = int.Parse(xmlHelper.GetNodeValue(n.SelectSingleNode("refreshRate")));
+                m.Assembly = Umbraco.Core.XmlHelper.GetNodeValue(n.SelectSingleNode("scriptAssembly"));
+                m.Type = Umbraco.Core.XmlHelper.GetNodeValue(n.SelectSingleNode("scriptType"));
+                m.Xslt = Umbraco.Core.XmlHelper.GetNodeValue(n.SelectSingleNode("xslt"));
+                m.RefreshRate = int.Parse(Umbraco.Core.XmlHelper.GetNodeValue(n.SelectSingleNode("refreshRate")));
 
                 // we need to validate if the usercontrol is missing the tilde prefix requirement introduced in v6
                 if (String.IsNullOrEmpty(m.Assembly) && !String.IsNullOrEmpty(m.Type) && !m.Type.StartsWith("~"))
                     m.Type = "~/" + m.Type;
 
                 if (n.SelectSingleNode("scriptingFile") != null)
-                    m.ScriptingFile = xmlHelper.GetNodeValue(n.SelectSingleNode("scriptingFile"));
+                    m.ScriptingFile = Umbraco.Core.XmlHelper.GetNodeValue(n.SelectSingleNode("scriptingFile"));
 
                 try
                 {
-                    m.UseInEditor = bool.Parse(xmlHelper.GetNodeValue(n.SelectSingleNode("useInEditor")));
+                    m.UseInEditor = bool.Parse(Umbraco.Core.XmlHelper.GetNodeValue(n.SelectSingleNode("useInEditor")));
                 }
                 catch (Exception macroExp)
                 {
@@ -427,14 +427,14 @@ namespace umbraco.cms.businesslogic.macro
             XmlNode doc = xd.CreateElement("macro");
 
 			// info section
-			doc.AppendChild(xmlHelper.addTextNode(xd, "name", this.Name));
-			doc.AppendChild(xmlHelper.addTextNode(xd, "alias", this.Alias));
-			doc.AppendChild(xmlHelper.addTextNode(xd, "scriptType", this.Type));
-			doc.AppendChild(xmlHelper.addTextNode(xd, "scriptAssembly", this.Assembly));
-			doc.AppendChild(xmlHelper.addTextNode(xd, "xslt", this.Xslt));
-			doc.AppendChild(xmlHelper.addTextNode(xd, "useInEditor", this.UseInEditor.ToString()));
-			doc.AppendChild(xmlHelper.addTextNode(xd, "refreshRate", this.RefreshRate.ToString()));
-            doc.AppendChild(xmlHelper.addTextNode(xd, "scriptingFile", this.ScriptingFile));
+            doc.AppendChild(Umbraco.Core.XmlHelper.AddTextNode(xd, "name", this.Name));
+            doc.AppendChild(Umbraco.Core.XmlHelper.AddTextNode(xd, "alias", this.Alias));
+            doc.AppendChild(Umbraco.Core.XmlHelper.AddTextNode(xd, "scriptType", this.Type));
+            doc.AppendChild(Umbraco.Core.XmlHelper.AddTextNode(xd, "scriptAssembly", this.Assembly));
+            doc.AppendChild(Umbraco.Core.XmlHelper.AddTextNode(xd, "xslt", this.Xslt));
+            doc.AppendChild(Umbraco.Core.XmlHelper.AddTextNode(xd, "useInEditor", this.UseInEditor.ToString()));
+            doc.AppendChild(Umbraco.Core.XmlHelper.AddTextNode(xd, "refreshRate", this.RefreshRate.ToString()));
+            doc.AppendChild(Umbraco.Core.XmlHelper.AddTextNode(xd, "scriptingFile", this.ScriptingFile));
 
 			// properties
             XmlNode props = xd.CreateElement("properties");

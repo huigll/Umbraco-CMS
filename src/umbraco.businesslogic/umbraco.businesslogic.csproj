@@ -236,9 +236,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Utils\TypeResolver.cs" />
-    <Compile Include="xmlHelper.cs">
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

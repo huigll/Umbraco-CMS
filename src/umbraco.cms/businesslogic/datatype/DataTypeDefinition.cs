@@ -126,18 +126,18 @@ namespace umbraco.cms.businesslogic.datatype
         public XmlElement ToXml(XmlDocument xd)
         {
             XmlElement dt = xd.CreateElement("DataType");
-            dt.Attributes.Append(xmlHelper.addAttribute(xd, "Name", Text));
-            dt.Attributes.Append(xmlHelper.addAttribute(xd, "Id", this.DataType.Id.ToString()));
-            dt.Attributes.Append(xmlHelper.addAttribute(xd, "Definition", this.UniqueId.ToString()));
-            dt.Attributes.Append(xmlHelper.addAttribute(xd, "DatabaseType", this.DbType));
+            dt.Attributes.Append(Umbraco.Core.XmlHelper.AddAttribute(xd, "Name", Text));
+            dt.Attributes.Append(Umbraco.Core.XmlHelper.AddAttribute(xd, "Id", this.DataType.Id.ToString()));
+            dt.Attributes.Append(Umbraco.Core.XmlHelper.AddAttribute(xd, "Definition", this.UniqueId.ToString()));
+            dt.Attributes.Append(Umbraco.Core.XmlHelper.AddAttribute(xd, "DatabaseType", this.DbType));
 
             // templates
             XmlElement prevalues = xd.CreateElement("PreValues");
             foreach (DictionaryEntry item in PreValues.GetPreValues(this.Id))
             {
                 XmlElement prevalue = xd.CreateElement("PreValue");
-                prevalue.Attributes.Append(xmlHelper.addAttribute(xd, "Id", ((PreValue)item.Value).Id.ToString()));
-                prevalue.Attributes.Append(xmlHelper.addAttribute(xd, "Value", ((PreValue)item.Value).Value));
+                prevalue.Attributes.Append(Umbraco.Core.XmlHelper.AddAttribute(xd, "Id", ((PreValue)item.Value).Id.ToString()));
+                prevalue.Attributes.Append(Umbraco.Core.XmlHelper.AddAttribute(xd, "Value", ((PreValue)item.Value).Value));
 
                 prevalues.AppendChild(prevalue);
             }

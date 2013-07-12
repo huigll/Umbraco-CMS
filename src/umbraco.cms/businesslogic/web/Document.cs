@@ -220,7 +220,7 @@ namespace umbraco.cms.businesslogic.web
             {
                 string propertyAlias = sourceIsLegacySchema ? n.GetAttribute("alias") : n.Name;
                 Property prop = d.getProperty(propertyAlias);
-                string propValue = xmlHelper.GetNodeValue(n);
+                string propValue = Umbraco.Core.XmlHelper.GetNodeValue(n);
 
                 if (prop != null)
                 {

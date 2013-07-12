@@ -26,7 +26,7 @@ namespace dashboardUtilities
                         Uri requestUri;
                         if (Uri.TryCreate(url, UriKind.Absolute, out requestUri))
                         {
-                            var feedProxyXml = xmlHelper.OpenAsXmlDocument(IOHelper.MapPath(SystemFiles.FeedProxyConfig));
+                            var feedProxyXml = Umbraco.Core.XmlHelper.OpenAsXmlDocument(IOHelper.MapPath(SystemFiles.FeedProxyConfig));
                             if (feedProxyXml != null && feedProxyXml.SelectSingleNode(string.Concat("//allow[@host = '", requestUri.Host, "']")) != null)
                             {
                                 using (var client = new WebClient())

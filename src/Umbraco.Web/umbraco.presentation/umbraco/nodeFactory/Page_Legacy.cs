@@ -571,7 +571,7 @@ namespace umbraco.presentation.nodeFactory
                 _alias = UmbracoSettings.UseLegacyXmlSchema ?
                     PropertyXmlData.Attributes.GetNamedItem("alias").Value :
                     PropertyXmlData.Name;
-                _value = xmlHelper.GetNodeValue(PropertyXmlData);
+                _value = Umbraco.Core.XmlHelper.GetNodeValue(PropertyXmlData);
             }
             else
                 throw new ArgumentNullException("Property xml source is null");

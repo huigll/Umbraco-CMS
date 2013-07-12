@@ -13,7 +13,7 @@ namespace umbraco.cms.businesslogic.packager.standardPackageActions
 			if (string.IsNullOrEmpty(hostname))
 				return false;
 
-			var xdoc = xmlHelper.OpenAsXmlDocument(SystemFiles.FeedProxyConfig);
+            var xdoc = Umbraco.Core.XmlHelper.OpenAsXmlDocument(SystemFiles.FeedProxyConfig);
 
 			xdoc.PreserveWhitespace = true;
 
@@ -33,8 +33,8 @@ namespace umbraco.cms.businesslogic.packager.standardPackageActions
 
 				if (insert)
 				{
-					var newHostname = xmlHelper.addTextNode(xdoc, "allow", string.Empty);
-					newHostname.Attributes.Append(xmlHelper.addAttribute(xdoc, "host", hostname));
+                    var newHostname = Umbraco.Core.XmlHelper.AddTextNode(xdoc, "allow", string.Empty);
+                    newHostname.Attributes.Append(Umbraco.Core.XmlHelper.AddAttribute(xdoc, "host", hostname));
 					xn.AppendChild(newHostname);
 
 					xdoc.Save(IOHelper.MapPath(SystemFiles.FeedProxyConfig));
@@ -57,7 +57,7 @@ namespace umbraco.cms.businesslogic.packager.standardPackageActions
 			if (string.IsNullOrEmpty(hostname))
 				return false;
 
-			var xdoc = xmlHelper.OpenAsXmlDocument(SystemFiles.FeedProxyConfig);
+            var xdoc = Umbraco.Core.XmlHelper.OpenAsXmlDocument(SystemFiles.FeedProxyConfig);
 			xdoc.PreserveWhitespace = true;
 
 			var xn = xdoc.SelectSingleNode("//feedProxy");

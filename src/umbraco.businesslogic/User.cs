@@ -130,7 +130,7 @@ namespace umbraco.BusinessLogic
             {
                 _name = value;
                 SqlHelper.ExecuteNonQuery("Update umbracoUser set UserName = @userName where id = @id", SqlHelper.CreateParameter("@userName", value), SqlHelper.CreateParameter("@id", Id));
-                FlushFromCache();
+                //FlushFromCache();
             }
         }
 
@@ -150,7 +150,7 @@ namespace umbraco.BusinessLogic
             {
                 _email = value;
                 SqlHelper.ExecuteNonQuery("Update umbracoUser set UserEmail = @email where id = @id", SqlHelper.CreateParameter("@id", this.Id), SqlHelper.CreateParameter("@email", value));
-                FlushFromCache();
+                //FlushFromCache();
             }
         }
 
@@ -170,7 +170,7 @@ namespace umbraco.BusinessLogic
             {
                 _language = value;
                 SqlHelper.ExecuteNonQuery("Update umbracoUser set userLanguage = @language where id = @id", SqlHelper.CreateParameter("@language", value), SqlHelper.CreateParameter("@id", Id));
-                FlushFromCache();
+                //FlushFromCache();
             }
         }
 
@@ -187,7 +187,7 @@ namespace umbraco.BusinessLogic
             set
             {
                 SqlHelper.ExecuteNonQuery("Update umbracoUser set UserPassword = @pw where id = @id", SqlHelper.CreateParameter("@pw", value), SqlHelper.CreateParameter("@id", Id));
-                FlushFromCache();
+                //FlushFromCache();
             }
         }
 
@@ -289,7 +289,7 @@ namespace umbraco.BusinessLogic
                     throw new Exception(String.Format("A user with the login '{0}' already exists", value));
                 _loginname = value;
                 SqlHelper.ExecuteNonQuery("Update umbracoUser set UserLogin = @login where id = @id", SqlHelper.CreateParameter("@login", value), SqlHelper.CreateParameter("@id", Id));
-                FlushFromCache();
+                //FlushFromCache();
             }
         }
 
@@ -361,7 +361,7 @@ namespace umbraco.BusinessLogic
                     @"Update umbracoUser set userType = @type where id = @id",
                     SqlHelper.CreateParameter("@type", value.Id),
                     SqlHelper.CreateParameter("@id", Id));
-                FlushFromCache();
+                //FlushFromCache();
             }
         }
 
@@ -396,6 +396,7 @@ namespace umbraco.BusinessLogic
         {
             try
             {
+                
                 if (umbraco.BasePages.BasePage.umbracoUserContextID != "")
                     return BusinessLogic.User.GetUser(umbraco.BasePages.BasePage.GetUserId(umbraco.BasePages.BasePage.umbracoUserContextID));
                 else
@@ -636,7 +637,7 @@ namespace umbraco.BusinessLogic
             SqlHelper.ExecuteNonQuery("delete from umbracoUserLogins where userID = @id", SqlHelper.CreateParameter("@id", Id));
 
             SqlHelper.ExecuteNonQuery("delete from umbracoUser where id = @id", SqlHelper.CreateParameter("@id", Id));
-            FlushFromCache();
+            //FlushFromCache();
         }
 
         /// <summary>
@@ -809,7 +810,7 @@ namespace umbraco.BusinessLogic
             {
                 _userNoConsole = value;
                 SqlHelper.ExecuteNonQuery("update umbracoUser set userNoConsole = @userNoConsole where id = @id", SqlHelper.CreateParameter("@id", this.Id), SqlHelper.CreateParameter("@userNoConsole", _userNoConsole));
-                FlushFromCache();
+                //FlushFromCache();
             }
         }
 
@@ -829,7 +830,7 @@ namespace umbraco.BusinessLogic
             {
                 _userDisabled = value;
                 SqlHelper.ExecuteNonQuery("update umbracoUser set userDisabled = @userDisabled where id = @id", SqlHelper.CreateParameter("@id", this.Id), SqlHelper.CreateParameter("@userDisabled", _userDisabled));
-                FlushFromCache();
+                //FlushFromCache();
             }
         }
 
@@ -851,7 +852,7 @@ namespace umbraco.BusinessLogic
             {
                 _defaultToLiveEditing = value;
                 SqlHelper.ExecuteNonQuery("update umbracoUser set defaultToLiveEditing = @defaultToLiveEditing where id = @id", SqlHelper.CreateParameter("@id", this.Id), SqlHelper.CreateParameter("@defaultToLiveEditing", _defaultToLiveEditing));
-                FlushFromCache();
+                //FlushFromCache();
             }
         }
 
@@ -872,7 +873,7 @@ namespace umbraco.BusinessLogic
 
                 _startnodeid = value;
                 SqlHelper.ExecuteNonQuery("update umbracoUser set  startStructureId = @start where id = @id", SqlHelper.CreateParameter("@start", value), SqlHelper.CreateParameter("@id", this.Id));
-                FlushFromCache();
+                //FlushFromCache();
             }
         }
 
@@ -893,19 +894,19 @@ namespace umbraco.BusinessLogic
 
                 _startmediaid = value;
                 SqlHelper.ExecuteNonQuery("update umbracoUser set  startMediaId = @start where id = @id", SqlHelper.CreateParameter("@start", value), SqlHelper.CreateParameter("@id", this.Id));
-                FlushFromCache();
+                //FlushFromCache();
             }
         }
 
-        /// <summary>
-        /// Flushes the user from cache.
-        /// </summary>
-        [Obsolete("This method should not be used, cache flushing is handled automatically by event handling in the web application and ensures that all servers are notified, this will not notify all servers in a load balanced environment")]
-        public void FlushFromCache()
-        {
-            OnFlushingFromCache(EventArgs.Empty);
-            ApplicationContext.Current.ApplicationCache.ClearCacheItem(string.Format("UmbracoUser{0}", Id.ToString()));            
-        }
+        ///// <summary>
+        ///// Flushes the user from cache.
+        ///// </summary>
+        //[Obsolete("This method should not be used, cache flushing is handled automatically by event handling in the web application and ensures that all servers are notified, this will not notify all servers in a load balanced environment")]
+        //public void FlushFromCache()
+        //{
+        //    OnFlushingFromCache(EventArgs.Empty);
+        //    ApplicationContext.Current.ApplicationCache.ClearCacheItem(string.Format("UmbracoUser{0}", Id.ToString()));            
+        //}
 
         /// <summary>
         /// Gets the user with a specified ID

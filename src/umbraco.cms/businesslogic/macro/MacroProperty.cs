@@ -180,10 +180,10 @@ namespace umbraco.cms.businesslogic.macro
         {
             XmlElement doc = xd.CreateElement("property");
 
-            doc.Attributes.Append(xmlHelper.addAttribute(xd, "name", this.Name));
-            doc.Attributes.Append(xmlHelper.addAttribute(xd, "alias", this.Alias));
-            doc.Attributes.Append(xmlHelper.addAttribute(xd, "show", this.Public.ToString()));
-            doc.Attributes.Append(xmlHelper.addAttribute(xd, "propertyType", this.Type.Alias));
+            doc.Attributes.Append(Umbraco.Core.XmlHelper.AddAttribute(xd, "name", this.Name));
+            doc.Attributes.Append(Umbraco.Core.XmlHelper.AddAttribute(xd, "alias", this.Alias));
+            doc.Attributes.Append(Umbraco.Core.XmlHelper.AddAttribute(xd, "show", this.Public.ToString()));
+            doc.Attributes.Append(Umbraco.Core.XmlHelper.AddAttribute(xd, "propertyType", this.Type.Alias));
 
             return doc;
         }

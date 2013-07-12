@@ -183,12 +183,12 @@ namespace umbraco.cms.businesslogic.packager
         public int CreateManifest(string tempDir, string guid, string repoGuid)
         {
             //This is the new improved install rutine, which chops up the process into 3 steps, creating the manifest, moving files, and finally handling umb objects
-            string _packName = xmlHelper.GetNodeValue(_packageConfig.DocumentElement.SelectSingleNode("/umbPackage/info/package/name"));
-            string _packAuthor = xmlHelper.GetNodeValue(_packageConfig.DocumentElement.SelectSingleNode("/umbPackage/info/author/name"));
-            string _packAuthorUrl = xmlHelper.GetNodeValue(_packageConfig.DocumentElement.SelectSingleNode("/umbPackage/info/author/website"));
-            string _packVersion = xmlHelper.GetNodeValue(_packageConfig.DocumentElement.SelectSingleNode("/umbPackage/info/package/version"));
-            string _packReadme = xmlHelper.GetNodeValue(_packageConfig.DocumentElement.SelectSingleNode("/umbPackage/info/readme"));
-            string _packLicense = xmlHelper.GetNodeValue(_packageConfig.DocumentElement.SelectSingleNode("/umbPackage/info/package/license "));
+            string _packName = Umbraco.Core.XmlHelper.GetNodeValue(_packageConfig.DocumentElement.SelectSingleNode("/umbPackage/info/package/name"));
+            string _packAuthor = Umbraco.Core.XmlHelper.GetNodeValue(_packageConfig.DocumentElement.SelectSingleNode("/umbPackage/info/author/name"));
+            string _packAuthorUrl = Umbraco.Core.XmlHelper.GetNodeValue(_packageConfig.DocumentElement.SelectSingleNode("/umbPackage/info/author/website"));
+            string _packVersion = Umbraco.Core.XmlHelper.GetNodeValue(_packageConfig.DocumentElement.SelectSingleNode("/umbPackage/info/package/version"));
+            string _packReadme = Umbraco.Core.XmlHelper.GetNodeValue(_packageConfig.DocumentElement.SelectSingleNode("/umbPackage/info/readme"));
+            string _packLicense = Umbraco.Core.XmlHelper.GetNodeValue(_packageConfig.DocumentElement.SelectSingleNode("/umbPackage/info/package/license "));
 
             bool _enableSkins = false;
             string _skinRepoGuid = "";
@@ -196,7 +196,7 @@ namespace umbraco.cms.businesslogic.packager
             if (_packageConfig.DocumentElement.SelectSingleNode("/umbPackage/enableSkins") != null)
             {
                 XmlNode _skinNode = _packageConfig.DocumentElement.SelectSingleNode("/umbPackage/enableSkins");
-                _enableSkins = bool.Parse(xmlHelper.GetNodeValue(_skinNode));
+                _enableSkins = bool.Parse(Umbraco.Core.XmlHelper.GetNodeValue(_skinNode));
                 if (_skinNode.Attributes["repository"] != null && !string.IsNullOrEmpty(_skinNode.Attributes["repository"].Value))
                     _skinRepoGuid = _skinNode.Attributes["repository"].Value;
             }
@@ -239,9 +239,9 @@ namespace umbraco.cms.businesslogic.packager
                     //we enclose the whole file-moving to ensure that the entire installer doesn't crash
                     try
                     {
-                        String destPath = GetFileName(basePath, xmlHelper.GetNodeValue(n.SelectSingleNode("orgPath")));
-                        String sourceFile = GetFileName(tempDir, xmlHelper.GetNodeValue(n.SelectSingleNode("guid")));
-                        String destFile = GetFileName(destPath, xmlHelper.GetNodeValue(n.SelectSingleNode("orgName")));
+                        String destPath = GetFileName(basePath, Umbraco.Core.XmlHelper.GetNodeValue(n.SelectSingleNode("orgPath")));
+                        String sourceFile = GetFileName(tempDir, Umbraco.Core.XmlHelper.GetNodeValue(n.SelectSingleNode("guid")));
+                        String destFile = GetFileName(destPath, Umbraco.Core.XmlHelper.GetNodeValue(n.SelectSingleNode("orgName")));
 
                         // Create the destination directory if it doesn't exist
                         if (!Directory.Exists(destPath))
@@ -254,7 +254,8 @@ namespace umbraco.cms.businesslogic.packager
                         File.Move(sourceFile, destFile);
 
                         //PPH log file install
-                        insPack.Data.Files.Add(xmlHelper.GetNodeValue(n.SelectSingleNode("orgPath")) + "/" + xmlHelper.GetNodeValue(n.SelectSingleNode("orgName")));
+                        insPack.Data.Files.Add(Umbraco.Core.XmlHelper.GetNodeValue(n.SelectSingleNode("orgPath")) + "/" +
+                            Umbraco.Core.XmlHelper.GetNodeValue(n.SelectSingleNode("orgName")));
                     }
                     catch (Exception ex)
                     {
@@ -555,12 +556,12 @@ namespace umbraco.cms.businesslogic.packager
         public void Install(string tempDir, string guid, string repoGuid)
         {
             //PPH added logging of installs, this adds all install info in the installedPackages config file.
-            string packName = xmlHelper.GetNodeValue(_packageConfig.DocumentElement.SelectSingleNode("/umbPackage/info/package/name"));
-            string packAuthor = xmlHelper.GetNodeValue(_packageConfig.DocumentElement.SelectSingleNode("/umbPackage/info/author/name"));
-            string packAuthorUrl = xmlHelper.GetNodeValue(_packageConfig.DocumentElement.SelectSingleNode("/umbPackage/info/author/website"));
-            string packVersion = xmlHelper.GetNodeValue(_packageConfig.DocumentElement.SelectSingleNode("/umbPackage/info/package/version"));
-            string packReadme = xmlHelper.GetNodeValue(_packageConfig.DocumentElement.SelectSingleNode("/umbPackage/info/readme"));
-            string packLicense = xmlHelper.GetNodeValue(_packageConfig.DocumentElement.SelectSingleNode("/umbPackage/info/package/license "));
+            string packName = Umbraco.Core.XmlHelper.GetNodeValue(_packageConfig.DocumentElement.SelectSingleNode("/umbPackage/info/package/name"));
+            string packAuthor = Umbraco.Core.XmlHelper.GetNodeValue(_packageConfig.DocumentElement.SelectSingleNode("/umbPackage/info/author/name"));
+            string packAuthorUrl = Umbraco.Core.XmlHelper.GetNodeValue(_packageConfig.DocumentElement.SelectSingleNode("/umbPackage/info/author/website"));
+            string packVersion = Umbraco.Core.XmlHelper.GetNodeValue(_packageConfig.DocumentElement.SelectSingleNode("/umbPackage/info/package/version"));
+            string packReadme = Umbraco.Core.XmlHelper.GetNodeValue(_packageConfig.DocumentElement.SelectSingleNode("/umbPackage/info/readme"));
+            string packLicense = Umbraco.Core.XmlHelper.GetNodeValue(_packageConfig.DocumentElement.SelectSingleNode("/umbPackage/info/package/license "));
 
 
             //Create a new package instance to record all the installed package adds - this is the same format as the created packages has.
@@ -634,9 +635,9 @@ namespace umbraco.cms.businesslogic.packager
             string basePath = System.Web.Hosting.HostingEnvironment.ApplicationPhysicalPath;
             foreach (XmlNode n in _packageConfig.DocumentElement.SelectNodes("//file"))
             {
-                String destPath = GetFileName(basePath, xmlHelper.GetNodeValue(n.SelectSingleNode("orgPath")));
-                String sourceFile = GetFileName(tempDir, xmlHelper.GetNodeValue(n.SelectSingleNode("guid")));
-                String destFile = GetFileName(destPath, xmlHelper.GetNodeValue(n.SelectSingleNode("orgName")));
+                String destPath = GetFileName(basePath, Umbraco.Core.XmlHelper.GetNodeValue(n.SelectSingleNode("orgPath")));
+                String sourceFile = GetFileName(tempDir, Umbraco.Core.XmlHelper.GetNodeValue(n.SelectSingleNode("guid")));
+                String destFile = GetFileName(destPath, Umbraco.Core.XmlHelper.GetNodeValue(n.SelectSingleNode("orgName")));
 
                 // Create the destination directory if it doesn't exist
                 if (!Directory.Exists(destPath))
@@ -648,7 +649,8 @@ namespace umbraco.cms.businesslogic.packager
                 File.Move(sourceFile, destFile);
 
                 //PPH log file install
-                insPack.Data.Files.Add(xmlHelper.GetNodeValue(n.SelectSingleNode("orgPath")) + "/" + xmlHelper.GetNodeValue(n.SelectSingleNode("orgName")));
+                insPack.Data.Files.Add(Umbraco.Core.XmlHelper.GetNodeValue(n.SelectSingleNode("orgPath")) + "/" +
+                    Umbraco.Core.XmlHelper.GetNodeValue(n.SelectSingleNode("orgName")));
             }
             #endregion
 
@@ -743,18 +745,18 @@ namespace umbraco.cms.businesslogic.packager
             {
                 StyleSheet s = StyleSheet.MakeNew(
                     currentUser,
-                    xmlHelper.GetNodeValue(n.SelectSingleNode("Name")),
-                    xmlHelper.GetNodeValue(n.SelectSingleNode("FileName")),
-                    xmlHelper.GetNodeValue(n.SelectSingleNode("Content")));
+                    Umbraco.Core.XmlHelper.GetNodeValue(n.SelectSingleNode("Name")),
+                    Umbraco.Core.XmlHelper.GetNodeValue(n.SelectSingleNode("FileName")),
+                    Umbraco.Core.XmlHelper.GetNodeValue(n.SelectSingleNode("Content")));
 
                 foreach (XmlNode prop in n.SelectNodes("Properties/Property"))
                 {
                     StylesheetProperty sp = StylesheetProperty.MakeNew(
-                        xmlHelper.GetNodeValue(prop.SelectSingleNode("Name")),
+                        Umbraco.Core.XmlHelper.GetNodeValue(prop.SelectSingleNode("Name")),
                         s,
                         currentUser);
-                    sp.Alias = xmlHelper.GetNodeValue(prop.SelectSingleNode("Alias"));
-                    sp.value = xmlHelper.GetNodeValue(prop.SelectSingleNode("Value"));
+                    sp.Alias = Umbraco.Core.XmlHelper.GetNodeValue(prop.SelectSingleNode("Alias"));
+                    sp.value = Umbraco.Core.XmlHelper.GetNodeValue(prop.SelectSingleNode("Value"));
                 }
                 s.saveCssToFile();
                 s.Save();
@@ -825,8 +827,8 @@ namespace umbraco.cms.businesslogic.packager
             foreach (XmlNode n in _packageConfig.DocumentElement.SelectNodes("//file"))
             {
                 bool badFile = false;
-                string destPath = GetFileName(basePath, xmlHelper.GetNodeValue(n.SelectSingleNode("orgPath")));
-                string destFile = GetFileName(destPath, xmlHelper.GetNodeValue(n.SelectSingleNode("orgName")));
+                string destPath = GetFileName(basePath, Umbraco.Core.XmlHelper.GetNodeValue(n.SelectSingleNode("orgPath")));
+                string destFile = GetFileName(destPath, Umbraco.Core.XmlHelper.GetNodeValue(n.SelectSingleNode("orgName")));
 
                 if (destPath.ToLower().Contains(IOHelper.DirSepChar + "app_code"))
                     badFile = true;
@@ -840,7 +842,7 @@ namespace umbraco.cms.businesslogic.packager
                 if (badFile)
                 {
                     _containUnsecureFiles = true;
-                    _unsecureFiles.Add(xmlHelper.GetNodeValue(n.SelectSingleNode("orgName")));
+                    _unsecureFiles.Add(Umbraco.Core.XmlHelper.GetNodeValue(n.SelectSingleNode("orgName")));
                 }
             }
 
@@ -891,13 +893,13 @@ namespace umbraco.cms.businesslogic.packager
 
             try
             {
-                _readme = xmlHelper.GetNodeValue(_packageConfig.DocumentElement.SelectSingleNode("/umbPackage/info/readme"));
+                _readme = Umbraco.Core.XmlHelper.GetNodeValue(_packageConfig.DocumentElement.SelectSingleNode("/umbPackage/info/readme"));
             }
             catch { }
 
             try
             {
-                _control = xmlHelper.GetNodeValue(_packageConfig.DocumentElement.SelectSingleNode("/umbPackage/control"));
+                _control = Umbraco.Core.XmlHelper.GetNodeValue(_packageConfig.DocumentElement.SelectSingleNode("/umbPackage/control"));
             }
             catch { }
         }

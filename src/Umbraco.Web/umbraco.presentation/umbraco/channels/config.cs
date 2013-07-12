@@ -85,33 +85,33 @@ namespace umbraco.presentation.channels.businesslogic
             // add new node
             XmlElement newChannelxml = configFile.CreateElement("channel");
             newChannelxml.AppendChild(
-                xmlHelper.addTextNode(configFile, "name", Name));
+                Umbraco.Core.XmlHelper.AddTextNode(configFile, "name", Name));
             newChannelxml.AppendChild(
-                xmlHelper.addTextNode(configFile, "user", User.Id.ToString()));
+                Umbraco.Core.XmlHelper.AddTextNode(configFile, "user", User.Id.ToString()));
             newChannelxml.AppendChild(
-                xmlHelper.addTextNode(configFile, "startNode", StartNode.ToString()));
+                Umbraco.Core.XmlHelper.AddTextNode(configFile, "startNode", StartNode.ToString()));
             newChannelxml.AppendChild(
-                xmlHelper.addTextNode(configFile, "fullTree", FullTree.ToString()));
+                Umbraco.Core.XmlHelper.AddTextNode(configFile, "fullTree", FullTree.ToString()));
             newChannelxml.AppendChild(
-                xmlHelper.addTextNode(configFile, "documentTypeAlias", DocumentTypeAlias));
+                Umbraco.Core.XmlHelper.AddTextNode(configFile, "documentTypeAlias", DocumentTypeAlias));
             
             // fields
             XmlElement fieldsxml = configFile.CreateElement("fields");
             fieldsxml.AppendChild(
-                xmlHelper.addTextNode(configFile, "categories", FieldCategoriesAlias));
+                Umbraco.Core.XmlHelper.AddTextNode(configFile, "categories", FieldCategoriesAlias));
             fieldsxml.AppendChild(
-                xmlHelper.addTextNode(configFile, "description", FieldDescriptionAlias));
+                Umbraco.Core.XmlHelper.AddTextNode(configFile, "description", FieldDescriptionAlias));
             fieldsxml.AppendChild(
-                xmlHelper.addTextNode(configFile, "excerpt", FieldExcerptAlias));
+                Umbraco.Core.XmlHelper.AddTextNode(configFile, "excerpt", FieldExcerptAlias));
             newChannelxml.AppendChild(fieldsxml);
 
 
             // media
             XmlElement media = configFile.CreateElement("mediaObjectSupport");
-            media.Attributes.Append(xmlHelper.addAttribute(configFile, "enabled", ImageSupport.ToString()));
-            media.Attributes.Append(xmlHelper.addAttribute(configFile, "folderId", MediaFolder.ToString()));
-            media.Attributes.Append(xmlHelper.addAttribute(configFile, "mediaTypeAlias", MediaTypeAlias));
-            media.Attributes.Append(xmlHelper.addAttribute(configFile, "mediaTypeFileProperty", MediaTypeFileProperty));
+            media.Attributes.Append(Umbraco.Core.XmlHelper.AddAttribute(configFile, "enabled", ImageSupport.ToString()));
+            media.Attributes.Append(Umbraco.Core.XmlHelper.AddAttribute(configFile, "folderId", MediaFolder.ToString()));
+            media.Attributes.Append(Umbraco.Core.XmlHelper.AddAttribute(configFile, "mediaTypeAlias", MediaTypeAlias));
+            media.Attributes.Append(Umbraco.Core.XmlHelper.AddAttribute(configFile, "mediaTypeFileProperty", MediaTypeFileProperty));
             newChannelxml.AppendChild(media);
             configFile.DocumentElement.AppendChild(newChannelxml);
 

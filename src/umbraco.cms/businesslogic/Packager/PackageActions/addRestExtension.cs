@@ -20,7 +20,7 @@ namespace umbraco.cms.businesslogic.packager.standardPackageActions
 
 				XmlDocument xdoc = new XmlDocument();
 				xdoc.PreserveWhitespace = true;
-				xdoc = xmlHelper.OpenAsXmlDocument(reConfig);
+                xdoc = Umbraco.Core.XmlHelper.OpenAsXmlDocument(reConfig);
 
 
 				XmlNode xn = xdoc.SelectSingleNode("//RestExtensions");

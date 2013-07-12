@@ -18,7 +18,7 @@ namespace umbraco.cms.businesslogic.packager.standardPackageActions
 
 			XmlDocument xdoc = new XmlDocument();
 			xdoc.PreserveWhitespace = true;
-			xdoc = xmlHelper.OpenAsXmlDocument(xeConfig);
+            xdoc = Umbraco.Core.XmlHelper.OpenAsXmlDocument(xeConfig);
 
 			XmlNode xn = xdoc.SelectSingleNode("//XsltExtensions");
 
@@ -35,10 +35,10 @@ namespace umbraco.cms.businesslogic.packager.standardPackageActions
 				}
 				if (insertExt)
 				{
-					XmlNode newExt = umbraco.xmlHelper.addTextNode(xdoc, "ext", "");
-					newExt.Attributes.Append(umbraco.xmlHelper.addAttribute(xdoc, "assembly", _assembly.Replace("/bin/", "")));
-					newExt.Attributes.Append(umbraco.xmlHelper.addAttribute(xdoc, "type", _type));
-					newExt.Attributes.Append(umbraco.xmlHelper.addAttribute(xdoc, "alias", _alias));
+                    XmlNode newExt = Umbraco.Core.XmlHelper.AddTextNode(xdoc, "ext", "");
+                    newExt.Attributes.Append(Umbraco.Core.XmlHelper.AddAttribute(xdoc, "assembly", _assembly.Replace("/bin/", "")));
+                    newExt.Attributes.Append(Umbraco.Core.XmlHelper.AddAttribute(xdoc, "type", _type));
+                    newExt.Attributes.Append(Umbraco.Core.XmlHelper.AddAttribute(xdoc, "alias", _alias));
 					xn.AppendChild(newExt);
 
 
@@ -63,7 +63,7 @@ namespace umbraco.cms.businesslogic.packager.standardPackageActions
 
 			XmlDocument xdoc = new XmlDocument();
 			xdoc.PreserveWhitespace = true;
-			xdoc = xmlHelper.OpenAsXmlDocument(xeConfig);
+            xdoc = Umbraco.Core.XmlHelper.OpenAsXmlDocument(xeConfig);
 
 			XmlNode xn = xdoc.SelectSingleNode("//XsltExtensions");
 
