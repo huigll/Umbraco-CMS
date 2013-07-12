@@ -28,9 +28,11 @@ namespace umbraco.uicontrols
             
         }
 
-        public static new ClientDependencyLoader TryCreate(Control parent, out bool isNew)
+        public static  ClientDependencyLoader TryCreate(Control parent, out bool isNew)
         {
-            if (ClientDependencyLoader.Instance == null)
+            var context = new System.Web.HttpContextWrapper(System.Web.HttpContext.Current);
+            var instance = ClientDependencyLoader.GetInstance(context);
+            if (instance == null)
             {
                 var loader = new UmbracoClientDependencyLoader();
                 parent.Controls.Add(loader);
@@ -40,7 +42,7 @@ namespace umbraco.uicontrols
             else
             {
                 isNew = false;
-                return ClientDependencyLoader.Instance;
+                return instance;
             }
 
         }

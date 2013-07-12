@@ -41,7 +41,7 @@ namespace umbraco.BusinessLogic.Actions
 		{
 			get
 			{
-				return string.Format("{0}.actionExport()", ClientTools.Scripts.GetAppActions);
+				return string.Format("{0}.actionExport()",  ClientTools.Scripts.GetAppActions);
 			}
 		}
 

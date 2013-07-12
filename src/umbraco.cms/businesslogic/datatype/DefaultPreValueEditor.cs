@@ -19,7 +19,7 @@ namespace umbraco.cms.businesslogic.datatype
         private cms.businesslogic.datatype.BaseDataType _datatype;
         
         //WHY IS THIS HERE... IT IS NEVER SET!?
-        private BaseDataType _datatypeOld;
+        //private BaseDataType _datatypeOld;
 
         private bool _isEnsured = false;
         private string _prevalue;
@@ -92,8 +92,8 @@ namespace umbraco.cms.businesslogic.datatype
             {
                 if (_datatype != null)
                     _dropdownlist.SelectedValue = _datatype.DBType.ToString();
-                else
-                    _dropdownlist.SelectedValue = _datatypeOld.DBType.ToString();
+                //else
+                //    _dropdownlist.SelectedValue = _datatypeOld.DBType.ToString();
 
                 _textbox.Text = Prevalue;
             }
@@ -109,8 +109,8 @@ namespace umbraco.cms.businesslogic.datatype
                     int defId;
                     if (_datatype != null)
                         defId = _datatype.DataTypeDefinitionId;
-                    else if (_datatypeOld != null)
-                        defId = _datatypeOld.DataTypeDefinitionId;
+                    //else if (_datatypeOld != null)
+                    //    defId = _datatypeOld.DataTypeDefinitionId;
                     else
                         throw new ArgumentException("Datatype is not initialized");
 
@@ -124,8 +124,8 @@ namespace umbraco.cms.businesslogic.datatype
                 int defId;
                 if (_datatype != null)
                     defId = _datatype.DataTypeDefinitionId;
-                else if (_datatypeOld != null)
-                    defId = _datatypeOld.DataTypeDefinitionId;
+                //else if (_datatypeOld != null)
+                //    defId = _datatypeOld.DataTypeDefinitionId;
                 else
                     throw new ArgumentException("Datatype is not initialized");
 
@@ -149,8 +149,8 @@ namespace umbraco.cms.businesslogic.datatype
                 int defId;
                 if (_datatype != null)
                     defId = _datatype.DataTypeDefinitionId;
-                else if (_datatypeOld != null)
-                    defId = _datatypeOld.DataTypeDefinitionId;
+                //else if (_datatypeOld != null)
+                //    defId = _datatypeOld.DataTypeDefinitionId;
                 else
                     throw new ArgumentException("Datatype is not initialized");
 
@@ -198,8 +198,8 @@ namespace umbraco.cms.businesslogic.datatype
                     _datatype.DBType =
                         (cms.businesslogic.datatype.DBTypes)
                         Enum.Parse(typeof (cms.businesslogic.datatype.DBTypes), _dropdownlist.SelectedValue, true);
-                else if (_datatypeOld != null)
-                    _datatypeOld.DBType = (DBTypes) Enum.Parse(typeof (DBTypes), _dropdownlist.SelectedValue, true);
+                //else if (_datatypeOld != null)
+                //    _datatypeOld.DBType = (DBTypes) Enum.Parse(typeof (DBTypes), _dropdownlist.SelectedValue, true);
 
 
                 if (_displayTextBox)

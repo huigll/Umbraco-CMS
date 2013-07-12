@@ -25,7 +25,7 @@ namespace umbraco.cms.businesslogic.packager.standardPackageActions
 
 			string documentName = xmlData.Attributes["documentName"].Value;
 
-			int parentDocid = 0;
+		//	int parentDocid = 0;
 
 			web.Document[] rootDocs = web.Document.GetRootDocuments();
 
