@@ -18,7 +18,6 @@ namespace Umbraco.Core.Models
         private Lazy<int> _parentId;
         private string _name;
         private string _urlName;
-        private bool _isLoadFromDB;
         private int _level;
         private string _path;
         private string _alias;
@@ -124,7 +123,19 @@ namespace Umbraco.Core.Models
                 }, _name, NameSelector);
             }
         }
-               
+        [DataMember]
+        public virtual string UrlName
+        {
+            get { return _urlName; }
+            set
+            {
+                SetPropertyValueAndDetectChanges(o =>
+                {
+                    _urlName = value;
+                    return _urlName;
+                }, _urlName, NameSelector);
+            }
+        }
         
         /// <summary>
         /// Gets or sets the level of the content entity

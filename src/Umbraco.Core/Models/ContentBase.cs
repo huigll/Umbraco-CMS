@@ -20,8 +20,7 @@ namespace Umbraco.Core.Models
         protected IContentTypeComposition ContentTypeBase;
         private Lazy<int> _parentId;
         private string _name;//NOTE Once localization is introduced this will be the localized Name of the Content/Media.
-       
-        private bool _isLoadFromDB;
+        private string _urlName;
         private int _sortOrder;
         private int _level;
         private string _path;
@@ -86,7 +85,6 @@ namespace Umbraco.Core.Models
         private static readonly PropertyInfo DefaultContentTypeIdSelector = ExpressionHelper.GetPropertyInfo<ContentBase, int>(x => x.ContentTypeId);
         private readonly static PropertyInfo PropertyCollectionSelector = ExpressionHelper.GetPropertyInfo<ContentBase, PropertyCollection>(x => x.Properties);
 
-        
         protected void PropertiesChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
             OnPropertyChanged(PropertyCollectionSelector);
@@ -130,25 +128,22 @@ namespace Umbraco.Core.Models
                 }, _name, NameSelector);
             }
         }
-       
-
         /// <summary>
         /// Gets or sets the name of the entity
         /// </summary>
         [DataMember]
-        public virtual bool IsLoadFromDB
+        public virtual string UrlName
         {
-            get { return _isLoadFromDB; }
+            get { return _urlName; }
             set
             {
                 SetPropertyValueAndDetectChanges(o =>
                 {
-                    _isLoadFromDB = value;
-                    return _isLoadFromDB;
-                }, _isLoadFromDB, NameSelector);
+                    _urlName = value;
+                    return _urlName;
+                }, _urlName, NameSelector);
             }
         }
-
         /// <summary>
         /// Gets or sets the sort order of the content entity
         /// </summary>

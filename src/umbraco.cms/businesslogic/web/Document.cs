@@ -698,7 +698,19 @@ namespace umbraco.cms.businesslogic.web
                 Content.Name = value;
             }
         }
-      
+
+        public override string UrlName
+        {
+            get
+            {
+                return Content.UrlName;
+            }
+            set
+            {
+                Content.UrlName = value;
+            }
+        }
+
         /// <summary>
         /// The date of the last update of the document
         /// </summary>

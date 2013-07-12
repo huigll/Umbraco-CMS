@@ -53,8 +53,6 @@ namespace Umbraco.Core.Models
         /// </summary>
         ContentStatus Status { get; }
 
-
-     
         /// <summary>
         /// Changes the <see cref="IContentType"/> for the current content object
         /// </summary>

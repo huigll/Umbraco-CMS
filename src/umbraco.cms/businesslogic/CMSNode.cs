@@ -941,6 +941,12 @@ order by level,sortOrder";
             }
         }
 
+        public virtual string UrlName
+        {
+            get;
+            set;
+        }
+        
 
         /// <summary>
         /// The menu items used in the tree view

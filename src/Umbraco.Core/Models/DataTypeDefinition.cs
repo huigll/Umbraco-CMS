@@ -19,7 +19,7 @@ namespace Umbraco.Core.Models
     {
         private int _parentId;
         private string _name;
-     
+        private string _urlName;
         private int _sortOrder;
         private int _level;
         private string _path;
@@ -78,9 +78,19 @@ namespace Umbraco.Core.Models
                 }, _name, NameSelector);
             }
         }
-      
-
-
+        [DataMember]
+        public string UrlName
+        {
+            get { return _urlName; }
+            set
+            {
+                SetPropertyValueAndDetectChanges(o =>
+                {
+                    _urlName = value;
+                    return _urlName;
+                }, _urlName, NameSelector);
+            }
+        }
         /// <summary>
         /// Gets or sets the sort order of the content entity
         /// </summary>
