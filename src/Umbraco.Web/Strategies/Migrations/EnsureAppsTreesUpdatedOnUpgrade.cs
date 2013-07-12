@@ -8,7 +8,7 @@ namespace Umbraco.Web.Strategies.Migrations
     /// This is kind of a hack to ensure that Apps and Trees that might still reside in the db is
     /// written to the 'new' applications.config and trees.config files upon upgrade to version 6.0
     /// </summary>
-    public class EnsureAppsTreesUpdatedOnUpgrade : IApplicationStartupHandler
+    public class EnsureAppsTreesUpdatedOnUpgrade : Umbraco.Core.ApplicationEventHandler//IApplicationStartupHandler
     {
         public EnsureAppsTreesUpdatedOnUpgrade()
         {

@@ -7,6 +7,7 @@ using Examine;
 using Lucene.Net.Documents;
 using umbraco.businesslogic;
 using umbraco.interfaces;
+using Umbraco.Core;
 
 namespace umbraco.presentation.umbraco.Search
 {
@@ -14,7 +15,7 @@ namespace umbraco.presentation.umbraco.Search
     /// Used to wire up events for Examine
     /// </summary>
     [Obsolete("This class has been superceded by Umbraco.Web.Search.ExamineEvents. This class is no longer used and will be removed from the codebase.")]
-    public class ExamineEvents : IApplicationStartupHandler
+    public class ExamineEvents : ApplicationEventHandler//IApplicationStartupHandler
     {
     }
 }

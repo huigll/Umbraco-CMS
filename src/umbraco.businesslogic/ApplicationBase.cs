@@ -8,13 +8,13 @@ using umbraco.interfaces;
 
 namespace umbraco.BusinessLogic 
 {
-    /// <summary>
-    /// ApplicationBase provides an easy to use base class to install event handlers in umbraco.
-    /// Class inhiriting from ApplcationBase are automaticly registered and instantiated by umbraco on application start.
-    /// To use, inhirite the ApplicationBase Class and add an empty constructor. 
-    /// </summary>
-    [Obsolete("ApplicationBase has been depricated. Please use ApplicationStartupHandler instead.")]
-    public abstract class ApplicationBase : IApplicationStartupHandler
-    { }
+    ///// <summary>
+    ///// ApplicationBase provides an easy to use base class to install event handlers in umbraco.
+    ///// Class inhiriting from ApplcationBase are automaticly registered and instantiated by umbraco on application start.
+    ///// To use, inhirite the ApplicationBase Class and add an empty constructor. 
+    ///// </summary>
+    //[Obsolete("ApplicationBase has been depricated. Please use ApplicationStartupHandler instead.")]
+    //public abstract class ApplicationBase : IApplicationStartupHandler
+    //{ }
 
 }

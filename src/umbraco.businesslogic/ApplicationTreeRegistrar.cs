@@ -9,7 +9,7 @@ using umbraco.interfaces;
 
 namespace umbraco.BusinessLogic
 {
-    public class ApplicationTreeRegistrar : IApplicationStartupHandler
+    public class ApplicationTreeRegistrar : ApplicationEventHandler//IApplicationStartupHandler
     {
         public ApplicationTreeRegistrar()
         {

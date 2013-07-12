@@ -4,7 +4,7 @@ using umbraco.interfaces;
 
 namespace umbraco.presentation.nodeFactory
 {
-	public class UmbracoSiteMapProviderAccessUpdate : IApplicationStartupHandler
+    public class UmbracoSiteMapProviderAccessUpdate : Umbraco.Core.ApplicationEventHandler// IApplicationStartupHandler
 	{
 		public UmbracoSiteMapProviderAccessUpdate()
 		{

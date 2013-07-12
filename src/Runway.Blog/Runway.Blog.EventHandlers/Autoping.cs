@@ -11,7 +11,7 @@ using umbraco.cms.businesslogic.property;
 using umbraco.cms.businesslogic.web;
 namespace Runway.Blog.EventHandlers
 {
-	public class Autoping : ApplicationBase
+    public class Autoping : umbraco.businesslogic.ApplicationStartupHandler// ApplicationBase
 	{
 		public Autoping()
 		{

@@ -29,7 +29,7 @@ namespace umbraco.presentation
 		private HttpApplication mApp;
 		private IContainer components = null;
 
-	    private readonly IList<IApplicationStartupHandler> startupHandlers = new List<IApplicationStartupHandler>(); 
+        private readonly IList<Umbraco.Core.IApplicationEventHandler/*IApplicationStartupHandler*/> startupHandlers = new List<Umbraco.Core.IApplicationEventHandler/*IApplicationStartupHandler*/>(); 
 
 		/// <summary>True if the module is currently handling an error.</summary>
 		private static object handlingError = false;

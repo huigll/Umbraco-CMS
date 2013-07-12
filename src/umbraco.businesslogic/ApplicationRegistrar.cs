@@ -12,7 +12,7 @@ using umbraco.interfaces;
 
 namespace umbraco.BusinessLogic
 {
-    public class ApplicationRegistrar : IApplicationStartupHandler
+    public class ApplicationRegistrar : ApplicationEventHandler//IApplicationStartupHandler
     {
         private ISqlHelper _sqlHelper;
         protected ISqlHelper SqlHelper

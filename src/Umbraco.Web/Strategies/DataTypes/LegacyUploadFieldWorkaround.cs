@@ -17,7 +17,7 @@ namespace Umbraco.Web.Strategies.DataTypes
 	/// This is an intermediate fix for the legacy DataTypeUploadField and the FileHandlerData, so that properties
 	/// are saved correctly when using the Upload field on a (legacy) Document or Media class.
 	/// </remarks>
-	public class LegacyUploadFieldWorkaround : IApplicationStartupHandler
+    public class LegacyUploadFieldWorkaround : ApplicationEventHandler//IApplicationStartupHandler
 	{
 		public LegacyUploadFieldWorkaround()
 		{

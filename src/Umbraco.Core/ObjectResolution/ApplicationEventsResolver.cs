@@ -61,7 +61,7 @@ namespace Umbraco.Core.ObjectResolution
 			get { return false; }			
 		}
 
-	    private class LegacyStartupHandlerResolver : ManyObjectsResolverBase<ApplicationEventsResolver, IApplicationStartupHandler>
+	    private class LegacyStartupHandlerResolver : ManyObjectsResolverBase<ApplicationEventsResolver, IApplicationEventHandler/*IApplicationStartupHandler*/>
 	    {
 	        internal LegacyStartupHandlerResolver(IEnumerable<Type> legacyStartupHandlers)
                 : base(legacyStartupHandlers)
@@ -69,7 +69,7 @@ namespace Umbraco.Core.ObjectResolution
 
 	        }
 
-            public IEnumerable<IApplicationStartupHandler> LegacyStartupHandlers
+            public IEnumerable<IApplicationEventHandler> LegacyStartupHandlers
             {
                 get { return Values; }
             }

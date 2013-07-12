@@ -17,8 +17,6 @@ namespace Umbraco.Core.Models
     {
         private Lazy<int> _parentId;
         private string _name;
-        private string _urlName;
-        private bool _isLoadFromDB;
         private int _level;
         private string _path;
         private string _alias;

@@ -430,7 +430,7 @@ namespace Umbraco.Core
         /// <returns></returns>
         internal IEnumerable<Type> ResolveApplicationStartupHandlers()
         {
-            return ResolveTypes<IApplicationStartupHandler>();
+            return ResolveTypes<IApplicationEventHandler/*IApplicationStartupHandler*/>();
         }
 
         /// <summary>

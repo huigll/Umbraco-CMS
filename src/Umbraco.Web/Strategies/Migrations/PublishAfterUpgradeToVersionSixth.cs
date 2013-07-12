@@ -14,7 +14,7 @@ namespace Umbraco.Web.Strategies.Migrations
     /// This event ensures that upgrades from (configured) versions lower then 6.0.0
     /// have their publish state updated after the database schema has been migrated.
     /// </summary>
-    public class PublishAfterUpgradeToVersionSixth : IApplicationStartupHandler
+    public class PublishAfterUpgradeToVersionSixth : ApplicationEventHandler//IApplicationStartupHandler
     {
         public PublishAfterUpgradeToVersionSixth()
         {

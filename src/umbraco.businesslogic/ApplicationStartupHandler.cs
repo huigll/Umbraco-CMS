@@ -18,7 +18,7 @@ namespace umbraco.businesslogic
 	/// To use, inhirite the ApplicationStartupHandler Class and add an empty constructor. 
 	/// </summary>
     [Obsolete("This class is no longer used, implement IApplicationEventHandler instead")]
-	public abstract class ApplicationStartupHandler : IApplicationStartupHandler
+	public abstract class ApplicationStartupHandler //: IApplicationStartupHandler
 	{
 
 		[Obsolete("This method is no longer used, use the Umbraco.Web.ApplicationEventsResolver to create the handlers")]
@@ -30,7 +30,7 @@ namespace umbraco.businesslogic
 			//now we just create the types... this is kind of silly since these objects don't actually do anything
 			//except run their constructors.
 
-			var instances = PluginManager.Current.CreateInstances<IApplicationStartupHandler>(
+			var instances = PluginManager.Current.CreateInstances<IApplicationEventHandler /*IApplicationEventHandler*/ >(
 				PluginManager.Current.ResolveApplicationStartupHandlers());
 
 		}

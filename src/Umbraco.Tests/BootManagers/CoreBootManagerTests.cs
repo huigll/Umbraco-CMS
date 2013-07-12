@@ -96,7 +96,7 @@ namespace Umbraco.Tests.BootManagers
         /// <summary>
         /// Test legacy startup handler
         /// </summary>
-        public class LegacyStartupHandler : IApplicationStartupHandler
+        public class LegacyStartupHandler : ApplicationEventHandler//IApplicationStartupHandler
         {
             public static bool Initialized = false;
 
