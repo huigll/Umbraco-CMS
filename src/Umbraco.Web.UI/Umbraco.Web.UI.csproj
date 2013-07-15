@@ -276,6 +276,13 @@
     <Compile Include="..\SolutionInfo.cs">
       <Link>Properties\SolutionInfo.cs</Link>
     </Compile>
+    <Content Include="App_Code\MediaSlider\ViewUserControlGetImageList.cs" />
+    <Compile Include="App_Code\RunwayContactForm\Contact.ascx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_Code\RunwayContactForm\Contact.ascx.designer.cs">
+      <DependentUpon>Contact.ascx.cs</DependentUpon>
+    </Compile>
     <Compile Include="Install\Default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -554,6 +561,11 @@
       <SubType>
       </SubType>
     </Content>
+    <Content Include="UserControls\Blog\AjaxCommentForm.ascx" />
+    <Content Include="UserControls\Blog\BlogInstaller.ascx" />
+    <Content Include="UserControls\Blog\CommentModeration.ascx" />
+    <Content Include="UserControls\MediaSlider\ViewUserControlGetImageList.ascx" />
+    <Content Include="UserControls\RunwayContactForm\Contact.ascx" />
     <Content Include="Xslt\u.mediaSliderImages.xslt" />
     <Content Include="Xslt\umb2ndLevelNavigation.xslt" />
     <Content Include="Xslt\umbBlogArchive.xslt" />
@@ -2569,7 +2581,6 @@
     <Content Include="Config\EmbeddedMedia.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Code\" />
     <Folder Include="App_Data\" />
     <Folder Include="App_Plugins\" />
     <Folder Include="MacroScripts\" />
@@ -2577,7 +2588,6 @@
     <Folder Include="Scripts\" />
     <Folder Include="Umbraco_Client\FolderBrowser\Images\" />
     <Folder Include="Umbraco_Client\Tags\images\" />
-    <Folder Include="UserControls\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
