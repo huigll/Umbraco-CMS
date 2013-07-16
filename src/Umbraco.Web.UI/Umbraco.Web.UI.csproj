@@ -276,7 +276,6 @@
     <Compile Include="..\SolutionInfo.cs">
       <Link>Properties\SolutionInfo.cs</Link>
     </Compile>
-    <Content Include="App_Code\MediaSlider\ViewUserControlGetImageList.cs" />
     <Compile Include="App_Code\RunwayContactForm\Contact.ascx.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
@@ -564,7 +563,6 @@
     <Content Include="UserControls\Blog\AjaxCommentForm.ascx" />
     <Content Include="UserControls\Blog\BlogInstaller.ascx" />
     <Content Include="UserControls\Blog\CommentModeration.ascx" />
-    <Content Include="UserControls\MediaSlider\ViewUserControlGetImageList.ascx" />
     <Content Include="UserControls\RunwayContactForm\Contact.ascx" />
     <Content Include="Xslt\u.mediaSliderImages.xslt" />
     <Content Include="Xslt\umb2ndLevelNavigation.xslt" />
