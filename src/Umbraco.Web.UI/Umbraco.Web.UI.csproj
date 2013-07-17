@@ -276,12 +276,12 @@
     <Compile Include="..\SolutionInfo.cs">
       <Link>Properties\SolutionInfo.cs</Link>
     </Compile>
-    <Compile Include="App_Code\RunwayContactForm\Contact.ascx.cs">
+    <Content Include="App_Code\RunwayContactForm\Contact.ascx.cs">
       <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="App_Code\RunwayContactForm\Contact.ascx.designer.cs">
+    </Content>
+    <Content Include="App_Code\RunwayContactForm\Contact.ascx.designer.cs">
       <DependentUpon>Contact.ascx.cs</DependentUpon>
-    </Compile>
+    </Content>
     <Compile Include="Install\Default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -583,7 +583,9 @@
     <Content Include="Xslt\umbBusinessFrontpageNews.xslt" />
     <Content Include="Xslt\umbfeedViewer.xslt" />
     <Content Include="Xslt\umbNewsListItems.xslt" />
-    <Content Include="Xslt\umbTopNavigation.xslt" />
+    <Content Include="Xslt\umbTopNavigation.xslt">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Config\404handlers.Release.config">
       <DependentUpon>404handlers.config</DependentUpon>
     </None>

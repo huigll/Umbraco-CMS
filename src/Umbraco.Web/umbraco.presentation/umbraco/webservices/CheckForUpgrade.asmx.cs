@@ -25,13 +25,15 @@ namespace umbraco.presentation.webservices
         public UpgradeResult CallUpgradeService()
         {
             if (!AuthorizeRequest()) return null;
-
+            return null;
+            /*
             var check = new global::umbraco.presentation.org.umbraco.update.CheckForUpgrade();                        
             org.umbraco.update.UpgradeResult result = check.CheckUpgrade(UmbracoVersion.Current.Major,
                                                                          UmbracoVersion.Current.Minor,
                                                                          UmbracoVersion.Current.Build,
                                                                          UmbracoVersion.CurrentComment);
             return new UpgradeResult(result.UpgradeType.ToString(), result.Comment, result.UpgradeUrl);
+             * */
         }
 
         [WebMethod]
