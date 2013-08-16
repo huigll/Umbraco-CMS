@@ -556,6 +556,7 @@
     <Content Include="Css\Custom.css" />
     <Content Include="Css\Starterkit.css" />
     <Content Include="MasterPages\Umedia\skin.xml" />
+    <Content Include="Scripts\rollboximage.js" />
     <Content Include="Umbraco\Xslt\Web.config">
       <SubType>
       </SubType>
@@ -2585,7 +2586,6 @@
     <Folder Include="App_Plugins\" />
     <Folder Include="MacroScripts\" />
     <Folder Include="Media\" />
-    <Folder Include="Scripts\" />
     <Folder Include="Umbraco_Client\FolderBrowser\Images\" />
     <Folder Include="Umbraco_Client\Tags\images\" />
   </ItemGroup>
